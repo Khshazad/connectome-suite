@@ -8,7 +8,7 @@ services:
       - key: PYTHON_VERSION
         value: 3.12.0
 
-  - type: static
+  - type: static_site
     name: connectome-web-suite
     buildCommand: echo "Static site ready"
     staticPublishPath: ./docs
