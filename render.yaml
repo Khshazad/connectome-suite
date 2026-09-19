@@ -9,8 +9,9 @@ services:
       - key: PYTHON_VERSION
         value: 3.12.0
 
-  - type: static_site
+  - type: web
     name: connectome-web-suite
+    env: static
     plan: free
     buildCommand: echo "Static site ready"
     staticPublishPath: ./docs
