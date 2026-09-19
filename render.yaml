@@ -12,6 +12,5 @@ services:
   - type: web
     name: connectome-web-suite
     env: static
-    plan: free
     buildCommand: echo "Static site ready"
     staticPublishPath: ./docs
