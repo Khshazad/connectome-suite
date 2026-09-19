@@ -90,53 +90,18 @@
     "graph_evidence": {
       "top_hubs": [
         {
-          "id": "N-1123",
-          "type": "motor",
-          "region": "mushroom_body",
-          "betweenness": 0.009,
-          "degree": 0.0515
-        },
-        {
-          "id": "N-1564",
-          "type": "motor",
-          "region": "mushroom_body",
-          "betweenness": 0.0049,
-          "degree": 0.0206
-        },
-        {
-          "id": "N-1360",
+          "id": "N-248",
           "type": "kenyon_cell",
           "region": "mushroom_body",
-          "betweenness": 0.0045,
+          "betweenness": 0.0028,
           "degree": 0.0309
         },
         {
           "id": "N-265",
           "type": "motor",
           "region": "mushroom_body",
-          "betweenness": 0.0042,
+          "betweenness": 0.0021,
           "degree": 0.0412
-        },
-        {
-          "id": "N-1510",
-          "type": "motor",
-          "region": "mushroom_body",
-          "betweenness": 0.004,
-          "degree": 0.0619
-        },
-        {
-          "id": "N-178",
-          "type": "kenyon_cell",
-          "region": "mushroom_body",
-          "betweenness": 0.0028,
-          "degree": 0.0412
-        },
-        {
-          "id": "N-1469",
-          "type": "motor",
-          "region": "mushroom_body",
-          "betweenness": 0.0028,
-          "degree": 0.0206
         },
         {
           "id": "N-1771",
@@ -146,24 +111,59 @@
           "degree": 0.0412
         },
         {
-          "id": "N-1521",
+          "id": "N-178",
           "type": "kenyon_cell",
           "region": "mushroom_body",
-          "betweenness": 0.0021,
+          "betweenness": 0.0014,
+          "degree": 0.0412
+        },
+        {
+          "id": "N-116",
+          "type": "motor",
+          "region": "mushroom_body",
+          "betweenness": 0.0014,
+          "degree": 0.0206
+        },
+        {
+          "id": "N-1243",
+          "type": "motor",
+          "region": "mushroom_body",
+          "betweenness": 0.0011,
+          "degree": 0.0206
+        },
+        {
+          "id": "N-989",
+          "type": "motor",
+          "region": "mushroom_body",
+          "betweenness": 0.0007,
           "degree": 0.0309
         },
         {
-          "id": "N-1403",
+          "id": "N-315",
           "type": "motor",
           "region": "mushroom_body",
-          "betweenness": 0.0021,
+          "betweenness": 0.0007,
           "degree": 0.0206
+        },
+        {
+          "id": "N-1090",
+          "type": "kenyon_cell",
+          "region": "mushroom_body",
+          "betweenness": 0.0007,
+          "degree": 0.0206
+        },
+        {
+          "id": "N-892",
+          "type": "motor",
+          "region": "mushroom_body",
+          "betweenness": 0.0004,
+          "degree": 0.0309
         }
       ],
       "filtered_region": "mushroom_body",
       "filtered_type": "motor"
     },
-    "natural_language_answer": "Top network hub neurons identified by betweenness centrality in mushroom_body region: N-1123 (motor), N-1564 (motor), N-1360 (kenyon_cell)."
+    "natural_language_answer": "Top network hub neurons identified by betweenness centrality in mushroom_body region: N-248 (kenyon_cell), N-265 (motor), N-1771 (motor)."
   },
   {
     "query": "Show neurotransmitter pathways connecting Cholinergic neurons to GABAergic neurons",
@@ -258,7 +258,7 @@
   },
   {
     "query": "Summarize the circuit structure in the antennal lobe",
-    "intent": "general_overview",
+    "intent": "subgraph_overview",
     "extracted_entities": {
       "node_ids": [],
       "neuron_types": [],
@@ -268,17 +268,19 @@
       "neurotransmitters": []
     },
     "graph_evidence": {
-      "total_nodes": 2000,
-      "total_edges": 24905,
-      "is_directed": true,
-      "sample_regions": [
-        "optic_lobe",
-        "central_brain",
-        "mushroom_body",
-        "ventral_nerve_cord",
-        "antennal_lobe"
-      ]
+      "region": "antennal_lobe",
+      "node_count": 419,
+      "edge_count": 1143,
+      "density": 0.0065,
+      "neuron_types_distribution": {
+        "interneuron": 194,
+        "motor": 83,
+        "sensory": 82,
+        "kenyon_cell": 30,
+        "central_complex": 22,
+        "giant_fiber": 8
+      }
     },
-    "natural_language_answer": "Connectome graph contains 2000 neurons and 24905 synapses across 5 brain regions."
+    "natural_language_answer": "The antennal_lobe sub-circuit contains 419 neurons and 1143 synapses with graph density of 0.0065."
   }
 ]

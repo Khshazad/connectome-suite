@@ -4,17 +4,21 @@ Fruit Fly Connectome In-Silico Pharma Screening API Server
 ==========================================================
 Production-grade FastAPI application exposing graph-based drug screening,
 lesion impact simulation, target ranking, and circuit extraction endpoints.
+Featuring Pydantic v2 schemas, virtual drug receptor binding kinetics (Hill equation),
+and persistent SQLite caching.
 """
 
 import os
 import sys
 import json
+import hashlib
+import sqlite3
 import logging
 import numpy as np
 import pandas as pd
 import networkx as nx
 from typing import List, Dict, Any, Optional
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, ConfigDict
 from fastapi import FastAPI, HTTPException, Query, status
 import uvicorn
 
@@ -24,9 +28,83 @@ logger = logging.getLogger("PharmaAPI")
 
 app = FastAPI(
     title="Fruit Fly Connectome In-Silico Pharma Screening API",
-    description="High-throughput graph neural screening engine for neuro-therapeutics",
+    description="High-throughput graph neural screening engine for neuro-therapeutics with Hill receptor kinetics & SQLite caching.",
     version="2.0.0",
+    docs_url="/docs",
+    redoc_url="/redoc"
 )
+
+# Persistent SQLite Cache System
+class PharmaCacheDB:
+    def __init__(self, db_path: str = "pharma_cache.db"):
+        self.db_path = db_path
+        self._init_db()
+
+    def _init_db(self):
+        try:
+            with sqlite3.connect(self.db_path) as conn:
+                cursor = conn.cursor()
+                cursor.execute("""
+                    CREATE TABLE IF NOT EXISTS api_cache (
+                        request_hash TEXT PRIMARY KEY,
+                        endpoint TEXT NOT NULL,
+                        response_json TEXT NOT NULL,
+                        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+                    )
+                """)
+                conn.commit()
+        except Exception as e:
+            logger.warning(f"Could not initialize SQLite cache: {e}")
+
+    def get(self, endpoint: str, params_dict: dict) -> Optional[dict]:
+        try:
+            param_str = json.dumps(params_dict, sort_keys=True)
+            req_hash = hashlib.sha256(f"{endpoint}:{param_str}".encode('utf-8')).hexdigest()
+            with sqlite3.connect(self.db_path) as conn:
+                cursor = conn.cursor()
+                cursor.execute("SELECT response_json FROM api_cache WHERE request_hash = ?", (req_hash,))
+                row = cursor.fetchone()
+                if row:
+                    return json.loads(row[0])
+        except Exception as e:
+            logger.warning(f"Cache get error: {e}")
+        return None
+
+    def set(self, endpoint: str, params_dict: dict, response_data: dict):
+        try:
+            param_str = json.dumps(params_dict, sort_keys=True)
+            req_hash = hashlib.sha256(f"{endpoint}:{param_str}".encode('utf-8')).hexdigest()
+            resp_str = json.dumps(response_data)
+            with sqlite3.connect(self.db_path) as conn:
+                cursor = conn.cursor()
+                cursor.execute("""
+                    INSERT OR REPLACE INTO api_cache (request_hash, endpoint, response_json)
+                    VALUES (?, ?, ?)
+                """, (req_hash, endpoint, resp_str))
+                conn.commit()
+        except Exception as e:
+            logger.warning(f"Cache set error: {e}")
+
+    def clear(self):
+        try:
+            with sqlite3.connect(self.db_path) as conn:
+                cursor = conn.cursor()
+                cursor.execute("DELETE FROM api_cache")
+                conn.commit()
+        except Exception as e:
+            logger.warning(f"Cache clear error: {e}")
+
+    def stats(self) -> dict:
+        try:
+            with sqlite3.connect(self.db_path) as conn:
+                cursor = conn.cursor()
+                cursor.execute("SELECT COUNT(*), endpoint FROM api_cache GROUP BY endpoint")
+                rows = cursor.fetchall()
+                return {"total_entries": sum(r[0] for r in rows), "by_endpoint": {r[1]: r[0] for r in rows}}
+        except Exception:
+            return {"total_entries": 0, "by_endpoint": {}}
+
+cache_db = PharmaCacheDB()
 
 # Global Connectome Graph Container
 class ConnectomeEngine:
@@ -84,8 +162,32 @@ class ConnectomeEngine:
 
 engine = ConnectomeEngine()
 
-# Request & Response Models
+# Virtual Drug Receptor Binding Kinetics Model
+RECEPTOR_MODELS = {
+    "GABAR": {"nt": "GABAergic", "Kd_uM": 1.2, "hill_n": 1.5, "Emax_hz": 25.0, "type": "inhibitory"},
+    "nAChR": {"nt": "Cholinergic", "Kd_uM": 0.8, "hill_n": 1.8, "Emax_hz": 30.0, "type": "excitatory"},
+    "DopR": {"nt": "Dopaminergic", "Kd_uM": 2.5, "hill_n": 1.2, "Emax_hz": 18.0, "type": "modulatory"},
+    "GluR": {"nt": "Glutamatergic", "Kd_uM": 1.0, "hill_n": 1.6, "Emax_hz": 28.0, "type": "excitatory"}
+}
+
+def calculate_receptor_occupancy(concentration_uM: float, Kd_uM: float, hill_n: float) -> float:
+    """Hill equation for receptor occupancy: theta = C^n / (Kd^n + C^n)"""
+    if concentration_uM <= 0:
+        return 0.0
+    c_n = concentration_uM ** hill_n
+    kd_n = Kd_uM ** hill_n
+    return float(c_n / (kd_n + c_n))
+
+# Request & Response Pydantic v2 Models
 class LesionRequest(BaseModel):
+    model_config = ConfigDict(json_schema_extra={
+        "example": {
+            "target_neurons": ["N-1", "N-5"],
+            "target_types": ["sensory"],
+            "lesion_severity": 0.5,
+            "mode": "node_removal"
+        }
+    })
     target_neurons: Optional[List[str]] = Field(default=[], description="List of neuron IDs to lesion")
     target_types: Optional[List[str]] = Field(default=[], description="List of neuron types to lesion")
     lesion_severity: float = Field(default=1.0, ge=0.0, le=1.0, description="Fraction of nodes/edges removed")
@@ -104,9 +206,18 @@ class LesionResponse(BaseModel):
     lesioned_targets_count: int
 
 class DrugSimulateRequest(BaseModel):
-    compound_name: str = Field(..., example="NeuroMod-X4")
-    target_receptor: str = Field(..., example="GABAR", description="Target receptor: GABAR, nAChR, DopR, GluR")
-    mechanism: str = Field(..., example="agonist", description="Mechanism: agonist, antagonist, allosteric_modulator")
+    model_config = ConfigDict(json_schema_extra={
+        "example": {
+            "compound_name": "NeuroMod-X4",
+            "target_receptor": "GABAR",
+            "mechanism": "agonist",
+            "dosage_concentration": 2.5,
+            "target_region": "central_brain"
+        }
+    })
+    compound_name: str = Field(..., description="Name of candidate drug compound")
+    target_receptor: str = Field(..., description="Target receptor: GABAR, nAChR, DopR, GluR")
+    mechanism: str = Field(..., description="Mechanism: agonist, antagonist, allosteric_modulator")
     dosage_concentration: float = Field(default=1.0, ge=0.0, le=10.0, description="Concentration (uM)")
     target_region: Optional[str] = Field(default=None, description="Optional restricted brain region")
 
@@ -114,6 +225,8 @@ class DrugSimulateResponse(BaseModel):
     compound_name: str
     target_receptor: str
     mechanism: str
+    dosage_concentration_uM: float
+    receptor_occupancy_pct: float
     affected_neuron_count: int
     mean_firing_rate_shift_hz: float
     circuit_stability_index: float
@@ -123,7 +236,14 @@ class DrugSimulateResponse(BaseModel):
     top_modulated_nodes: List[Dict[str, Any]]
 
 class TargetRankRequest(BaseModel):
-    disease_context: str = Field(..., example="hyper_excitability", description="Context: hyper_excitability, neurodegeneration, motor_deficit")
+    model_config = ConfigDict(json_schema_extra={
+        "example": {
+            "disease_context": "hyper_excitability",
+            "top_k": 10,
+            "region_filter": "central_brain"
+        }
+    })
+    disease_context: str = Field(..., description="Context: hyper_excitability, neurodegeneration, motor_deficit")
     top_k: int = Field(default=10, ge=1, le=100)
     region_filter: Optional[str] = Field(default=None)
 
@@ -138,8 +258,16 @@ class TargetRankItem(BaseModel):
     recommended_mechanism: str
 
 class CircuitExtractRequest(BaseModel):
-    source_nodes: List[str] = Field(..., example=["N-0", "N-1"])
-    target_nodes: Optional[List[str]] = Field(default=[])
+    model_config = ConfigDict(json_schema_extra={
+        "example": {
+            "source_nodes": ["N-0", "N-1"],
+            "target_nodes": [],
+            "max_hops": 2,
+            "min_weight": 0.2
+        }
+    })
+    source_nodes: List[str] = Field(..., description="Starting neuron IDs")
+    target_nodes: Optional[List[str]] = Field(default=[], description="Target neuron IDs")
     max_hops: int = Field(default=2, ge=1, le=5)
     min_weight: float = Field(default=0.2, ge=0.0)
     neurotransmitter_filter: Optional[List[str]] = Field(default=None)
@@ -164,7 +292,7 @@ class CircuitExtractResponse(BaseModel):
     subcircuit_density: float
 
 # Utility Functions
-def _approx_global_efficiency(G: nx.DiGraph, sample_size: int = 100) -> float:
+def _approx_global_efficiency(G: nx.DiGraph, sample_size: int = 40) -> float:
     nodes = list(G.nodes())
     if not nodes:
         return 0.0
@@ -198,11 +326,25 @@ def get_root():
         "version": "2.0.0",
         "nodes": engine.G.number_of_nodes(),
         "synapses": engine.G.number_of_edges(),
-        "endpoints": ["/predict/lesion", "/drug/simulate", "/target/rank", "/circuit/extract"]
+        "cache_stats": cache_db.stats(),
+        "endpoints": ["/predict/lesion", "/drug/simulate", "/target/rank", "/circuit/extract", "/cache/stats"]
     }
+
+@app.get("/cache/stats")
+def get_cache_stats():
+    return cache_db.stats()
+
+@app.post("/cache/clear")
+def clear_cache():
+    cache_db.clear()
+    return {"status": "success", "message": "SQLite API cache cleared successfully."}
 
 @app.post("/predict/lesion", response_model=LesionResponse)
 def predict_lesion(req: LesionRequest):
+    cached = cache_db.get("/predict/lesion", req.model_dump())
+    if cached:
+        return LesionResponse(**cached)
+
     G = engine.G.copy()
     initial_nodes = G.number_of_nodes()
     initial_edges = G.number_of_edges()
@@ -229,9 +371,9 @@ def predict_lesion(req: LesionRequest):
     eff_after = _approx_global_efficiency(G)
     eff_loss = max(0.0, (eff_before - eff_after) / (eff_before + 1e-9)) * 100.0
     disc_comps = nx.number_weakly_connected_components(G)
-    cascade_risk = float(min(1.0, (len(nodes_to_remove) / initial_nodes) * 2.5 + (eff_loss / 100.0)))
+    cascade_risk = float(min(1.0, (len(nodes_to_remove) / (initial_nodes + 1e-9)) * 2.5 + (eff_loss / 100.0)))
 
-    return LesionResponse(
+    resp = LesionResponse(
         initial_nodes=initial_nodes,
         remaining_nodes=G.number_of_nodes(),
         initial_edges=initial_edges,
@@ -244,16 +386,25 @@ def predict_lesion(req: LesionRequest):
         lesioned_targets_count=len(nodes_to_remove)
     )
 
+    cache_db.set("/predict/lesion", req.model_dump(), resp.model_dump())
+    return resp
+
 @app.post("/drug/simulate", response_model=DrugSimulateResponse)
 def drug_simulate(req: DrugSimulateRequest):
+    cached = cache_db.get("/drug/simulate", req.model_dump())
+    if cached:
+        return DrugSimulateResponse(**cached)
+
     G = engine.G
-    receptor_nt_map = {
-        "GABAR": "GABAergic",
-        "nAChR": "Cholinergic",
-        "DopR": "Dopaminergic",
-        "GluR": "Glutamatergic"
-    }
-    target_nt = receptor_nt_map.get(req.target_receptor, "Cholinergic")
+    rec_info = RECEPTOR_MODELS.get(req.target_receptor, RECEPTOR_MODELS["nAChR"])
+    target_nt = rec_info["nt"]
+
+    # Calculate binding kinetics via Hill Equation
+    occupancy = calculate_receptor_occupancy(
+        concentration_uM=req.dosage_concentration,
+        Kd_uM=rec_info["Kd_uM"],
+        hill_n=rec_info["hill_n"]
+    )
     
     matching_nodes = []
     for node, attrs in G.nodes(data=True):
@@ -266,27 +417,38 @@ def drug_simulate(req: DrugSimulateRequest):
         matching_nodes = list(G.nodes())[:50]
         affected_count = len(matching_nodes)
 
-    mult = 1.5 if req.mechanism == "agonist" else (-1.2 if req.mechanism == "antagonist" else 0.8)
-    firing_shift = req.dosage_concentration * mult * np.random.uniform(2.5, 8.0)
+    # Compute firing rate shift based on Hill occupancy and mechanism
+    max_effect = rec_info["Emax_hz"] * occupancy
+    if req.mechanism == "agonist":
+        firing_shift = max_effect
+    elif req.mechanism == "antagonist":
+        firing_shift = -max_effect * 0.85
+    else: # allosteric modulator
+        firing_shift = max_effect * 0.45
+
     stability_idx = float(max(0.1, min(1.0, 1.0 - (abs(firing_shift) / 50.0))))
-    gain_shift = float(1.0 + (firing_shift / 10.0))
-    side_effect = float(min(1.0, (req.dosage_concentration / 10.0) * (affected_count / G.number_of_nodes()) * 3.0))
-    efficacy = float(min(1.0, (affected_count / (G.number_of_nodes() * 0.3)) * (1.0 - side_effect * 0.5)))
+    gain_shift = float(1.0 + (firing_shift / 20.0))
+    side_effect = float(min(1.0, (req.dosage_concentration / 10.0) * (affected_count / (G.number_of_nodes() + 1e-9)) * 2.5))
+    efficacy = float(min(1.0, occupancy * (affected_count / (G.number_of_nodes() * 0.2 + 1e-9)) * (1.0 - side_effect * 0.4)))
 
     top_nodes = []
     for nid in matching_nodes[:5]:
         data = G.nodes[nid]
+        gene_expr = data.get('gene_expression', 0.5)
         top_nodes.append({
             "id": nid,
             "type": data.get('type', 'unknown'),
             "region": data.get('region', 'unknown'),
-            "delta_rate_hz": round(firing_shift * np.random.uniform(0.8, 1.2), 2)
+            "gene_expression": round(gene_expr, 3),
+            "delta_rate_hz": round(firing_shift * gene_expr, 2)
         })
 
-    return DrugSimulateResponse(
+    resp = DrugSimulateResponse(
         compound_name=req.compound_name,
         target_receptor=req.target_receptor,
         mechanism=req.mechanism,
+        dosage_concentration_uM=req.dosage_concentration,
+        receptor_occupancy_pct=round(occupancy * 100.0, 2),
         affected_neuron_count=affected_count,
         mean_firing_rate_shift_hz=round(firing_shift, 2),
         circuit_stability_index=round(stability_idx, 4),
@@ -296,14 +458,20 @@ def drug_simulate(req: DrugSimulateRequest):
         top_modulated_nodes=top_nodes
     )
 
+    cache_db.set("/drug/simulate", req.model_dump(), resp.model_dump())
+    return resp
+
 @app.post("/target/rank", response_model=List[TargetRankItem])
 def target_rank(req: TargetRankRequest):
+    cached = cache_db.get("/target/rank", req.model_dump())
+    if cached:
+        return [TargetRankItem(**item) for item in cached]
+
     G = engine.G
     nodes = list(G.nodes())
     if req.region_filter:
         nodes = [n for n in nodes if G.nodes[n].get('region') == req.region_filter]
 
-    # Subsample for fast calculation
     sub_nodes = nodes[:150] if len(nodes) > 150 else nodes
     subG = G.subgraph(sub_nodes)
 
@@ -332,10 +500,17 @@ def target_rank(req: TargetRankRequest):
         ))
 
     items.sort(key=lambda x: x.composite_rank_score, reverse=True)
-    return items[:req.top_k]
+    res_items = items[:req.top_k]
+
+    cache_db.set("/target/rank", req.model_dump(), [item.model_dump() for item in res_items])
+    return res_items
 
 @app.post("/circuit/extract", response_model=CircuitExtractResponse)
 def circuit_extract(req: CircuitExtractRequest):
+    cached = cache_db.get("/circuit/extract", req.model_dump())
+    if cached:
+        return CircuitExtractResponse(**cached)
+
     G = engine.G
     visited = set(req.source_nodes)
     current_frontier = set(req.source_nodes)
@@ -379,13 +554,16 @@ def circuit_extract(req: CircuitExtractRequest):
     n_edges = len(edges_out)
     density = round(n_edges / (n_nodes * (n_nodes - 1) + 1e-9), 4)
 
-    return CircuitExtractResponse(
+    resp = CircuitExtractResponse(
         nodes=nodes_out,
         edges=edges_out,
         node_count=n_nodes,
         edge_count=n_edges,
         subcircuit_density=density
     )
+
+    cache_db.set("/circuit/extract", req.model_dump(), resp.model_dump())
+    return resp
 
 if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=8000)

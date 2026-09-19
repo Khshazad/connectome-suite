@@ -1,29 +1,60 @@
 {
   "product_id": 8,
-  "name": "Neuromorphic Edge-AI Pruner",
+  "name": "Neuromorphic Edge-AI Pruner & Model Compressor",
   "connectome_calibration_neurons": 2000,
-  "mlp_pruning_benchmark": {
-    "total_parameters": 264704,
-    "nonzero_parameters": 39704,
-    "overall_sparsity_pct": 85.0,
-    "dense_memory_mb": 1.0098,
-    "estimated_sparse_memory_mb": 0.4544,
-    "memory_reduction_factor": 2.22,
-    "mse_reconstruction_error": 0.007203,
-    "representation_cosine_similarity": 0.2232,
-    "representation_capacity_preserved": false
+  "target_biological_sparsity_pct": 88.0,
+  "architectures_pruned": {
+    "mlp": {
+      "total_parameters": 264704,
+      "nonzero_parameters": 31763,
+      "overall_sparsity_pct": 88.0,
+      "target_sparsity_met": true,
+      "dense_memory_mb": 1.0098,
+      "coo_sparse_memory_mb": 0.6058,
+      "csr_sparse_memory_mb": 0.3635,
+      "memory_reduction_factor": 2.78,
+      "flops_reduction_pct": 88.0,
+      "mse_reconstruction_error": 0.011718,
+      "representation_cosine_similarity": 0.4768,
+      "representation_preserved": false
+    },
+    "cnn": {
+      "total_parameters": 60256,
+      "nonzero_parameters": 8434,
+      "overall_sparsity_pct": 86.0,
+      "target_sparsity_met": true,
+      "dense_memory_mb": 0.2299,
+      "coo_sparse_memory_mb": 0.1609,
+      "csr_sparse_memory_mb": 0.0965,
+      "memory_reduction_factor": 2.38,
+      "flops_reduction_pct": 86.0,
+      "mse_reconstruction_error": 0.004351,
+      "representation_cosine_similarity": 0.4687,
+      "representation_preserved": false
+    },
+    "resnet": {
+      "total_parameters": 42848,
+      "nonzero_parameters": 5137,
+      "overall_sparsity_pct": 88.01,
+      "target_sparsity_met": true,
+      "dense_memory_mb": 0.1635,
+      "coo_sparse_memory_mb": 0.098,
+      "csr_sparse_memory_mb": 0.0588,
+      "memory_reduction_factor": 2.78,
+      "flops_reduction_pct": 88.01,
+      "mse_reconstruction_error": 0.066076,
+      "representation_cosine_similarity": 0.0908,
+      "representation_preserved": false
+    }
   },
-  "cnn_pruning_benchmark": {
-    "total_parameters": 60256,
-    "nonzero_parameters": 12049,
-    "overall_sparsity_pct": 80.0,
-    "dense_memory_mb": 0.2299,
-    "estimated_sparse_memory_mb": 0.1379,
-    "memory_reduction_factor": 1.67,
-    "mse_reconstruction_error": 0.002093,
-    "representation_cosine_similarity": 0.3722,
-    "representation_capacity_preserved": false
+  "coo_csr_sparse_conversions": {
+    "mlp_sparse_layers": 3,
+    "cnn_sparse_layers": 3,
+    "resnet_sparse_layers": 6,
+    "formats_supported": [
+      "COO",
+      "CSR"
+    ]
   },
-  "sparse_tensors_generated": 3,
   "status": "SUCCESS"
 }

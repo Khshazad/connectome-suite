@@ -15,36 +15,36 @@
   ],
   "perturbation_matrix_pct": {
     "nAChR": {
-      "interneuron": 37.01,
-      "kenyon_cell": 36.41,
-      "motor": 38.57,
-      "sensory": 35.53,
-      "central_complex": 38.2,
-      "giant_fiber": 39.99
+      "interneuron": 37.16,
+      "kenyon_cell": 36.18,
+      "motor": 37.89,
+      "sensory": 35.57,
+      "central_complex": 38.01,
+      "giant_fiber": 39.74
     },
     "GABAR": {
-      "interneuron": 29.96,
-      "kenyon_cell": 28.75,
-      "motor": 29.78,
-      "sensory": 30.48,
-      "central_complex": 27.88,
-      "giant_fiber": 29.6
+      "interneuron": 29.73,
+      "kenyon_cell": 28.05,
+      "motor": 29.98,
+      "sensory": 30.52,
+      "central_complex": 27.66,
+      "giant_fiber": 28.4
     },
     "DopR": {
-      "interneuron": 14.83,
-      "kenyon_cell": 15.39,
-      "motor": 13.6,
-      "sensory": 14.25,
-      "central_complex": 13.88,
-      "giant_fiber": 14.94
+      "interneuron": 14.95,
+      "kenyon_cell": 15.29,
+      "motor": 13.83,
+      "sensory": 15.17,
+      "central_complex": 14.96,
+      "giant_fiber": 15.61
     },
     "GluR": {
-      "interneuron": 28.75,
-      "kenyon_cell": 31.02,
-      "motor": 29.07,
-      "sensory": 30.48,
-      "central_complex": 30.76,
-      "giant_fiber": 28.36
+      "interneuron": 29.7,
+      "kenyon_cell": 31.05,
+      "motor": 29.28,
+      "sensory": 30.19,
+      "central_complex": 30.89,
+      "giant_fiber": 28.03
     }
   }
 }

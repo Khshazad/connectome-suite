@@ -1,15 +1,45 @@
 {
   "alzheimers_simulation": {
     "disease": "Alzheimer's Disease (Tau/Amyloid Graph Diffusion)",
-    "simulation_steps": 8,
+    "simulation_steps": 20,
     "trajectory": [
+      {
+        "remaining_nodes": 1996,
+        "remaining_edges": 24820,
+        "node_survival_ratio": 0.998,
+        "largest_component_ratio": 0.97,
+        "functional_health_index": 0.9844,
+        "stage": 0,
+        "mean_pathology_load": 0.002,
+        "severely_damaged_nodes": 4
+      },
       {
         "remaining_nodes": 2000,
         "remaining_edges": 24905,
         "node_survival_ratio": 1.0,
-        "largest_component_ratio": 1.0,
-        "functional_health_index": 1.0,
-        "stage": 0,
+        "largest_component_ratio": 0.97,
+        "functional_health_index": 0.985,
+        "stage": 1,
+        "mean_pathology_load": 0.0019,
+        "severely_damaged_nodes": 0
+      },
+      {
+        "remaining_nodes": 2000,
+        "remaining_edges": 24905,
+        "node_survival_ratio": 1.0,
+        "largest_component_ratio": 0.97,
+        "functional_health_index": 0.985,
+        "stage": 2,
+        "mean_pathology_load": 0.0019,
+        "severely_damaged_nodes": 0
+      },
+      {
+        "remaining_nodes": 2000,
+        "remaining_edges": 24905,
+        "node_survival_ratio": 1.0,
+        "largest_component_ratio": 0.97,
+        "functional_health_index": 0.985,
+        "stage": 3,
         "mean_pathology_load": 0.0018,
         "severely_damaged_nodes": 0
       },
@@ -17,58 +47,28 @@
         "remaining_nodes": 2000,
         "remaining_edges": 24905,
         "node_survival_ratio": 1.0,
-        "largest_component_ratio": 1.0,
-        "functional_health_index": 1.0,
-        "stage": 1,
-        "mean_pathology_load": 0.0017,
-        "severely_damaged_nodes": 0
-      },
-      {
-        "remaining_nodes": 2000,
-        "remaining_edges": 24905,
-        "node_survival_ratio": 1.0,
-        "largest_component_ratio": 1.0,
-        "functional_health_index": 1.0,
-        "stage": 2,
-        "mean_pathology_load": 0.0016,
-        "severely_damaged_nodes": 0
-      },
-      {
-        "remaining_nodes": 2000,
-        "remaining_edges": 24905,
-        "node_survival_ratio": 1.0,
-        "largest_component_ratio": 1.0,
-        "functional_health_index": 1.0,
-        "stage": 3,
-        "mean_pathology_load": 0.0016,
-        "severely_damaged_nodes": 0
-      },
-      {
-        "remaining_nodes": 2000,
-        "remaining_edges": 24905,
-        "node_survival_ratio": 1.0,
-        "largest_component_ratio": 1.0,
-        "functional_health_index": 1.0,
+        "largest_component_ratio": 0.97,
+        "functional_health_index": 0.985,
         "stage": 4,
-        "mean_pathology_load": 0.0016,
+        "mean_pathology_load": 0.0018,
         "severely_damaged_nodes": 0
       },
       {
         "remaining_nodes": 2000,
         "remaining_edges": 24905,
         "node_survival_ratio": 1.0,
-        "largest_component_ratio": 1.0,
-        "functional_health_index": 1.0,
+        "largest_component_ratio": 0.97,
+        "functional_health_index": 0.985,
         "stage": 5,
-        "mean_pathology_load": 0.0016,
+        "mean_pathology_load": 0.0018,
         "severely_damaged_nodes": 0
       },
       {
         "remaining_nodes": 2000,
         "remaining_edges": 24905,
         "node_survival_ratio": 1.0,
-        "largest_component_ratio": 1.0,
-        "functional_health_index": 1.0,
+        "largest_component_ratio": 0.97,
+        "functional_health_index": 0.985,
         "stage": 6,
         "mean_pathology_load": 0.0017,
         "severely_damaged_nodes": 0
@@ -77,226 +77,646 @@
         "remaining_nodes": 2000,
         "remaining_edges": 24905,
         "node_survival_ratio": 1.0,
-        "largest_component_ratio": 1.0,
-        "functional_health_index": 1.0,
+        "largest_component_ratio": 0.97,
+        "functional_health_index": 0.985,
         "stage": 7,
         "mean_pathology_load": 0.0017,
+        "severely_damaged_nodes": 0
+      },
+      {
+        "remaining_nodes": 2000,
+        "remaining_edges": 24905,
+        "node_survival_ratio": 1.0,
+        "largest_component_ratio": 0.97,
+        "functional_health_index": 0.985,
+        "stage": 8,
+        "mean_pathology_load": 0.0017,
+        "severely_damaged_nodes": 0
+      },
+      {
+        "remaining_nodes": 2000,
+        "remaining_edges": 24905,
+        "node_survival_ratio": 1.0,
+        "largest_component_ratio": 0.97,
+        "functional_health_index": 0.985,
+        "stage": 9,
+        "mean_pathology_load": 0.0017,
+        "severely_damaged_nodes": 0
+      },
+      {
+        "remaining_nodes": 2000,
+        "remaining_edges": 24905,
+        "node_survival_ratio": 1.0,
+        "largest_component_ratio": 0.97,
+        "functional_health_index": 0.985,
+        "stage": 10,
+        "mean_pathology_load": 0.0017,
+        "severely_damaged_nodes": 0
+      },
+      {
+        "remaining_nodes": 2000,
+        "remaining_edges": 24905,
+        "node_survival_ratio": 1.0,
+        "largest_component_ratio": 0.97,
+        "functional_health_index": 0.985,
+        "stage": 11,
+        "mean_pathology_load": 0.0018,
+        "severely_damaged_nodes": 0
+      },
+      {
+        "remaining_nodes": 2000,
+        "remaining_edges": 24905,
+        "node_survival_ratio": 1.0,
+        "largest_component_ratio": 0.97,
+        "functional_health_index": 0.985,
+        "stage": 12,
+        "mean_pathology_load": 0.0018,
+        "severely_damaged_nodes": 0
+      },
+      {
+        "remaining_nodes": 2000,
+        "remaining_edges": 24905,
+        "node_survival_ratio": 1.0,
+        "largest_component_ratio": 0.97,
+        "functional_health_index": 0.985,
+        "stage": 13,
+        "mean_pathology_load": 0.0018,
+        "severely_damaged_nodes": 0
+      },
+      {
+        "remaining_nodes": 2000,
+        "remaining_edges": 24905,
+        "node_survival_ratio": 1.0,
+        "largest_component_ratio": 0.97,
+        "functional_health_index": 0.985,
+        "stage": 14,
+        "mean_pathology_load": 0.0018,
+        "severely_damaged_nodes": 0
+      },
+      {
+        "remaining_nodes": 2000,
+        "remaining_edges": 24905,
+        "node_survival_ratio": 1.0,
+        "largest_component_ratio": 0.97,
+        "functional_health_index": 0.985,
+        "stage": 15,
+        "mean_pathology_load": 0.0018,
+        "severely_damaged_nodes": 0
+      },
+      {
+        "remaining_nodes": 2000,
+        "remaining_edges": 24905,
+        "node_survival_ratio": 1.0,
+        "largest_component_ratio": 0.97,
+        "functional_health_index": 0.985,
+        "stage": 16,
+        "mean_pathology_load": 0.0018,
+        "severely_damaged_nodes": 0
+      },
+      {
+        "remaining_nodes": 2000,
+        "remaining_edges": 24905,
+        "node_survival_ratio": 1.0,
+        "largest_component_ratio": 0.97,
+        "functional_health_index": 0.985,
+        "stage": 17,
+        "mean_pathology_load": 0.0019,
+        "severely_damaged_nodes": 0
+      },
+      {
+        "remaining_nodes": 2000,
+        "remaining_edges": 24905,
+        "node_survival_ratio": 1.0,
+        "largest_component_ratio": 0.97,
+        "functional_health_index": 0.985,
+        "stage": 18,
+        "mean_pathology_load": 0.0019,
+        "severely_damaged_nodes": 0
+      },
+      {
+        "remaining_nodes": 2000,
+        "remaining_edges": 24905,
+        "node_survival_ratio": 1.0,
+        "largest_component_ratio": 0.97,
+        "functional_health_index": 0.985,
+        "stage": 19,
+        "mean_pathology_load": 0.0019,
         "severely_damaged_nodes": 0
       }
     ]
   },
   "parkinsons_simulation": {
     "disease": "Parkinson's Disease (Dopaminergic Neurodegeneration)",
-    "simulation_steps": 8,
+    "simulation_steps": 20,
     "trajectory": [
       {
-        "remaining_nodes": 1987,
-        "remaining_edges": 24599,
-        "node_survival_ratio": 0.9935,
-        "largest_component_ratio": 0.9935,
-        "functional_health_index": 0.9948,
+        "remaining_nodes": 1992,
+        "remaining_edges": 24721,
+        "node_survival_ratio": 0.996,
+        "largest_component_ratio": 0.9667,
+        "functional_health_index": 0.9821,
         "stage": 0,
-        "dopaminergic_cell_loss_pct": 7.56,
-        "total_dead_neurons": 13
+        "dopaminergic_cell_loss_pct": 4.65,
+        "total_dead_neurons": 8
       },
       {
-        "remaining_nodes": 1973,
-        "remaining_edges": 24253,
-        "node_survival_ratio": 0.9865,
-        "largest_component_ratio": 0.9865,
-        "functional_health_index": 0.9892,
+        "remaining_nodes": 1984,
+        "remaining_edges": 24528,
+        "node_survival_ratio": 0.992,
+        "largest_component_ratio": 0.9733,
+        "functional_health_index": 0.9843,
         "stage": 1,
-        "dopaminergic_cell_loss_pct": 15.7,
-        "total_dead_neurons": 27
+        "dopaminergic_cell_loss_pct": 9.3,
+        "total_dead_neurons": 16
+      },
+      {
+        "remaining_nodes": 1976,
+        "remaining_edges": 24316,
+        "node_survival_ratio": 0.988,
+        "largest_component_ratio": 0.9667,
+        "functional_health_index": 0.9797,
+        "stage": 2,
+        "dopaminergic_cell_loss_pct": 13.95,
+        "total_dead_neurons": 24
+      },
+      {
+        "remaining_nodes": 1967,
+        "remaining_edges": 24120,
+        "node_survival_ratio": 0.9835,
+        "largest_component_ratio": 0.9733,
+        "functional_health_index": 0.9817,
+        "stage": 3,
+        "dopaminergic_cell_loss_pct": 19.19,
+        "total_dead_neurons": 33
       },
       {
         "remaining_nodes": 1959,
         "remaining_edges": 23906,
         "node_survival_ratio": 0.9795,
-        "largest_component_ratio": 0.9795,
-        "functional_health_index": 0.9836,
-        "stage": 2,
+        "largest_component_ratio": 0.97,
+        "functional_health_index": 0.9788,
+        "stage": 4,
         "dopaminergic_cell_loss_pct": 23.84,
         "total_dead_neurons": 41
       },
       {
-        "remaining_nodes": 1945,
-        "remaining_edges": 23558,
-        "node_survival_ratio": 0.9725,
-        "largest_component_ratio": 0.9725,
-        "functional_health_index": 0.978,
-        "stage": 3,
-        "dopaminergic_cell_loss_pct": 31.98,
-        "total_dead_neurons": 55
+        "remaining_nodes": 1951,
+        "remaining_edges": 23713,
+        "node_survival_ratio": 0.9755,
+        "largest_component_ratio": 0.97,
+        "functional_health_index": 0.9776,
+        "stage": 5,
+        "dopaminergic_cell_loss_pct": 28.49,
+        "total_dead_neurons": 49
       },
       {
-        "remaining_nodes": 1932,
-        "remaining_edges": 23242,
-        "node_survival_ratio": 0.966,
-        "largest_component_ratio": 0.966,
-        "functional_health_index": 0.9728,
-        "stage": 4,
-        "dopaminergic_cell_loss_pct": 39.53,
-        "total_dead_neurons": 68
+        "remaining_nodes": 1943,
+        "remaining_edges": 23511,
+        "node_survival_ratio": 0.9715,
+        "largest_component_ratio": 0.97,
+        "functional_health_index": 0.9764,
+        "stage": 6,
+        "dopaminergic_cell_loss_pct": 33.14,
+        "total_dead_neurons": 57
+      },
+      {
+        "remaining_nodes": 1934,
+        "remaining_edges": 23283,
+        "node_survival_ratio": 0.967,
+        "largest_component_ratio": 0.97,
+        "functional_health_index": 0.9751,
+        "stage": 7,
+        "dopaminergic_cell_loss_pct": 38.37,
+        "total_dead_neurons": 66
+      },
+      {
+        "remaining_nodes": 1926,
+        "remaining_edges": 23107,
+        "node_survival_ratio": 0.963,
+        "largest_component_ratio": 0.97,
+        "functional_health_index": 0.9739,
+        "stage": 8,
+        "dopaminergic_cell_loss_pct": 43.02,
+        "total_dead_neurons": 74
       },
       {
         "remaining_nodes": 1918,
         "remaining_edges": 22938,
         "node_survival_ratio": 0.959,
-        "largest_component_ratio": 0.959,
-        "functional_health_index": 0.9672,
-        "stage": 5,
+        "largest_component_ratio": 0.97,
+        "functional_health_index": 0.9727,
+        "stage": 9,
         "dopaminergic_cell_loss_pct": 47.67,
         "total_dead_neurons": 82
       },
       {
-        "remaining_nodes": 1904,
-        "remaining_edges": 22594,
-        "node_survival_ratio": 0.952,
-        "largest_component_ratio": 0.952,
-        "functional_health_index": 0.9616,
-        "stage": 6,
-        "dopaminergic_cell_loss_pct": 55.81,
-        "total_dead_neurons": 96
+        "remaining_nodes": 1910,
+        "remaining_edges": 22733,
+        "node_survival_ratio": 0.955,
+        "largest_component_ratio": 0.97,
+        "functional_health_index": 0.9715,
+        "stage": 10,
+        "dopaminergic_cell_loss_pct": 52.33,
+        "total_dead_neurons": 90
       },
       {
-        "remaining_nodes": 1890,
-        "remaining_edges": 22280,
-        "node_survival_ratio": 0.945,
-        "largest_component_ratio": 0.945,
-        "functional_health_index": 0.956,
-        "stage": 7,
-        "dopaminergic_cell_loss_pct": 63.95,
-        "total_dead_neurons": 110
+        "remaining_nodes": 1901,
+        "remaining_edges": 22514,
+        "node_survival_ratio": 0.9505,
+        "largest_component_ratio": 0.97,
+        "functional_health_index": 0.9701,
+        "stage": 11,
+        "dopaminergic_cell_loss_pct": 57.56,
+        "total_dead_neurons": 99
+      },
+      {
+        "remaining_nodes": 1893,
+        "remaining_edges": 22343,
+        "node_survival_ratio": 0.9465,
+        "largest_component_ratio": 0.97,
+        "functional_health_index": 0.9689,
+        "stage": 12,
+        "dopaminergic_cell_loss_pct": 62.21,
+        "total_dead_neurons": 107
+      },
+      {
+        "remaining_nodes": 1885,
+        "remaining_edges": 22153,
+        "node_survival_ratio": 0.9425,
+        "largest_component_ratio": 0.97,
+        "functional_health_index": 0.9677,
+        "stage": 13,
+        "dopaminergic_cell_loss_pct": 66.86,
+        "total_dead_neurons": 115
+      },
+      {
+        "remaining_nodes": 1877,
+        "remaining_edges": 21957,
+        "node_survival_ratio": 0.9385,
+        "largest_component_ratio": 0.97,
+        "functional_health_index": 0.9665,
+        "stage": 14,
+        "dopaminergic_cell_loss_pct": 71.51,
+        "total_dead_neurons": 123
+      },
+      {
+        "remaining_nodes": 1868,
+        "remaining_edges": 21747,
+        "node_survival_ratio": 0.934,
+        "largest_component_ratio": 0.97,
+        "functional_health_index": 0.9652,
+        "stage": 15,
+        "dopaminergic_cell_loss_pct": 76.74,
+        "total_dead_neurons": 132
+      },
+      {
+        "remaining_nodes": 1860,
+        "remaining_edges": 21565,
+        "node_survival_ratio": 0.93,
+        "largest_component_ratio": 0.97,
+        "functional_health_index": 0.964,
+        "stage": 16,
+        "dopaminergic_cell_loss_pct": 81.4,
+        "total_dead_neurons": 140
+      },
+      {
+        "remaining_nodes": 1852,
+        "remaining_edges": 21372,
+        "node_survival_ratio": 0.926,
+        "largest_component_ratio": 0.97,
+        "functional_health_index": 0.9628,
+        "stage": 17,
+        "dopaminergic_cell_loss_pct": 86.05,
+        "total_dead_neurons": 148
+      },
+      {
+        "remaining_nodes": 1844,
+        "remaining_edges": 21197,
+        "node_survival_ratio": 0.922,
+        "largest_component_ratio": 0.97,
+        "functional_health_index": 0.9616,
+        "stage": 18,
+        "dopaminergic_cell_loss_pct": 90.7,
+        "total_dead_neurons": 156
+      },
+      {
+        "remaining_nodes": 1835,
+        "remaining_edges": 20998,
+        "node_survival_ratio": 0.9175,
+        "largest_component_ratio": 0.97,
+        "functional_health_index": 0.9602,
+        "stage": 19,
+        "dopaminergic_cell_loss_pct": 95.93,
+        "total_dead_neurons": 165
       }
     ]
   },
   "pruning_simulation": {
     "disease": "Synaptic Pruning (Age-Related Connectome Decay)",
-    "simulation_steps": 8,
+    "simulation_steps": 20,
     "trajectory": [
+      {
+        "remaining_nodes": 2000,
+        "remaining_edges": 24283,
+        "node_survival_ratio": 1.0,
+        "largest_component_ratio": 0.9667,
+        "functional_health_index": 0.9833,
+        "stage": 0,
+        "pruned_synapses_pct": 2.5
+      },
       {
         "remaining_nodes": 2000,
         "remaining_edges": 23660,
         "node_survival_ratio": 1.0,
-        "largest_component_ratio": 1.0,
-        "functional_health_index": 1.0,
-        "stage": 0,
+        "largest_component_ratio": 0.9633,
+        "functional_health_index": 0.9817,
+        "stage": 1,
         "pruned_synapses_pct": 5.0
+      },
+      {
+        "remaining_nodes": 2000,
+        "remaining_edges": 23038,
+        "node_survival_ratio": 1.0,
+        "largest_component_ratio": 0.96,
+        "functional_health_index": 0.98,
+        "stage": 2,
+        "pruned_synapses_pct": 7.5
       },
       {
         "remaining_nodes": 2000,
         "remaining_edges": 22415,
         "node_survival_ratio": 1.0,
-        "largest_component_ratio": 1.0,
-        "functional_health_index": 1.0,
-        "stage": 1,
+        "largest_component_ratio": 0.96,
+        "functional_health_index": 0.98,
+        "stage": 3,
         "pruned_synapses_pct": 10.0
+      },
+      {
+        "remaining_nodes": 2000,
+        "remaining_edges": 21792,
+        "node_survival_ratio": 1.0,
+        "largest_component_ratio": 0.95,
+        "functional_health_index": 0.975,
+        "stage": 4,
+        "pruned_synapses_pct": 12.5
       },
       {
         "remaining_nodes": 2000,
         "remaining_edges": 21170,
         "node_survival_ratio": 1.0,
-        "largest_component_ratio": 1.0,
-        "functional_health_index": 1.0,
-        "stage": 2,
+        "largest_component_ratio": 0.95,
+        "functional_health_index": 0.975,
+        "stage": 5,
         "pruned_synapses_pct": 15.0
+      },
+      {
+        "remaining_nodes": 2000,
+        "remaining_edges": 20547,
+        "node_survival_ratio": 1.0,
+        "largest_component_ratio": 0.9467,
+        "functional_health_index": 0.9733,
+        "stage": 6,
+        "pruned_synapses_pct": 17.5
       },
       {
         "remaining_nodes": 2000,
         "remaining_edges": 19924,
         "node_survival_ratio": 1.0,
-        "largest_component_ratio": 1.0,
-        "functional_health_index": 1.0,
-        "stage": 3,
+        "largest_component_ratio": 0.9467,
+        "functional_health_index": 0.9733,
+        "stage": 7,
         "pruned_synapses_pct": 20.0
+      },
+      {
+        "remaining_nodes": 2000,
+        "remaining_edges": 19302,
+        "node_survival_ratio": 1.0,
+        "largest_component_ratio": 0.9433,
+        "functional_health_index": 0.9717,
+        "stage": 8,
+        "pruned_synapses_pct": 22.5
       },
       {
         "remaining_nodes": 2000,
         "remaining_edges": 18679,
         "node_survival_ratio": 1.0,
-        "largest_component_ratio": 1.0,
-        "functional_health_index": 1.0,
-        "stage": 4,
+        "largest_component_ratio": 0.9367,
+        "functional_health_index": 0.9683,
+        "stage": 9,
         "pruned_synapses_pct": 25.0
+      },
+      {
+        "remaining_nodes": 2000,
+        "remaining_edges": 18057,
+        "node_survival_ratio": 1.0,
+        "largest_component_ratio": 0.9267,
+        "functional_health_index": 0.9633,
+        "stage": 10,
+        "pruned_synapses_pct": 27.5
       },
       {
         "remaining_nodes": 2000,
         "remaining_edges": 17434,
         "node_survival_ratio": 1.0,
-        "largest_component_ratio": 1.0,
-        "functional_health_index": 1.0,
-        "stage": 5,
+        "largest_component_ratio": 0.9267,
+        "functional_health_index": 0.9633,
+        "stage": 11,
         "pruned_synapses_pct": 30.0
+      },
+      {
+        "remaining_nodes": 2000,
+        "remaining_edges": 16811,
+        "node_survival_ratio": 1.0,
+        "largest_component_ratio": 0.92,
+        "functional_health_index": 0.96,
+        "stage": 12,
+        "pruned_synapses_pct": 32.5
       },
       {
         "remaining_nodes": 2000,
         "remaining_edges": 16189,
         "node_survival_ratio": 1.0,
-        "largest_component_ratio": 1.0,
-        "functional_health_index": 1.0,
-        "stage": 6,
+        "largest_component_ratio": 0.8833,
+        "functional_health_index": 0.9417,
+        "stage": 13,
         "pruned_synapses_pct": 35.0
+      },
+      {
+        "remaining_nodes": 2000,
+        "remaining_edges": 15566,
+        "node_survival_ratio": 1.0,
+        "largest_component_ratio": 0.88,
+        "functional_health_index": 0.94,
+        "stage": 14,
+        "pruned_synapses_pct": 37.5
       },
       {
         "remaining_nodes": 2000,
         "remaining_edges": 14943,
         "node_survival_ratio": 1.0,
-        "largest_component_ratio": 1.0,
-        "functional_health_index": 1.0,
-        "stage": 7,
+        "largest_component_ratio": 0.85,
+        "functional_health_index": 0.925,
+        "stage": 15,
         "pruned_synapses_pct": 40.0
+      },
+      {
+        "remaining_nodes": 2000,
+        "remaining_edges": 14321,
+        "node_survival_ratio": 1.0,
+        "largest_component_ratio": 0.84,
+        "functional_health_index": 0.92,
+        "stage": 16,
+        "pruned_synapses_pct": 42.5
+      },
+      {
+        "remaining_nodes": 2000,
+        "remaining_edges": 13698,
+        "node_survival_ratio": 1.0,
+        "largest_component_ratio": 0.8333,
+        "functional_health_index": 0.9167,
+        "stage": 17,
+        "pruned_synapses_pct": 45.0
+      },
+      {
+        "remaining_nodes": 2000,
+        "remaining_edges": 13076,
+        "node_survival_ratio": 1.0,
+        "largest_component_ratio": 0.82,
+        "functional_health_index": 0.91,
+        "stage": 18,
+        "pruned_synapses_pct": 47.5
+      },
+      {
+        "remaining_nodes": 2000,
+        "remaining_edges": 12453,
+        "node_survival_ratio": 1.0,
+        "largest_component_ratio": 0.7667,
+        "functional_health_index": 0.8833,
+        "stage": 19,
+        "pruned_synapses_pct": 50.0
       }
     ]
   },
   "trajectory_comparison": [
     {
       "stage": 0,
-      "alzheimers_health_index": 1.0,
-      "parkinsons_health_index": 0.9948,
-      "pruning_health_index": 1.0
+      "alzheimers_health_index": 0.9844,
+      "parkinsons_health_index": 0.9821,
+      "pruning_health_index": 0.9833
     },
     {
       "stage": 1,
-      "alzheimers_health_index": 1.0,
-      "parkinsons_health_index": 0.9892,
-      "pruning_health_index": 1.0
+      "alzheimers_health_index": 0.985,
+      "parkinsons_health_index": 0.9843,
+      "pruning_health_index": 0.9817
     },
     {
       "stage": 2,
-      "alzheimers_health_index": 1.0,
-      "parkinsons_health_index": 0.9836,
-      "pruning_health_index": 1.0
+      "alzheimers_health_index": 0.985,
+      "parkinsons_health_index": 0.9797,
+      "pruning_health_index": 0.98
     },
     {
       "stage": 3,
-      "alzheimers_health_index": 1.0,
-      "parkinsons_health_index": 0.978,
-      "pruning_health_index": 1.0
+      "alzheimers_health_index": 0.985,
+      "parkinsons_health_index": 0.9817,
+      "pruning_health_index": 0.98
     },
     {
       "stage": 4,
-      "alzheimers_health_index": 1.0,
-      "parkinsons_health_index": 0.9728,
-      "pruning_health_index": 1.0
+      "alzheimers_health_index": 0.985,
+      "parkinsons_health_index": 0.9788,
+      "pruning_health_index": 0.975
     },
     {
       "stage": 5,
-      "alzheimers_health_index": 1.0,
-      "parkinsons_health_index": 0.9672,
-      "pruning_health_index": 1.0
+      "alzheimers_health_index": 0.985,
+      "parkinsons_health_index": 0.9776,
+      "pruning_health_index": 0.975
     },
     {
       "stage": 6,
-      "alzheimers_health_index": 1.0,
-      "parkinsons_health_index": 0.9616,
-      "pruning_health_index": 1.0
+      "alzheimers_health_index": 0.985,
+      "parkinsons_health_index": 0.9764,
+      "pruning_health_index": 0.9733
     },
     {
       "stage": 7,
-      "alzheimers_health_index": 1.0,
-      "parkinsons_health_index": 0.956,
-      "pruning_health_index": 1.0
+      "alzheimers_health_index": 0.985,
+      "parkinsons_health_index": 0.9751,
+      "pruning_health_index": 0.9733
+    },
+    {
+      "stage": 8,
+      "alzheimers_health_index": 0.985,
+      "parkinsons_health_index": 0.9739,
+      "pruning_health_index": 0.9717
+    },
+    {
+      "stage": 9,
+      "alzheimers_health_index": 0.985,
+      "parkinsons_health_index": 0.9727,
+      "pruning_health_index": 0.9683
+    },
+    {
+      "stage": 10,
+      "alzheimers_health_index": 0.985,
+      "parkinsons_health_index": 0.9715,
+      "pruning_health_index": 0.9633
+    },
+    {
+      "stage": 11,
+      "alzheimers_health_index": 0.985,
+      "parkinsons_health_index": 0.9701,
+      "pruning_health_index": 0.9633
+    },
+    {
+      "stage": 12,
+      "alzheimers_health_index": 0.985,
+      "parkinsons_health_index": 0.9689,
+      "pruning_health_index": 0.96
+    },
+    {
+      "stage": 13,
+      "alzheimers_health_index": 0.985,
+      "parkinsons_health_index": 0.9677,
+      "pruning_health_index": 0.9417
+    },
+    {
+      "stage": 14,
+      "alzheimers_health_index": 0.985,
+      "parkinsons_health_index": 0.9665,
+      "pruning_health_index": 0.94
+    },
+    {
+      "stage": 15,
+      "alzheimers_health_index": 0.985,
+      "parkinsons_health_index": 0.9652,
+      "pruning_health_index": 0.925
+    },
+    {
+      "stage": 16,
+      "alzheimers_health_index": 0.985,
+      "parkinsons_health_index": 0.964,
+      "pruning_health_index": 0.92
+    },
+    {
+      "stage": 17,
+      "alzheimers_health_index": 0.985,
+      "parkinsons_health_index": 0.9628,
+      "pruning_health_index": 0.9167
+    },
+    {
+      "stage": 18,
+      "alzheimers_health_index": 0.985,
+      "parkinsons_health_index": 0.9616,
+      "pruning_health_index": 0.91
+    },
+    {
+      "stage": 19,
+      "alzheimers_health_index": 0.985,
+      "parkinsons_health_index": 0.9602,
+      "pruning_health_index": 0.8833
     }
   ]
 }

@@ -1,0 +1,1763 @@
+{
+  "nengo_version": "3.2.0",
+  "target_backend": "nengo_dl / nengo_loihi",
+  "description": "Fruit Fly Connectome Nengo SNN Ensemble Specification",
+  "ensembles": [
+    {
+      "name": "Ens_interneuron",
+      "n_neurons": 88,
+      "dimensions": 1,
+      "neuron_type": "LIFRate",
+      "tau_rc": 0.02,
+      "tau_ref": 0.002,
+      "neuron_ids": [
+        "N-19",
+        "N-13",
+        "N-39",
+        "N-3",
+        "N-141",
+        "N-84",
+        "N-59",
+        "N-102",
+        "N-18",
+        "N-65",
+        "N-147",
+        "N-20",
+        "N-22",
+        "N-184",
+        "N-173",
+        "N-36",
+        "N-138",
+        "N-96",
+        "N-155",
+        "N-129",
+        "N-81",
+        "N-188",
+        "N-93",
+        "N-114",
+        "N-195",
+        "N-189",
+        "N-44",
+        "N-177",
+        "N-85",
+        "N-135",
+        "N-54",
+        "N-149",
+        "N-180",
+        "N-133",
+        "N-169",
+        "N-161",
+        "N-193",
+        "N-142",
+        "N-95",
+        "N-151",
+        "N-27",
+        "N-41",
+        "N-146",
+        "N-23",
+        "N-131",
+        "N-16",
+        "N-24",
+        "N-143",
+        "N-87",
+        "N-158",
+        "N-28",
+        "N-144",
+        "N-160",
+        "N-30",
+        "N-122",
+        "N-125",
+        "N-130",
+        "N-119",
+        "N-82",
+        "N-61",
+        "N-153",
+        "N-64",
+        "N-124",
+        "N-17",
+        "N-60",
+        "N-166",
+        "N-103",
+        "N-105",
+        "N-48",
+        "N-101",
+        "N-8",
+        "N-78",
+        "N-106",
+        "N-163",
+        "N-174",
+        "N-136",
+        "N-89",
+        "N-194",
+        "N-187",
+        "N-0",
+        "N-162",
+        "N-110",
+        "N-46",
+        "N-172",
+        "N-63",
+        "N-47",
+        "N-97",
+        "N-108"
+      ]
+    },
+    {
+      "name": "Ens_kenyon_cell",
+      "n_neurons": 17,
+      "dimensions": 1,
+      "neuron_type": "LIFRate",
+      "tau_rc": 0.02,
+      "tau_ref": 0.002,
+      "neuron_ids": [
+        "N-104",
+        "N-1",
+        "N-134",
+        "N-52",
+        "N-178",
+        "N-55",
+        "N-11",
+        "N-192",
+        "N-140",
+        "N-43",
+        "N-50",
+        "N-150",
+        "N-182",
+        "N-33",
+        "N-139",
+        "N-34",
+        "N-112"
+      ]
+    },
+    {
+      "name": "Ens_motor",
+      "n_neurons": 35,
+      "dimensions": 1,
+      "neuron_type": "LIFRate",
+      "tau_rc": 0.02,
+      "tau_ref": 0.002,
+      "neuron_ids": [
+        "N-126",
+        "N-62",
+        "N-159",
+        "N-91",
+        "N-116",
+        "N-76",
+        "N-176",
+        "N-25",
+        "N-157",
+        "N-35",
+        "N-74",
+        "N-165",
+        "N-156",
+        "N-137",
+        "N-86",
+        "N-170",
+        "N-45",
+        "N-107",
+        "N-73",
+        "N-12",
+        "N-9",
+        "N-113",
+        "N-186",
+        "N-70",
+        "N-38",
+        "N-185",
+        "N-92",
+        "N-199",
+        "N-75",
+        "N-94",
+        "N-51",
+        "N-67",
+        "N-2",
+        "N-120",
+        "N-196"
+      ]
+    },
+    {
+      "name": "Ens_central_complex",
+      "n_neurons": 12,
+      "dimensions": 1,
+      "neuron_type": "LIFRate",
+      "tau_rc": 0.02,
+      "tau_ref": 0.002,
+      "neuron_ids": [
+        "N-53",
+        "N-7",
+        "N-118",
+        "N-127",
+        "N-115",
+        "N-191",
+        "N-80",
+        "N-88",
+        "N-197",
+        "N-121",
+        "N-183",
+        "N-198"
+      ]
+    },
+    {
+      "name": "Ens_sensory",
+      "n_neurons": 46,
+      "dimensions": 1,
+      "neuron_type": "LIFRate",
+      "tau_rc": 0.02,
+      "tau_ref": 0.002,
+      "neuron_ids": [
+        "N-83",
+        "N-117",
+        "N-145",
+        "N-49",
+        "N-15",
+        "N-29",
+        "N-10",
+        "N-181",
+        "N-111",
+        "N-123",
+        "N-90",
+        "N-98",
+        "N-6",
+        "N-4",
+        "N-175",
+        "N-5",
+        "N-14",
+        "N-42",
+        "N-100",
+        "N-164",
+        "N-171",
+        "N-167",
+        "N-31",
+        "N-58",
+        "N-148",
+        "N-71",
+        "N-128",
+        "N-26",
+        "N-99",
+        "N-109",
+        "N-77",
+        "N-79",
+        "N-132",
+        "N-152",
+        "N-40",
+        "N-72",
+        "N-32",
+        "N-57",
+        "N-168",
+        "N-56",
+        "N-190",
+        "N-68",
+        "N-21",
+        "N-37",
+        "N-66",
+        "N-179"
+      ]
+    },
+    {
+      "name": "Ens_giant_fiber",
+      "n_neurons": 2,
+      "dimensions": 1,
+      "neuron_type": "LIFRate",
+      "tau_rc": 0.02,
+      "tau_ref": 0.002,
+      "neuron_ids": [
+        "N-69",
+        "N-154"
+      ]
+    }
+  ],
+  "connections": [
+    {
+      "pre": "Ens_motor",
+      "post": "Ens_sensory",
+      "transform": 0.1265,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_motor",
+      "post": "Ens_motor",
+      "transform": 0.0802,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_motor",
+      "post": "Ens_motor",
+      "transform": 0.2646,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_kenyon_cell",
+      "post": "Ens_motor",
+      "transform": 0.4117,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_central_complex",
+      "post": "Ens_motor",
+      "transform": 0.081,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_sensory",
+      "post": "Ens_central_complex",
+      "transform": 0.3632,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_motor",
+      "post": "Ens_motor",
+      "transform": 0.0112,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_interneuron",
+      "post": "Ens_sensory",
+      "transform": 0.0314,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_interneuron",
+      "post": "Ens_interneuron",
+      "transform": 0.0915,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_interneuron",
+      "post": "Ens_interneuron",
+      "transform": 0.1876,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_interneuron",
+      "post": "Ens_motor",
+      "transform": 0.2439,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_interneuron",
+      "post": "Ens_interneuron",
+      "transform": 0.581,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_interneuron",
+      "post": "Ens_motor",
+      "transform": 0.12,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_sensory",
+      "post": "Ens_central_complex",
+      "transform": 0.2068,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_sensory",
+      "post": "Ens_motor",
+      "transform": 0.0533,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_sensory",
+      "post": "Ens_interneuron",
+      "transform": 0.0116,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_central_complex",
+      "post": "Ens_motor",
+      "transform": 0.3354,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_motor",
+      "post": "Ens_interneuron",
+      "transform": 0.1634,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_motor",
+      "post": "Ens_interneuron",
+      "transform": 0.157,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_motor",
+      "post": "Ens_interneuron",
+      "transform": 0.2007,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_interneuron",
+      "post": "Ens_interneuron",
+      "transform": 0.0492,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_interneuron",
+      "post": "Ens_sensory",
+      "transform": 0.0184,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_interneuron",
+      "post": "Ens_sensory",
+      "transform": 0.2005,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_interneuron",
+      "post": "Ens_interneuron",
+      "transform": 0.1341,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_interneuron",
+      "post": "Ens_central_complex",
+      "transform": 0.0687,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_central_complex",
+      "post": "Ens_sensory",
+      "transform": 0.0229,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_kenyon_cell",
+      "post": "Ens_sensory",
+      "transform": 0.0644,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_kenyon_cell",
+      "post": "Ens_interneuron",
+      "transform": 0.1849,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_kenyon_cell",
+      "post": "Ens_interneuron",
+      "transform": 0.1064,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_motor",
+      "post": "Ens_interneuron",
+      "transform": 0.0699,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_motor",
+      "post": "Ens_interneuron",
+      "transform": 0.2058,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_interneuron",
+      "post": "Ens_interneuron",
+      "transform": 0.0673,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_interneuron",
+      "post": "Ens_motor",
+      "transform": 0.1091,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_interneuron",
+      "post": "Ens_interneuron",
+      "transform": 0.0742,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_interneuron",
+      "post": "Ens_interneuron",
+      "transform": 0.1322,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_sensory",
+      "post": "Ens_interneuron",
+      "transform": 0.0428,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_sensory",
+      "post": "Ens_central_complex",
+      "transform": 0.0844,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_sensory",
+      "post": "Ens_sensory",
+      "transform": 0.0151,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_sensory",
+      "post": "Ens_interneuron",
+      "transform": 0.0115,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_motor",
+      "post": "Ens_giant_fiber",
+      "transform": 0.0351,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_motor",
+      "post": "Ens_kenyon_cell",
+      "transform": 0.0849,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_kenyon_cell",
+      "post": "Ens_interneuron",
+      "transform": 0.1793,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_interneuron",
+      "post": "Ens_sensory",
+      "transform": 0.0432,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_interneuron",
+      "post": "Ens_interneuron",
+      "transform": 0.1112,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_interneuron",
+      "post": "Ens_sensory",
+      "transform": 0.0845,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_interneuron",
+      "post": "Ens_interneuron",
+      "transform": 0.0379,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_interneuron",
+      "post": "Ens_central_complex",
+      "transform": 0.0502,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_interneuron",
+      "post": "Ens_interneuron",
+      "transform": 0.2807,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_interneuron",
+      "post": "Ens_sensory",
+      "transform": 0.0539,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_interneuron",
+      "post": "Ens_interneuron",
+      "transform": 0.0778,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_interneuron",
+      "post": "Ens_interneuron",
+      "transform": 0.2226,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_sensory",
+      "post": "Ens_interneuron",
+      "transform": 0.3018,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_sensory",
+      "post": "Ens_interneuron",
+      "transform": 0.0163,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_interneuron",
+      "post": "Ens_interneuron",
+      "transform": 0.1395,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_central_complex",
+      "post": "Ens_motor",
+      "transform": 0.0511,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_central_complex",
+      "post": "Ens_motor",
+      "transform": 0.0717,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_central_complex",
+      "post": "Ens_sensory",
+      "transform": 0.0956,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_central_complex",
+      "post": "Ens_interneuron",
+      "transform": 0.1531,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_sensory",
+      "post": "Ens_interneuron",
+      "transform": 0.1057,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_motor",
+      "post": "Ens_sensory",
+      "transform": 0.3161,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_motor",
+      "post": "Ens_interneuron",
+      "transform": 0.0893,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_interneuron",
+      "post": "Ens_motor",
+      "transform": 0.0465,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_motor",
+      "post": "Ens_interneuron",
+      "transform": 0.0369,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_motor",
+      "post": "Ens_sensory",
+      "transform": 0.1189,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_sensory",
+      "post": "Ens_interneuron",
+      "transform": 0.0585,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_motor",
+      "post": "Ens_interneuron",
+      "transform": 0.0964,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_motor",
+      "post": "Ens_motor",
+      "transform": 0.0219,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_interneuron",
+      "post": "Ens_motor",
+      "transform": 0.2912,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_interneuron",
+      "post": "Ens_interneuron",
+      "transform": 0.0292,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_interneuron",
+      "post": "Ens_interneuron",
+      "transform": 0.0153,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_interneuron",
+      "post": "Ens_interneuron",
+      "transform": 0.0592,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_interneuron",
+      "post": "Ens_interneuron",
+      "transform": 0.0163,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_kenyon_cell",
+      "post": "Ens_central_complex",
+      "transform": 0.0262,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_kenyon_cell",
+      "post": "Ens_sensory",
+      "transform": 0.0265,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_interneuron",
+      "post": "Ens_interneuron",
+      "transform": 0.0804,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_motor",
+      "post": "Ens_sensory",
+      "transform": 0.0545,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_interneuron",
+      "post": "Ens_sensory",
+      "transform": 0.0359,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_interneuron",
+      "post": "Ens_interneuron",
+      "transform": 0.3143,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_interneuron",
+      "post": "Ens_interneuron",
+      "transform": 0.2201,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_interneuron",
+      "post": "Ens_motor",
+      "transform": 0.0711,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_interneuron",
+      "post": "Ens_sensory",
+      "transform": 0.1031,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_interneuron",
+      "post": "Ens_sensory",
+      "transform": 0.2745,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_sensory",
+      "post": "Ens_interneuron",
+      "transform": 0.1827,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_sensory",
+      "post": "Ens_interneuron",
+      "transform": 0.0727,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_sensory",
+      "post": "Ens_sensory",
+      "transform": 0.0353,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_sensory",
+      "post": "Ens_interneuron",
+      "transform": 0.1311,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_sensory",
+      "post": "Ens_interneuron",
+      "transform": 0.3227,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_motor",
+      "post": "Ens_interneuron",
+      "transform": 0.1062,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_motor",
+      "post": "Ens_motor",
+      "transform": 0.2535,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_interneuron",
+      "post": "Ens_interneuron",
+      "transform": 0.1764,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_interneuron",
+      "post": "Ens_interneuron",
+      "transform": 0.1571,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_interneuron",
+      "post": "Ens_interneuron",
+      "transform": 0.1343,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_interneuron",
+      "post": "Ens_interneuron",
+      "transform": 0.8328,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_interneuron",
+      "post": "Ens_interneuron",
+      "transform": 0.1698,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_interneuron",
+      "post": "Ens_interneuron",
+      "transform": 0.0323,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_sensory",
+      "post": "Ens_motor",
+      "transform": 0.3774,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_interneuron",
+      "post": "Ens_interneuron",
+      "transform": 0.1594,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_motor",
+      "post": "Ens_sensory",
+      "transform": 0.1817,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_motor",
+      "post": "Ens_interneuron",
+      "transform": 0.4413,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_sensory",
+      "post": "Ens_sensory",
+      "transform": 0.0922,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_sensory",
+      "post": "Ens_sensory",
+      "transform": 0.4064,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_sensory",
+      "post": "Ens_sensory",
+      "transform": 0.0926,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_interneuron",
+      "post": "Ens_interneuron",
+      "transform": 0.1686,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_motor",
+      "post": "Ens_sensory",
+      "transform": 0.0187,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_kenyon_cell",
+      "post": "Ens_interneuron",
+      "transform": 0.1967,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_kenyon_cell",
+      "post": "Ens_motor",
+      "transform": 0.0318,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_kenyon_cell",
+      "post": "Ens_interneuron",
+      "transform": 0.0581,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_kenyon_cell",
+      "post": "Ens_interneuron",
+      "transform": 0.0114,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_interneuron",
+      "post": "Ens_sensory",
+      "transform": 0.2263,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_sensory",
+      "post": "Ens_interneuron",
+      "transform": 0.1211,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_interneuron",
+      "post": "Ens_sensory",
+      "transform": 0.0417,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_interneuron",
+      "post": "Ens_interneuron",
+      "transform": 0.0535,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_central_complex",
+      "post": "Ens_interneuron",
+      "transform": 0.046,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_interneuron",
+      "post": "Ens_sensory",
+      "transform": 0.0107,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_sensory",
+      "post": "Ens_interneuron",
+      "transform": 0.1035,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_sensory",
+      "post": "Ens_kenyon_cell",
+      "transform": 0.0116,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_kenyon_cell",
+      "post": "Ens_central_complex",
+      "transform": 0.4392,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_kenyon_cell",
+      "post": "Ens_central_complex",
+      "transform": 0.322,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_motor",
+      "post": "Ens_motor",
+      "transform": 0.222,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_motor",
+      "post": "Ens_sensory",
+      "transform": 0.0613,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_interneuron",
+      "post": "Ens_interneuron",
+      "transform": 0.4287,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_interneuron",
+      "post": "Ens_interneuron",
+      "transform": 0.0227,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_interneuron",
+      "post": "Ens_interneuron",
+      "transform": 0.2407,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_motor",
+      "post": "Ens_sensory",
+      "transform": 0.0639,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_kenyon_cell",
+      "post": "Ens_sensory",
+      "transform": 0.1666,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_interneuron",
+      "post": "Ens_interneuron",
+      "transform": 0.0388,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_interneuron",
+      "post": "Ens_kenyon_cell",
+      "transform": 0.2762,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_kenyon_cell",
+      "post": "Ens_interneuron",
+      "transform": 0.1199,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_kenyon_cell",
+      "post": "Ens_interneuron",
+      "transform": 0.0332,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_giant_fiber",
+      "post": "Ens_interneuron",
+      "transform": 0.2005,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_interneuron",
+      "post": "Ens_interneuron",
+      "transform": 0.1859,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_interneuron",
+      "post": "Ens_motor",
+      "transform": 0.184,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_motor",
+      "post": "Ens_interneuron",
+      "transform": 0.2728,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_interneuron",
+      "post": "Ens_interneuron",
+      "transform": 0.2233,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_interneuron",
+      "post": "Ens_interneuron",
+      "transform": 0.027,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_interneuron",
+      "post": "Ens_motor",
+      "transform": 0.1844,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_motor",
+      "post": "Ens_kenyon_cell",
+      "transform": 0.6963,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_kenyon_cell",
+      "post": "Ens_interneuron",
+      "transform": 0.0989,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_kenyon_cell",
+      "post": "Ens_sensory",
+      "transform": 0.1711,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_kenyon_cell",
+      "post": "Ens_interneuron",
+      "transform": 0.0457,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_motor",
+      "post": "Ens_central_complex",
+      "transform": 0.0687,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_motor",
+      "post": "Ens_sensory",
+      "transform": 0.0789,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_giant_fiber",
+      "post": "Ens_central_complex",
+      "transform": 0.2191,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_giant_fiber",
+      "post": "Ens_kenyon_cell",
+      "transform": 0.2793,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_sensory",
+      "post": "Ens_interneuron",
+      "transform": 0.1421,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_sensory",
+      "post": "Ens_sensory",
+      "transform": 0.279,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_interneuron",
+      "post": "Ens_motor",
+      "transform": 0.1263,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_central_complex",
+      "post": "Ens_giant_fiber",
+      "transform": 0.1517,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_central_complex",
+      "post": "Ens_interneuron",
+      "transform": 0.1077,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_central_complex",
+      "post": "Ens_sensory",
+      "transform": 0.0887,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_interneuron",
+      "post": "Ens_kenyon_cell",
+      "transform": 0.0402,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_interneuron",
+      "post": "Ens_kenyon_cell",
+      "transform": 0.2851,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_interneuron",
+      "post": "Ens_sensory",
+      "transform": 0.0828,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_interneuron",
+      "post": "Ens_motor",
+      "transform": 0.0718,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_interneuron",
+      "post": "Ens_sensory",
+      "transform": 0.2777,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_interneuron",
+      "post": "Ens_interneuron",
+      "transform": 0.0189,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_sensory",
+      "post": "Ens_giant_fiber",
+      "transform": 0.0311,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_sensory",
+      "post": "Ens_kenyon_cell",
+      "transform": 0.1523,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_central_complex",
+      "post": "Ens_kenyon_cell",
+      "transform": 0.0698,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_central_complex",
+      "post": "Ens_interneuron",
+      "transform": 0.2155,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_central_complex",
+      "post": "Ens_interneuron",
+      "transform": 0.0754,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_interneuron",
+      "post": "Ens_sensory",
+      "transform": 0.0114,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_sensory",
+      "post": "Ens_interneuron",
+      "transform": 0.2776,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_sensory",
+      "post": "Ens_motor",
+      "transform": 0.0182,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_sensory",
+      "post": "Ens_motor",
+      "transform": 0.1902,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_sensory",
+      "post": "Ens_motor",
+      "transform": 0.276,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_interneuron",
+      "post": "Ens_sensory",
+      "transform": 0.3821,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_interneuron",
+      "post": "Ens_sensory",
+      "transform": 0.0611,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_interneuron",
+      "post": "Ens_interneuron",
+      "transform": 0.2245,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_interneuron",
+      "post": "Ens_interneuron",
+      "transform": 0.1956,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_sensory",
+      "post": "Ens_interneuron",
+      "transform": 0.3093,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_sensory",
+      "post": "Ens_sensory",
+      "transform": 0.066,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_motor",
+      "post": "Ens_motor",
+      "transform": 0.0735,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_motor",
+      "post": "Ens_interneuron",
+      "transform": 0.2026,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_motor",
+      "post": "Ens_interneuron",
+      "transform": 0.2462,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_motor",
+      "post": "Ens_interneuron",
+      "transform": 0.0356,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_motor",
+      "post": "Ens_sensory",
+      "transform": 0.021,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_motor",
+      "post": "Ens_sensory",
+      "transform": 0.2368,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_interneuron",
+      "post": "Ens_interneuron",
+      "transform": 0.0902,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_interneuron",
+      "post": "Ens_sensory",
+      "transform": 0.0255,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_kenyon_cell",
+      "post": "Ens_central_complex",
+      "transform": 0.029,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_kenyon_cell",
+      "post": "Ens_sensory",
+      "transform": 0.1086,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_kenyon_cell",
+      "post": "Ens_interneuron",
+      "transform": 0.4099,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_kenyon_cell",
+      "post": "Ens_sensory",
+      "transform": 0.1221,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_sensory",
+      "post": "Ens_interneuron",
+      "transform": 0.2887,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_interneuron",
+      "post": "Ens_central_complex",
+      "transform": 0.0206,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_interneuron",
+      "post": "Ens_interneuron",
+      "transform": 0.4236,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_interneuron",
+      "post": "Ens_interneuron",
+      "transform": 0.0408,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_interneuron",
+      "post": "Ens_kenyon_cell",
+      "transform": 0.116,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_interneuron",
+      "post": "Ens_central_complex",
+      "transform": 0.5957,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_interneuron",
+      "post": "Ens_motor",
+      "transform": 0.0292,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_interneuron",
+      "post": "Ens_motor",
+      "transform": 0.1565,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_interneuron",
+      "post": "Ens_central_complex",
+      "transform": 0.1147,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_interneuron",
+      "post": "Ens_sensory",
+      "transform": 0.1567,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_sensory",
+      "post": "Ens_interneuron",
+      "transform": 0.392,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_sensory",
+      "post": "Ens_sensory",
+      "transform": 0.17,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_interneuron",
+      "post": "Ens_motor",
+      "transform": 0.1868,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_interneuron",
+      "post": "Ens_interneuron",
+      "transform": 0.0138,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_interneuron",
+      "post": "Ens_sensory",
+      "transform": 0.2593,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_motor",
+      "post": "Ens_sensory",
+      "transform": 0.143,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_motor",
+      "post": "Ens_interneuron",
+      "transform": 0.022,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_interneuron",
+      "post": "Ens_interneuron",
+      "transform": 0.2715,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_interneuron",
+      "post": "Ens_motor",
+      "transform": 0.1032,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_interneuron",
+      "post": "Ens_kenyon_cell",
+      "transform": 0.0279,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_motor",
+      "post": "Ens_interneuron",
+      "transform": 0.4072,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_motor",
+      "post": "Ens_sensory",
+      "transform": 0.2978,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_interneuron",
+      "post": "Ens_giant_fiber",
+      "transform": 0.2447,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_interneuron",
+      "post": "Ens_kenyon_cell",
+      "transform": 0.0326,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_interneuron",
+      "post": "Ens_motor",
+      "transform": 0.0655,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_interneuron",
+      "post": "Ens_sensory",
+      "transform": 0.0147,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_sensory",
+      "post": "Ens_sensory",
+      "transform": 0.0374,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_sensory",
+      "post": "Ens_kenyon_cell",
+      "transform": 0.0577,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_kenyon_cell",
+      "post": "Ens_motor",
+      "transform": 0.4316,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_sensory",
+      "post": "Ens_motor",
+      "transform": 0.0729,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_sensory",
+      "post": "Ens_sensory",
+      "transform": 0.0465,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_interneuron",
+      "post": "Ens_central_complex",
+      "transform": 0.1065,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_sensory",
+      "post": "Ens_central_complex",
+      "transform": 0.0468,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_sensory",
+      "post": "Ens_sensory",
+      "transform": 0.2043,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_motor",
+      "post": "Ens_interneuron",
+      "transform": 0.5612,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_central_complex",
+      "post": "Ens_kenyon_cell",
+      "transform": 0.1563,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_interneuron",
+      "post": "Ens_interneuron",
+      "transform": 0.0122,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_interneuron",
+      "post": "Ens_interneuron",
+      "transform": 0.1756,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_sensory",
+      "post": "Ens_motor",
+      "transform": 0.3715,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_sensory",
+      "post": "Ens_sensory",
+      "transform": 0.0433,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_sensory",
+      "post": "Ens_sensory",
+      "transform": 0.032,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_sensory",
+      "post": "Ens_interneuron",
+      "transform": 0.367,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_interneuron",
+      "post": "Ens_central_complex",
+      "transform": 0.0594,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_interneuron",
+      "post": "Ens_interneuron",
+      "transform": 0.0546,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_interneuron",
+      "post": "Ens_interneuron",
+      "transform": 0.0287,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_interneuron",
+      "post": "Ens_interneuron",
+      "transform": 0.1106,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_kenyon_cell",
+      "post": "Ens_interneuron",
+      "transform": 0.215,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_interneuron",
+      "post": "Ens_sensory",
+      "transform": 0.1888,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_interneuron",
+      "post": "Ens_kenyon_cell",
+      "transform": 0.1178,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_interneuron",
+      "post": "Ens_interneuron",
+      "transform": 0.104,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_interneuron",
+      "post": "Ens_interneuron",
+      "transform": 0.1862,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_sensory",
+      "post": "Ens_motor",
+      "transform": 0.0564,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_sensory",
+      "post": "Ens_central_complex",
+      "transform": 0.2723,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_sensory",
+      "post": "Ens_interneuron",
+      "transform": 0.1596,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_sensory",
+      "post": "Ens_kenyon_cell",
+      "transform": 0.0107,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_interneuron",
+      "post": "Ens_interneuron",
+      "transform": 0.0706,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_sensory",
+      "post": "Ens_interneuron",
+      "transform": 0.2367,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_sensory",
+      "post": "Ens_motor",
+      "transform": 0.1199,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_sensory",
+      "post": "Ens_interneuron",
+      "transform": 0.1738,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_central_complex",
+      "post": "Ens_sensory",
+      "transform": 0.03,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_central_complex",
+      "post": "Ens_interneuron",
+      "transform": 0.3473,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_motor",
+      "post": "Ens_sensory",
+      "transform": 0.1087,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_interneuron",
+      "post": "Ens_interneuron",
+      "transform": 0.2096,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_interneuron",
+      "post": "Ens_motor",
+      "transform": 0.1005,
+      "synapse": 0.005
+    },
+    {
+      "pre": "Ens_kenyon_cell",
+      "post": "Ens_motor",
+      "transform": 0.0635,
+      "synapse": 0.005
+    }
+  ]
+}

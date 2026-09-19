@@ -2,12 +2,13 @@
 """
 Neuromorphic SNN Hardware Benchmark Engine & Framework
 ======================================================
-Evaluates Spiking Neural Network (SNN) performance metrics on connectome subgraphs:
+Evaluates Spiking Neural Network (SNN) performance metrics on connectome & synthetic subgraphs:
 - Latency (Time-to-first-spike, Mean ISI, Propagation Delay)
-- Energy per Spike (pJ/spike across Loihi 2, SpiNNaker 2, TrueNorth, BrainScaleS-2)
+- Energy per Spike (pJ/spike across Intel Loihi 2, BrainChip Akida, SynSense DYNAP-SE, SpiNNaker 2)
 - Dynamic Range (Firing rate dynamic range, Weight quantization distortion)
 - Throughput (Spikes/sec, SOPS - Synaptic Operations Per Second, GSOPS/Watt)
-- Schema Exporters for PyNN 0.10+ and Intel Lava
+- Topology Comparison (Biological Connectome vs Erdős-Rényi, Barabási-Albert, Watts-Strogatz)
+- Schema Exporters for PyNN 0.10+, Intel Lava, and Nengo SNN
 """
 
 import os
@@ -24,15 +25,30 @@ from pathlib import Path
 logging.basicConfig(level=logging.INFO, format='[%(asctime)s] %(levelname)s: %(message)s')
 logger = logging.getLogger("NeuromorphicBenchmark")
 
-# Neuromorphic Hardware Profiles
 HARDWARE_PROFILES = {
-    "Loihi_2": {
+    "Intel_Loihi_2": {
         "energy_per_spike_pj": 23.0,
         "static_power_mw": 15.0,
         "max_weight_bits": 8,
         "clock_freq_mhz": 128.0,
         "max_neurons_per_core": 1024,
         "architecture": "Digital Asynchronous Mesh"
+    },
+    "BrainChip_Akida": {
+        "energy_per_spike_pj": 10.0,
+        "static_power_mw": 12.0,
+        "max_weight_bits": 4,
+        "clock_freq_mhz": 100.0,
+        "max_neurons_per_core": 2048,
+        "architecture": "Neuromorphic Event-Driven Core"
+    },
+    "SynSense_DYNAP_SE": {
+        "energy_per_spike_pj": 5.0,
+        "static_power_mw": 5.0,
+        "max_weight_bits": 8,
+        "clock_freq_mhz": 50.0,
+        "max_neurons_per_core": 256,
+        "architecture": "Subthreshold Analog Mixed-Signal"
     },
     "SpiNNaker_2": {
         "energy_per_spike_pj": 45.0,
@@ -41,29 +57,13 @@ HARDWARE_PROFILES = {
         "clock_freq_mhz": 500.0,
         "max_neurons_per_core": 1536,
         "architecture": "ARM Multi-Core Parallel RISC"
-    },
-    "TrueNorth": {
-        "energy_per_spike_pj": 26.0,
-        "static_power_mw": 70.0,
-        "max_weight_bits": 4,
-        "clock_freq_mhz": 1.0,
-        "max_neurons_per_core": 256,
-        "architecture": "Crossbar Digital Array"
-    },
-    "BrainScaleS_2": {
-        "energy_per_spike_pj": 120.0,
-        "static_power_mw": 120.0,
-        "max_weight_bits": 6,
-        "clock_freq_mhz": 10.0, # Accelerated 10^4 x physical time
-        "max_neurons_per_core": 512,
-        "architecture": "Analog Mixed-Signal Subthreshold"
     }
 }
 
 class LeakyIntegrateAndFireSimulator:
     """Fast vector LIF simulator for benchmark latency & spike extraction."""
 
-    def __init__(self, G: nx.DiGraph, dt_ms: float = 0.1, v_thresh: float = -50.0, v_reset: float = -70.0, tau_m: float = 20.0):
+    def __init__(self, G: nx.DiGraph, dt_ms: float = 0.5, v_thresh: float = -50.0, v_reset: float = -70.0, tau_m: float = 20.0):
         self.G = G
         self.nodes = list(G.nodes())
         self.N = len(self.nodes)
@@ -73,7 +73,6 @@ class LeakyIntegrateAndFireSimulator:
         self.v_reset = v_reset
         self.tau_m = tau_m
 
-        # Build adjacency weight matrix
         self.W = np.zeros((self.N, self.N), dtype=np.float32)
         for u, v, d in G.edges(data=True):
             i, j = self.node2idx[u], self.node2idx[v]
@@ -82,39 +81,35 @@ class LeakyIntegrateAndFireSimulator:
                 w = -w
             self.W[i, j] = w
 
-    def run_simulation(self, duration_ms: float = 100.0, input_rate_hz: float = 50.0) -> Dict[str, Any]:
+    def run_simulation(self, duration_ms: float = 50.0, input_rate_hz: float = 50.0) -> Dict[str, Any]:
         n_steps = int(duration_ms / self.dt_ms)
         v = np.full(self.N, self.v_reset, dtype=np.float32)
-        spike_record = [] # (step, neuron_idx)
+        spike_record = []
 
         decay = np.exp(-self.dt_ms / self.tau_m)
         poisson_p = (input_rate_hz * (self.dt_ms / 1000.0))
 
-        # Sensory neurons get external stimulation
         sensory_indices = [self.node2idx[n] for n in self.nodes if self.G.nodes[n].get('type') == 'sensory']
         if not sensory_indices:
             sensory_indices = list(range(min(20, self.N)))
 
         for step in range(n_steps):
-            # Poisson input
             ext_stim = (np.random.rand(len(sensory_indices)) < poisson_p) * 15.0
             v[sensory_indices] += ext_stim
 
-            # Check threshold
             spikes = np.where(v >= self.v_thresh)[0]
             if len(spikes) > 0:
+                t_ms = step * self.dt_ms
                 for idx in spikes:
-                    spike_record.append((step * self.dt_ms, idx))
+                    spike_record.append((t_ms, idx))
                 v[spikes] = self.v_reset
 
-                # Recurrent synaptic propagation
                 if len(spikes) == 1:
                     synaptic_current = self.W[spikes[0], :]
                 else:
                     synaptic_current = np.sum(self.W[spikes, :], axis=0)
                 v += synaptic_current * 0.5
 
-            # Membrane voltage decay
             v = self.v_reset + (v - self.v_reset) * decay
 
         return {
@@ -128,16 +123,20 @@ class NeuromorphicBenchmarkSuite:
     """Core Neuromorphic Hardware Benchmark Evaluator."""
 
     def __init__(self, G: nx.DiGraph):
-        self.G = G
+        nodes = list(G.nodes())
+        if len(nodes) > 200:
+            sub_nodes = nodes[:200]
+            self.G = G.subgraph(sub_nodes).copy()
+        else:
+            self.G = G
 
-    def benchmark(self, duration_ms: float = 100.0) -> Dict[str, Any]:
-        sim = LeakyIntegrateAndFireSimulator(self.G)
+    def benchmark_graph(self, target_G: nx.DiGraph, topology_name: str = "biological", duration_ms: float = 50.0) -> Dict[str, Any]:
+        sim = LeakyIntegrateAndFireSimulator(target_G, dt_ms=0.5)
         sim_res = sim.run_simulation(duration_ms=duration_ms)
 
         spikes = sim_res["spike_record"]
         total_spikes = sim_res["total_spikes"]
 
-        # Latency Metrics
         if spikes:
             time_to_first_spike_ms = float(spikes[0][0])
             spike_times = [s[0] for s in spikes]
@@ -147,33 +146,26 @@ class NeuromorphicBenchmarkSuite:
             time_to_first_spike_ms = float(duration_ms)
             mean_isi_ms = float(duration_ms)
 
-        # Graph propagation depth approximation
-        avg_path_len = float(nx.average_shortest_path_length(self.G.to_undirected())) if nx.is_connected(self.G.to_undirected()) else 3.5
-        propagation_latency_ms = time_to_first_spike_ms * avg_path_len
+        propagation_latency_ms = time_to_first_spike_ms * 2.5
 
-        # Dynamic Range & Quantization Metrics
-        weights = [d.get('weight', 1.0) for _, _, d in self.G.edges(data=True)]
+        weights = [d.get('weight', 1.0) for _, _, d in target_G.edges(data=True)]
         if weights:
             w_max, w_min = max(weights), min(weights)
             dynamic_range_db = float(20 * math.log10((w_max + 1e-6) / (w_min + 1e-6)))
         else:
             dynamic_range_db = 0.0
 
-        # Throughput Metrics
         sps = float(total_spikes / (duration_ms / 1000.0))
-        synapses = self.G.number_of_edges()
+        synapses = target_G.number_of_edges()
         sops = float(total_spikes * synapses / (duration_ms / 1000.0))
         gsops = sops / 1e9
 
-        # Hardware Target Evaluation
         hw_results = {}
         for hw_name, prof in HARDWARE_PROFILES.items():
             energy_pj = total_spikes * prof["energy_per_spike_pj"]
-            static_energy_mj = (prof["static_power_mw"] * (duration_ms / 1000.0))
             total_power_mw = prof["static_power_mw"] + (energy_pj / 1e9) / (duration_ms / 1000.0) * 1000.0
             gsops_per_watt = gsops / (total_power_mw / 1000.0 + 1e-6)
 
-            # Weight quantization loss (MSE)
             bits = prof["max_weight_bits"]
             levels = 2 ** bits
             q_weights = np.round(np.array(weights) / (max(weights) + 1e-6) * (levels - 1)) / (levels - 1) * max(weights) if weights else np.array([])
@@ -189,9 +181,10 @@ class NeuromorphicBenchmarkSuite:
             }
 
         return {
+            "topology": topology_name,
             "graph_summary": {
-                "nodes": self.G.number_of_nodes(),
-                "synapses": self.G.number_of_edges(),
+                "nodes": target_G.number_of_nodes(),
+                "synapses": target_G.number_of_edges(),
             },
             "latency_metrics": {
                 "time_to_first_spike_ms": round(time_to_first_spike_ms, 3),
@@ -212,8 +205,46 @@ class NeuromorphicBenchmarkSuite:
             "hardware_profiles_evaluation": hw_results
         }
 
+    def benchmark(self, duration_ms: float = 50.0) -> Dict[str, Any]:
+        N = self.G.number_of_nodes()
+        E = self.G.number_of_edges()
+        p = min(1.0, E / (N * (N - 1) + 1e-9))
+        k = max(2, int(E / N))
+
+        bio_res = self.benchmark_graph(self.G, topology_name="biological_connectome", duration_ms=duration_ms)
+
+        G_er = nx.erdos_renyi_graph(n=N, p=p, seed=42, directed=True)
+        for u, v in G_er.edges():
+            G_er[u][v]['weight'] = np.random.exponential(1.5) + 0.1
+        er_res = self.benchmark_graph(G_er, topology_name="synthetic_erdos_renyi", duration_ms=duration_ms)
+
+        G_ba_undir = nx.barabasi_albert_graph(n=N, m=max(1, k // 2), seed=42)
+        G_ba = nx.DiGraph(G_ba_undir)
+        for u, v in G_ba.edges():
+            G_ba[u][v]['weight'] = np.random.exponential(1.5) + 0.1
+        ba_res = self.benchmark_graph(G_ba, topology_name="synthetic_barabasi_albert", duration_ms=duration_ms)
+
+        G_ws_undir = nx.watts_strogatz_graph(n=N, k=k if k % 2 == 0 else k + 1, p=0.1, seed=42)
+        G_ws = nx.DiGraph(G_ws_undir)
+        for u, v in G_ws.edges():
+            G_ws[u][v]['weight'] = np.random.exponential(1.5) + 0.1
+        ws_res = self.benchmark_graph(G_ws, topology_name="synthetic_watts_strogatz", duration_ms=duration_ms)
+
+        return {
+            "graph_summary": bio_res["graph_summary"],
+            "latency_metrics": bio_res["latency_metrics"],
+            "dynamic_range_metrics": bio_res["dynamic_range_metrics"],
+            "throughput_metrics": bio_res["throughput_metrics"],
+            "hardware_profiles_evaluation": bio_res["hardware_profiles_evaluation"],
+            "topology_comparison": {
+                "biological_connectome": bio_res,
+                "synthetic_erdos_renyi": er_res,
+                "synthetic_barabasi_albert": ba_res,
+                "synthetic_watts_strogatz": ws_res
+            }
+        }
+
     def export_pynn_schema(self, output_path: Path) -> Dict[str, Any]:
-        """Export connectome subgraph to PyNN 0.10+ schema JSON."""
         nodes_data = list(self.G.nodes(data=True))
         edges_data = list(self.G.edges(data=True))
 
@@ -241,7 +272,7 @@ class NeuromorphicBenchmarkSuite:
             })
 
         projections = []
-        for u, v, d in edges_data[:500]: # Export top 500 connections for compactness
+        for u, v, d in edges_data[:500]:
             projections.append({
                 "presynaptic": u,
                 "postsynaptic": v,
@@ -265,7 +296,6 @@ class NeuromorphicBenchmarkSuite:
         return pynn_data
 
     def export_lava_schema(self, output_path: Path) -> Dict[str, Any]:
-        """Export connectome subgraph to Intel Lava Neuromorphic Architecture JSON."""
         nodes_data = list(self.G.nodes(data=True))
         edges_data = list(self.G.edges(data=True))
 
@@ -280,7 +310,7 @@ class NeuromorphicBenchmarkSuite:
                     "v": -70.0,
                     "u": 0.0,
                     "vth": -50.0,
-                    "du": 409, # Quantized decay
+                    "du": 409,
                     "dv": 204
                 }
             })
@@ -308,6 +338,48 @@ class NeuromorphicBenchmarkSuite:
         logger.info(f"✓ Exported Lava schema to {output_path}")
         return lava_data
 
+    def export_nengo_schema(self, output_path: Path) -> Dict[str, Any]:
+        nodes_data = list(self.G.nodes(data=True))
+        edges_data = list(self.G.edges(data=True))
+
+        pop_groups = {}
+        for nid, d in nodes_data[:200]:
+            ntype = d.get('type', 'interneuron')
+            pop_groups.setdefault(ntype, []).append(nid)
+
+        ensembles = []
+        for ntype, n_ids in pop_groups.items():
+            ensembles.append({
+                "name": f"Ens_{ntype}",
+                "n_neurons": len(n_ids),
+                "dimensions": 1,
+                "neuron_type": "LIFRate",
+                "tau_rc": 0.02,
+                "tau_ref": 0.002,
+                "neuron_ids": n_ids
+            })
+
+        connections = []
+        for u, v, d in edges_data[:300]:
+            connections.append({
+                "pre": f"Ens_{self.G.nodes[u].get('type', 'interneuron')}",
+                "post": f"Ens_{self.G.nodes[v].get('type', 'interneuron')}",
+                "transform": round(float(d.get('weight', 1.0)) * 0.1, 4),
+                "synapse": 0.005
+            })
+
+        nengo_data = {
+            "nengo_version": "3.2.0",
+            "target_backend": "nengo_dl / nengo_loihi",
+            "description": "Fruit Fly Connectome Nengo SNN Ensemble Specification",
+            "ensembles": ensembles,
+            "connections": connections
+        }
+
+        with open(output_path, "w") as f:
+            json.dump(nengo_data, f, indent=2)
+        logger.info(f"✓ Exported Nengo schema to {output_path}")
+        return nengo_data
+
 if __name__ == "__main__":
-    # Internal test execution
     print("Neuromorphic Benchmark Engine Loaded.")

@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "connectome-circuit-library"
+version = "1.0.0"
+description = "Bio-Inspired PyTorch LIF Spiking Neural Network Circuit SDK"
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "MIT"}
+authors = [
+    {name = "Connectome Suite Team", email = "dev@connectome.ai"}
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Scientific/Engineering :: Bio-Informatics",
+]
+dependencies = [
+    "torch>=1.12.0",
+    "numpy>=1.20.0"
+]
+
+[project.urls]
+Homepage = "https://github.com/Khshazad/connectome-suite"
+Repository = "https://github.com/Khshazad/connectome-suite.git"

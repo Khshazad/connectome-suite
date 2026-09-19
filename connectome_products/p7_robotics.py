@@ -3,7 +3,7 @@ Product 7 Builder: Embodied Bio-Robotics Simulator
 =================================================
 
 Generates closed-loop 2D/3D agent navigation simulator controlled by Central Complex
-ring attractor, visual EMD motion detection, and Giant Fiber collision avoidance logic.
+EPG ring attractor, visual EMD motion detection, CPG motor drive, and Giant Fiber collision avoidance logic.
 """
 
 import os
@@ -18,11 +18,11 @@ logger = logging.getLogger("Product7Builder")
 def build_product_7(loader, output_dir: Path):
     """
     Builds and tests Product 7: Embodied Bio-Robotics Simulator.
-    
+
     Args:
         loader: ConnectomeLoader instance.
         output_dir: Target directory path (7_embodied_robotics).
-        
+
     Returns:
         dict: Summary of simulation execution and embodied agent results.
     """
@@ -36,7 +36,7 @@ def build_product_7(loader, output_dir: Path):
     sim_mod = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(sim_mod)
 
-    # Run full 200 step simulation
+    # Run full 200 step simulation across 2D plane and 3D flight arena
     sim_summary = sim_mod.run_robotics_simulation(num_steps=200, output_dir=output_dir)
 
     num_nodes = loader.G.number_of_nodes() if loader and hasattr(loader, 'G') and loader.G else 2000

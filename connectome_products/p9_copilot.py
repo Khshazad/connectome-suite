@@ -3,7 +3,8 @@
 Product 9: Natural Language AI Co-Pilot for Connectomics Generator & Module
 ============================================================================
 Generates 9_natural_language_copilot/copilot.py and implements a Graph RAG NLP agent
-for natural language query parsing, shortest path tracing, centrality analysis, and neurotransmitter pathway search.
+for natural language query parsing, shortest path tracing, centrality analysis,
+sub-circuit extraction, and neurotransmitter pathway search.
 """
 
 import os
@@ -24,6 +25,7 @@ Translates natural language domain questions into Graph RAG retrieval pipelines:
 - Centrality & hub ranking (Betweenness, PageRank, Degree)
 - Multi-step neurotransmitter pathway tracing
 - Sub-circuit structure analysis & natural language synthesis
+- Exports full session logs to copilot_demo_session.json
 """
 
 import os
@@ -66,7 +68,7 @@ class ConnectomeGraphRAGCoPilot:
 
     def ask(self, query_text: str) -> Dict[str, Any]:
         """Main entrypoint for processing natural language questions."""
-        logger.info(f"Processing query: '{query_text}'")
+        logger.info(f"Processing natural language query: '{query_text}'")
         intent, entities = self._parse_intent_and_entities(query_text)
         
         evidence = {}
@@ -94,14 +96,14 @@ class ConnectomeGraphRAGCoPilot:
     def _parse_intent_and_entities(self, query: str) -> Tuple[str, Dict[str, Any]]:
         q_lower = query.lower()
 
-        # Intent detection
+        # Intent detection logic
         if any(w in q_lower for w in ["shortest path", "path between", "route from", "connects to", "how to reach"]):
             intent = "shortest_path"
         elif any(w in q_lower for w in ["centrality", "hub", "most important", "highest degree", "betweenness", "pagerank"]):
             intent = "centrality_ranking"
         elif any(w in q_lower for w in ["pathway", "neurotransmitter", "cholinergic to", "gabaergic to", "flow of"]):
             intent = "pathway_trace"
-        elif any(w in q_lower for w in ["subgraph", "circuit in", "region", "optic lobe", "mushroom body"]):
+        elif any(w in q_lower for w in ["subgraph", "circuit in", "region", "optic lobe", "mushroom body", "antennal lobe"]):
             intent = "subgraph_overview"
         else:
             intent = "general_overview"
@@ -126,7 +128,6 @@ class ConnectomeGraphRAGCoPilot:
         if len(node_ids) >= 2:
             src, tgt = node_ids[0], node_ids[1]
         else:
-            # Fallback pick nodes based on specified types/regions or default
             src = node_ids[0] if node_ids else "N-0"
             tgt = "N-42" if "N-42" in self.G else list(self.G.nodes())[50]
 
@@ -158,7 +159,6 @@ class ConnectomeGraphRAGCoPilot:
         ntypes = entities.get("neuron_types", [])
         regions = entities.get("regions", [])
 
-        # Subsample graph for quick centrality calculation
         nodes = list(self.G.nodes())
         if regions:
             nodes = [n for n in nodes if self.G.nodes[n].get('region') in regions]

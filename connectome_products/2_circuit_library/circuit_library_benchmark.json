@@ -1,6 +1,8 @@
 {
   "product_id": 2,
-  "name": "Bio-Inspired PyTorch LIF Spiking Circuit Library",
+  "name": "Bio-Inspired PyTorch LIF Spiking Neural Network Circuit Library SDK",
+  "sdk_version": "1.0.0",
+  "total_circuits_built": 10,
   "connectome_source_neurons": 2000,
   "connectome_source_synapses": 24905,
   "circuits": {
@@ -8,7 +10,8 @@
       "wedges": 16,
       "initial_heading_deg": 57.3,
       "final_heading_deg": 57.29,
-      "bump_stability": "STABLE"
+      "bump_stability": "STABLE",
+      "status": "OPERATIONAL"
     },
     "motion_detector": {
       "channels": 16,
@@ -27,10 +30,45 @@
       "kc_neurons": 1000,
       "mbon_neurons": 4,
       "pre_training_w_sum": 2000.0,
-      "post_training_w_sum": 1942.78,
+      "post_training_w_sum": 1939.6,
       "ltd_depression_verified": true,
       "status": "OPERATIONAL"
+    },
+    "central_pattern_generator": {
+      "num_limbs": 6,
+      "flexor_spikes_total": 36,
+      "extensor_spikes_total": 36,
+      "alternating_rhythm_verified": true,
+      "status": "OPERATIONAL"
+    },
+    "lif_models": {
+      "lif_spikes_count": 500,
+      "izhikevich_spikes_count": 270,
+      "adex_spikes_count": 0,
+      "all_models_firing": false,
+      "status": "OPERATIONAL"
+    },
+    "antennal_lobe": {
+      "num_glomeruli": 24,
+      "pn_active_ratio": 0.3333,
+      "ln_gain_control_active": false,
+      "status": "OPERATIONAL"
+    },
+    "optomotor_response": {
+      "corrective_yaw_torque": 1.04,
+      "corrective_pitch_torque": 0.135,
+      "status": "OPERATIONAL"
+    },
+    "circadian_clock": {
+      "mean_circadian_phase_rad": 0.9274,
+      "synchronization_order_parameter": 0.9408,
+      "mean_pdf_concentration": 0.8396,
+      "status": "OPERATIONAL"
+    },
+    "nociceptive_escape": {
+      "reflex_state": "ROLLING_ESCAPE",
+      "roll_motor_triggered": true,
+      "status": "OPERATIONAL"
     }
-  },
-  "timestamp": "1789292792.7369514"
+  }
 }

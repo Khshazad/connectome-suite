@@ -1,9 +1,10 @@
 """
-Product 8 Builder: Neuromorphic Edge-AI Pruner & Model Compressor
-==================================================================
+Product 8 Builder: Neuromorphic Edge-AI Model Pruner & Compressor
+===================================================================
 
-Applies fruit fly connectome biological sparsity constraints (80%+ sparsity)
-to dense PyTorch neural network models (MLP, CNN) while preserving representation capacity.
+Applies fruit fly connectome biological log-normal graph sparsity (>85% target)
+to dense PyTorch architectures (MLP, ConvNet, ResNet), converts pruned layers to COO/CSR sparse format,
+and benchmarks compression metrics saved to `edge_ai_pruner_benchmark.json`.
 """
 
 import os
@@ -17,16 +18,56 @@ import torch.nn as nn
 logger = logging.getLogger("Product8Builder")
 
 
+class MiniResNetBlock(nn.Module):
+    """Miniature Residual Block with shortcut connection."""
+
+    def __init__(self, channels: int):
+        super().__init__()
+        self.conv1 = nn.Conv2d(channels, channels, kernel_size=3, padding=1)
+        self.relu = nn.ReLU()
+        self.conv2 = nn.Conv2d(channels, channels, kernel_size=3, padding=1)
+
+    def forward(self, x: torch.Tensor) -> torch.Tensor:
+        residual = x
+        out = self.relu(self.conv1(x))
+        out = self.conv2(out)
+        out += residual
+        return self.relu(out)
+
+
+class MiniResNet(nn.Module):
+    """Miniature Residual Neural Network for biological pruning benchmarks."""
+
+    def __init__(self, in_channels: int = 3, num_classes: int = 10):
+        super().__init__()
+        self.prep = nn.Sequential(
+            nn.Conv2d(in_channels, 32, kernel_size=3, padding=1),
+            nn.ReLU()
+        )
+        self.layer1 = MiniResNetBlock(32)
+        self.layer2 = MiniResNetBlock(32)
+        self.pool = nn.AdaptiveAvgPool2d((4, 4))
+        self.fc = nn.Linear(32 * 4 * 4, num_classes)
+
+    def forward(self, x: torch.Tensor) -> torch.Tensor:
+        out = self.prep(x)
+        out = self.layer1(out)
+        out = self.layer2(out)
+        out = self.pool(out)
+        out = torch.flatten(out, 1)
+        return self.fc(out)
+
+
 def build_product_8(loader, output_dir: Path):
     """
-    Builds and benchmarks Product 8: Neuromorphic Edge-AI Pruner.
-    
+    Builds and benchmarks Product 8: Neuromorphic Edge-AI Model Pruner (>85% Sparsity).
+
     Args:
         loader: ConnectomeLoader instance.
         output_dir: Target directory path (8_edge_ai_pruner).
-        
+
     Returns:
-        dict: Pruning benchmark metrics and compression statistics.
+        dict: Detailed pruning benchmarks across MLP, CNN, and ResNet architectures.
     """
     output_dir = Path(output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
@@ -40,11 +81,11 @@ def build_product_8(loader, output_dir: Path):
 
     BiologicalSparsityPruner = pruner_mod.BiologicalSparsityPruner
 
-    # Instantiate Pruner with 85% target biological sparsity
-    pruner = BiologicalSparsityPruner(target_sparsity=0.85, bio_topological_bias=0.25)
+    # Instantiate Biological Sparsity Pruner targeting >85% sparsity (0.88)
+    pruner = BiologicalSparsityPruner(target_sparsity=0.88, bio_topological_bias=0.25)
 
-    # 1. Benchmark PyTorch MLP Model
-    logger.info("  Pruning Multi-Layer Perceptron (MLP)...")
+    # 1. Benchmark Multi-Layer Perceptron (MLP)
+    logger.info("  Pruning 1/3: Multi-Layer Perceptron (MLP)...")
     mlp_dense = nn.Sequential(
         nn.Linear(256, 512),
         nn.ReLU(),
@@ -52,13 +93,13 @@ def build_product_8(loader, output_dir: Path):
         nn.ReLU(),
         nn.Linear(256, 10)
     )
-    mlp_pruned = pruner.prune_model(mlp_dense, target_sparsity=0.85)
-
+    mlp_pruned = pruner.prune_model(mlp_dense, target_sparsity=0.88)
     sample_mlp_input = torch.randn(16, 256)
     mlp_benchmark = pruner.benchmark_compression(mlp_dense, mlp_pruned, sample_mlp_input)
+    sparse_tensors_mlp = pruner.convert_to_sparse_tensors(mlp_pruned)
 
-    # 2. Benchmark PyTorch CNN Model
-    logger.info("  Pruning Convolutional Neural Network (CNN)...")
+    # 2. Benchmark Convolutional Neural Network (CNN)
+    logger.info("  Pruning 2/3: Convolutional Neural Network (CNN)...")
     cnn_dense = nn.Sequential(
         nn.Conv2d(3, 32, kernel_size=3, padding=1),
         nn.ReLU(),
@@ -68,27 +109,42 @@ def build_product_8(loader, output_dir: Path):
         nn.Flatten(),
         nn.Linear(64 * 8 * 8, 10)
     )
-    cnn_pruned = pruner.prune_model(cnn_dense, target_sparsity=0.80)
-
+    cnn_pruned = pruner.prune_model(cnn_dense, target_sparsity=0.86)
     sample_cnn_input = torch.randn(8, 3, 32, 32)
     cnn_benchmark = pruner.benchmark_compression(cnn_dense, cnn_pruned, sample_cnn_input)
+    sparse_tensors_cnn = pruner.convert_to_sparse_tensors(cnn_pruned)
 
-    # Extract sparse COO tensors for edge deployment
-    sparse_tensors_mlp = pruner.convert_to_sparse_tensors(mlp_pruned)
+    # 3. Benchmark Residual Neural Network (ResNet)
+    logger.info("  Pruning 3/3: Residual Neural Network (ResNet)...")
+    resnet_dense = MiniResNet(in_channels=3, num_classes=10)
+    resnet_pruned = pruner.prune_model(resnet_dense, target_sparsity=0.88)
+    sample_resnet_input = torch.randn(8, 3, 32, 32)
+    resnet_benchmark = pruner.benchmark_compression(resnet_dense, resnet_pruned, sample_resnet_input)
+    sparse_tensors_resnet = pruner.convert_to_sparse_tensors(resnet_pruned)
 
-    # Save pruned model weights
+    # Save pruned state dict model checkpoints
     torch.save(mlp_pruned.state_dict(), output_dir / "pruned_mlp_state.pt")
     torch.save(cnn_pruned.state_dict(), output_dir / "pruned_cnn_state.pt")
+    torch.save(resnet_pruned.state_dict(), output_dir / "pruned_resnet_state.pt")
 
     num_nodes = loader.G.number_of_nodes() if loader and hasattr(loader, 'G') and loader.G else 2000
 
     results = {
         "product_id": 8,
-        "name": "Neuromorphic Edge-AI Pruner",
+        "name": "Neuromorphic Edge-AI Pruner & Model Compressor",
         "connectome_calibration_neurons": num_nodes,
-        "mlp_pruning_benchmark": mlp_benchmark,
-        "cnn_pruning_benchmark": cnn_benchmark,
-        "sparse_tensors_generated": len(sparse_tensors_mlp),
+        "target_biological_sparsity_pct": 88.0,
+        "architectures_pruned": {
+            "mlp": mlp_benchmark,
+            "cnn": cnn_benchmark,
+            "resnet": resnet_benchmark,
+        },
+        "coo_csr_sparse_conversions": {
+            "mlp_sparse_layers": len(sparse_tensors_mlp),
+            "cnn_sparse_layers": len(sparse_tensors_cnn),
+            "resnet_sparse_layers": len(sparse_tensors_resnet),
+            "formats_supported": ["COO", "CSR"],
+        },
         "status": "SUCCESS",
     }
 

@@ -20,8 +20,8 @@ MAPPER_PY_CONTENT = '''#!/usr/bin/env python3
 Brain-Wide Gene-to-Circuit Receptor Mapper & Drug Susceptibility Engine
 ========================================================================
 Integrates single-cell RNA-sequencing (scRNA-seq) neurotransmitter receptor profiles
-with connectomics graph topology to predict cell-type drug susceptibility and
-circuit pharmacology.
+(nAChR, GABAR, DopR, GluR) with connectomics graph topology to predict cell-type drug susceptibility,
+vulnerability indices, and circuit pharmacology perturbation matrices.
 """
 
 import os
@@ -56,13 +56,13 @@ class GeneToCircuitMapper:
 
     def __init__(self, G: nx.DiGraph, neurons_df: pd.DataFrame):
         self.G = G
-        self.neurons_df = neurons_df
+        self.neurons_df = neurons_df.copy()
         self.expression_matrix = None
         self._generate_scrna_profiles()
 
     def _generate_scrna_profiles(self):
         """Generate realistic scRNA-seq receptor expression matrix mapped to neuron types."""
-        logger.info("Generating scRNA-seq receptor expression matrix...")
+        logger.info("Generating scRNA-seq receptor expression matrix for nAChR, GABAR, DopR, GluR...")
         np.random.seed(42)
         n_neurons = len(self.neurons_df)
 
@@ -90,10 +90,12 @@ class GeneToCircuitMapper:
         """Compute Cell-Type Drug Susceptibility & Vulnerability Scores."""
         logger.info("Computing cell-type drug susceptibility scores...")
         
-        # Calculate centrality
-        sub_nodes = list(self.G.nodes())[:200]
+        # Subsample graph for fast centrality computation
+        nodes = list(self.G.nodes())
+        sub_nodes = nodes[:150] if len(nodes) > 150 else nodes
         subG = self.G.subgraph(sub_nodes)
-        bet_cent = nx.betweenness_centrality(subG)
+        
+        bet_cent = nx.betweenness_centrality(subG, k=min(30, len(sub_nodes)))
         deg_cent = nx.degree_centrality(subG)
 
         self.neurons_df['betweenness'] = self.neurons_df['id'].map(lambda x: bet_cent.get(x, 0.0))
@@ -107,13 +109,11 @@ class GeneToCircuitMapper:
             group_ids = group['id'].tolist()
             expr_sub = self.expression_matrix.loc[group_ids]
             
-            mean_expr = expr_sub.mean().to_dict()
             total_expr_density = expr_sub.sum(axis=1).mean()
-            
             mean_bet = group['betweenness'].mean()
             mean_deg = group['degree'].mean()
 
-            # Susceptibility formula: S = 0.4*ReceptorDensity + 0.35*Betweenness + 0.25*Degree
+            # Formula: S = 0.4*ReceptorDensity + 0.35*Betweenness + 0.25*Degree
             susceptibility_score = float(0.4 * total_expr_density + 0.35 * mean_bet * 10.0 + 0.25 * mean_deg * 10.0)
 
             # Predominant receptor family
@@ -149,7 +149,6 @@ class GeneToCircuitMapper:
                 recs = self.RECEPTOR_FAMILIES[fam]
                 expr_val = self.expression_matrix.loc[ct_ids, recs].values.mean() if ct_ids else 0.0
                 
-                # Response = expression * sensitivity factor
                 response_val = float(np.tanh(expr_val * 0.8) * 100.0)
                 matrix[fam][ct] = round(response_val, 2)
 
