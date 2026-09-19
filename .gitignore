@@ -1,0 +1,16 @@
+# Python bytecode & cache
+__pycache__/
+*.py[cod]
+*$py.class
+.connectome_cache/
+*.pkl
+*.pt
+
+# Environments
+.venv/
+env/
+venv/
+
+# System files
+.DS_Store
+*.log

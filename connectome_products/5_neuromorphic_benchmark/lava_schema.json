@@ -1,0 +1,5509 @@
+{
+  "lava_version": "0.8.0",
+  "target_hardware": "Intel Loihi 2",
+  "description": "Fruit Fly Connectome Lava Network Specification",
+  "processes": [
+    {
+      "name": "LIFProcess_N-0",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-1",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-2",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-3",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-4",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-5",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-6",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-7",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-8",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-9",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-10",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-11",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-12",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-13",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-14",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-15",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-16",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-17",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-18",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-19",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-20",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-21",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-22",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-23",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-24",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-25",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-26",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-27",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-28",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-29",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-30",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-31",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-32",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-33",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-34",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-35",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-36",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-37",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-38",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-39",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-40",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-41",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-42",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-43",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-44",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-45",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-46",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-47",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-48",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-49",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-50",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-51",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-52",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-53",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-54",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-55",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-56",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-57",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-58",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-59",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-60",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-61",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-62",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-63",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-64",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-65",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-66",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-67",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-68",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-69",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-70",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-71",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-72",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-73",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-74",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-75",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-76",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-77",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-78",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-79",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-80",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-81",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-82",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-83",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-84",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-85",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-86",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-87",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-88",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-89",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-90",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-91",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-92",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-93",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-94",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-95",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-96",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-97",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-98",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-99",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-100",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-101",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-102",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-103",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-104",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-105",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-106",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-107",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-108",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-109",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-110",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-111",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-112",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-113",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-114",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-115",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-116",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-117",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-118",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-119",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-120",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-121",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-122",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-123",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-124",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-125",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-126",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-127",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-128",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-129",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-130",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-131",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-132",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-133",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-134",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-135",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-136",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-137",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-138",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-139",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-140",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-141",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-142",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-143",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-144",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-145",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-146",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-147",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-148",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-149",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-150",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-151",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-152",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-153",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-154",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-155",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-156",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-157",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-158",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-159",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-160",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-161",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-162",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-163",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-164",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-165",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-166",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-167",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-168",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-169",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-170",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-171",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-172",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-173",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-174",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-175",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-176",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-177",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-178",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-179",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-180",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-181",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-182",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-183",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-184",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-185",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-186",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-187",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-188",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-189",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-190",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-191",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-192",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-193",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-194",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-195",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-196",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-197",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-198",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    },
+    {
+      "name": "LIFProcess_N-199",
+      "process_type": "Lava.Proc.LIF",
+      "in_ports": [
+        "a_in"
+      ],
+      "out_ports": [
+        "s_out"
+      ],
+      "vars": {
+        "v": -70.0,
+        "u": 0.0,
+        "vth": -50.0,
+        "du": 409,
+        "dv": 204
+      }
+    }
+  ],
+  "connections": [
+    {
+      "src_process": "LIFProcess_N-0",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-663",
+      "dst_port": "a_in",
+      "weight": 17
+    },
+    {
+      "src_process": "LIFProcess_N-0",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1111",
+      "dst_port": "a_in",
+      "weight": 23
+    },
+    {
+      "src_process": "LIFProcess_N-0",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1375",
+      "dst_port": "a_in",
+      "weight": 16
+    },
+    {
+      "src_process": "LIFProcess_N-0",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1143",
+      "dst_port": "a_in",
+      "weight": 72
+    },
+    {
+      "src_process": "LIFProcess_N-0",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1452",
+      "dst_port": "a_in",
+      "weight": 77
+    },
+    {
+      "src_process": "LIFProcess_N-0",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1041",
+      "dst_port": "a_in",
+      "weight": 8
+    },
+    {
+      "src_process": "LIFProcess_N-0",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-980",
+      "dst_port": "a_in",
+      "weight": 17
+    },
+    {
+      "src_process": "LIFProcess_N-0",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1819",
+      "dst_port": "a_in",
+      "weight": 35
+    },
+    {
+      "src_process": "LIFProcess_N-0",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1025",
+      "dst_port": "a_in",
+      "weight": 56
+    },
+    {
+      "src_process": "LIFProcess_N-0",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1131",
+      "dst_port": "a_in",
+      "weight": 7
+    },
+    {
+      "src_process": "LIFProcess_N-0",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1182",
+      "dst_port": "a_in",
+      "weight": 8
+    },
+    {
+      "src_process": "LIFProcess_N-0",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-158",
+      "dst_port": "a_in",
+      "weight": 1
+    },
+    {
+      "src_process": "LIFProcess_N-0",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1162",
+      "dst_port": "a_in",
+      "weight": 5
+    },
+    {
+      "src_process": "LIFProcess_N-0",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-48",
+      "dst_port": "a_in",
+      "weight": 28
+    },
+    {
+      "src_process": "LIFProcess_N-0",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-508",
+      "dst_port": "a_in",
+      "weight": 41
+    },
+    {
+      "src_process": "LIFProcess_N-0",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1170",
+      "dst_port": "a_in",
+      "weight": 6
+    },
+    {
+      "src_process": "LIFProcess_N-1",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-495",
+      "dst_port": "a_in",
+      "weight": 20
+    },
+    {
+      "src_process": "LIFProcess_N-1",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1728",
+      "dst_port": "a_in",
+      "weight": 10
+    },
+    {
+      "src_process": "LIFProcess_N-1",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-35",
+      "dst_port": "a_in",
+      "weight": 65
+    },
+    {
+      "src_process": "LIFProcess_N-1",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-761",
+      "dst_port": "a_in",
+      "weight": 9
+    },
+    {
+      "src_process": "LIFProcess_N-1",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-706",
+      "dst_port": "a_in",
+      "weight": 127
+    },
+    {
+      "src_process": "LIFProcess_N-1",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-853",
+      "dst_port": "a_in",
+      "weight": 16
+    },
+    {
+      "src_process": "LIFProcess_N-2",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1370",
+      "dst_port": "a_in",
+      "weight": 17
+    },
+    {
+      "src_process": "LIFProcess_N-2",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1831",
+      "dst_port": "a_in",
+      "weight": 6
+    },
+    {
+      "src_process": "LIFProcess_N-2",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1287",
+      "dst_port": "a_in",
+      "weight": 97
+    },
+    {
+      "src_process": "LIFProcess_N-2",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1787",
+      "dst_port": "a_in",
+      "weight": 15
+    },
+    {
+      "src_process": "LIFProcess_N-2",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-27",
+      "dst_port": "a_in",
+      "weight": 89
+    },
+    {
+      "src_process": "LIFProcess_N-2",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1063",
+      "dst_port": "a_in",
+      "weight": 8
+    },
+    {
+      "src_process": "LIFProcess_N-2",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1103",
+      "dst_port": "a_in",
+      "weight": 13
+    },
+    {
+      "src_process": "LIFProcess_N-2",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1191",
+      "dst_port": "a_in",
+      "weight": 20
+    },
+    {
+      "src_process": "LIFProcess_N-3",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-27",
+      "dst_port": "a_in",
+      "weight": 14
+    },
+    {
+      "src_process": "LIFProcess_N-3",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1688",
+      "dst_port": "a_in",
+      "weight": 34
+    },
+    {
+      "src_process": "LIFProcess_N-3",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1884",
+      "dst_port": "a_in",
+      "weight": 6
+    },
+    {
+      "src_process": "LIFProcess_N-3",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-22",
+      "dst_port": "a_in",
+      "weight": 30
+    },
+    {
+      "src_process": "LIFProcess_N-3",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-833",
+      "dst_port": "a_in",
+      "weight": 25
+    },
+    {
+      "src_process": "LIFProcess_N-3",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-730",
+      "dst_port": "a_in",
+      "weight": 16
+    },
+    {
+      "src_process": "LIFProcess_N-3",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-425",
+      "dst_port": "a_in",
+      "weight": 7
+    },
+    {
+      "src_process": "LIFProcess_N-3",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-523",
+      "dst_port": "a_in",
+      "weight": 53
+    },
+    {
+      "src_process": "LIFProcess_N-3",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1390",
+      "dst_port": "a_in",
+      "weight": 6
+    },
+    {
+      "src_process": "LIFProcess_N-3",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-322",
+      "dst_port": "a_in",
+      "weight": 2
+    },
+    {
+      "src_process": "LIFProcess_N-3",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-767",
+      "dst_port": "a_in",
+      "weight": 82
+    },
+    {
+      "src_process": "LIFProcess_N-3",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1759",
+      "dst_port": "a_in",
+      "weight": 4
+    },
+    {
+      "src_process": "LIFProcess_N-3",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1212",
+      "dst_port": "a_in",
+      "weight": 45
+    },
+    {
+      "src_process": "LIFProcess_N-3",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1793",
+      "dst_port": "a_in",
+      "weight": 37
+    },
+    {
+      "src_process": "LIFProcess_N-3",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-86",
+      "dst_port": "a_in",
+      "weight": 39
+    },
+    {
+      "src_process": "LIFProcess_N-4",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-929",
+      "dst_port": "a_in",
+      "weight": 71
+    },
+    {
+      "src_process": "LIFProcess_N-4",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1323",
+      "dst_port": "a_in",
+      "weight": 2
+    },
+    {
+      "src_process": "LIFProcess_N-4",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1817",
+      "dst_port": "a_in",
+      "weight": 43
+    },
+    {
+      "src_process": "LIFProcess_N-4",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1738",
+      "dst_port": "a_in",
+      "weight": 28
+    },
+    {
+      "src_process": "LIFProcess_N-4",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1369",
+      "dst_port": "a_in",
+      "weight": 8
+    },
+    {
+      "src_process": "LIFProcess_N-4",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1573",
+      "dst_port": "a_in",
+      "weight": 29
+    },
+    {
+      "src_process": "LIFProcess_N-4",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-201",
+      "dst_port": "a_in",
+      "weight": 34
+    },
+    {
+      "src_process": "LIFProcess_N-4",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1050",
+      "dst_port": "a_in",
+      "weight": 16
+    },
+    {
+      "src_process": "LIFProcess_N-4",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-763",
+      "dst_port": "a_in",
+      "weight": 1
+    },
+    {
+      "src_process": "LIFProcess_N-4",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1346",
+      "dst_port": "a_in",
+      "weight": 28
+    },
+    {
+      "src_process": "LIFProcess_N-5",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1203",
+      "dst_port": "a_in",
+      "weight": 91
+    },
+    {
+      "src_process": "LIFProcess_N-5",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1796",
+      "dst_port": "a_in",
+      "weight": 100
+    },
+    {
+      "src_process": "LIFProcess_N-5",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1521",
+      "dst_port": "a_in",
+      "weight": 13
+    },
+    {
+      "src_process": "LIFProcess_N-5",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-283",
+      "dst_port": "a_in",
+      "weight": 7
+    },
+    {
+      "src_process": "LIFProcess_N-5",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-300",
+      "dst_port": "a_in",
+      "weight": 76
+    },
+    {
+      "src_process": "LIFProcess_N-5",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-136",
+      "dst_port": "a_in",
+      "weight": 20
+    },
+    {
+      "src_process": "LIFProcess_N-5",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1053",
+      "dst_port": "a_in",
+      "weight": 24
+    },
+    {
+      "src_process": "LIFProcess_N-5",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-135",
+      "dst_port": "a_in",
+      "weight": 51
+    },
+    {
+      "src_process": "LIFProcess_N-5",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1644",
+      "dst_port": "a_in",
+      "weight": 9
+    },
+    {
+      "src_process": "LIFProcess_N-6",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1567",
+      "dst_port": "a_in",
+      "weight": 8
+    },
+    {
+      "src_process": "LIFProcess_N-6",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1575",
+      "dst_port": "a_in",
+      "weight": 5
+    },
+    {
+      "src_process": "LIFProcess_N-6",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1011",
+      "dst_port": "a_in",
+      "weight": 35
+    },
+    {
+      "src_process": "LIFProcess_N-6",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1935",
+      "dst_port": "a_in",
+      "weight": 3
+    },
+    {
+      "src_process": "LIFProcess_N-6",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1198",
+      "dst_port": "a_in",
+      "weight": 18
+    },
+    {
+      "src_process": "LIFProcess_N-6",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-208",
+      "dst_port": "a_in",
+      "weight": 19
+    },
+    {
+      "src_process": "LIFProcess_N-6",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-189",
+      "dst_port": "a_in",
+      "weight": 9
+    },
+    {
+      "src_process": "LIFProcess_N-6",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-256",
+      "dst_port": "a_in",
+      "weight": 41
+    },
+    {
+      "src_process": "LIFProcess_N-6",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-352",
+      "dst_port": "a_in",
+      "weight": 55
+    },
+    {
+      "src_process": "LIFProcess_N-6",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-680",
+      "dst_port": "a_in",
+      "weight": 5
+    },
+    {
+      "src_process": "LIFProcess_N-6",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1344",
+      "dst_port": "a_in",
+      "weight": 19
+    },
+    {
+      "src_process": "LIFProcess_N-6",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-276",
+      "dst_port": "a_in",
+      "weight": 30
+    },
+    {
+      "src_process": "LIFProcess_N-6",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1167",
+      "dst_port": "a_in",
+      "weight": 28
+    },
+    {
+      "src_process": "LIFProcess_N-6",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1137",
+      "dst_port": "a_in",
+      "weight": 18
+    },
+    {
+      "src_process": "LIFProcess_N-7",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-961",
+      "dst_port": "a_in",
+      "weight": 29
+    },
+    {
+      "src_process": "LIFProcess_N-7",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1246",
+      "dst_port": "a_in",
+      "weight": 17
+    },
+    {
+      "src_process": "LIFProcess_N-7",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-857",
+      "dst_port": "a_in",
+      "weight": 35
+    },
+    {
+      "src_process": "LIFProcess_N-7",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-554",
+      "dst_port": "a_in",
+      "weight": 3
+    },
+    {
+      "src_process": "LIFProcess_N-7",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1553",
+      "dst_port": "a_in",
+      "weight": 125
+    },
+    {
+      "src_process": "LIFProcess_N-7",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-524",
+      "dst_port": "a_in",
+      "weight": 23
+    },
+    {
+      "src_process": "LIFProcess_N-7",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-907",
+      "dst_port": "a_in",
+      "weight": 19
+    },
+    {
+      "src_process": "LIFProcess_N-7",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1972",
+      "dst_port": "a_in",
+      "weight": 54
+    },
+    {
+      "src_process": "LIFProcess_N-7",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-12",
+      "dst_port": "a_in",
+      "weight": 53
+    },
+    {
+      "src_process": "LIFProcess_N-7",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1862",
+      "dst_port": "a_in",
+      "weight": 8
+    },
+    {
+      "src_process": "LIFProcess_N-7",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-597",
+      "dst_port": "a_in",
+      "weight": 1
+    },
+    {
+      "src_process": "LIFProcess_N-7",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-471",
+      "dst_port": "a_in",
+      "weight": 57
+    },
+    {
+      "src_process": "LIFProcess_N-7",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-396",
+      "dst_port": "a_in",
+      "weight": 1
+    },
+    {
+      "src_process": "LIFProcess_N-8",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-878",
+      "dst_port": "a_in",
+      "weight": 58
+    },
+    {
+      "src_process": "LIFProcess_N-8",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1130",
+      "dst_port": "a_in",
+      "weight": 6
+    },
+    {
+      "src_process": "LIFProcess_N-8",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-928",
+      "dst_port": "a_in",
+      "weight": 9
+    },
+    {
+      "src_process": "LIFProcess_N-8",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1470",
+      "dst_port": "a_in",
+      "weight": 6
+    },
+    {
+      "src_process": "LIFProcess_N-8",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1405",
+      "dst_port": "a_in",
+      "weight": 4
+    },
+    {
+      "src_process": "LIFProcess_N-8",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1330",
+      "dst_port": "a_in",
+      "weight": 27
+    },
+    {
+      "src_process": "LIFProcess_N-8",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-689",
+      "dst_port": "a_in",
+      "weight": 69
+    },
+    {
+      "src_process": "LIFProcess_N-8",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-430",
+      "dst_port": "a_in",
+      "weight": 22
+    },
+    {
+      "src_process": "LIFProcess_N-8",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-9",
+      "dst_port": "a_in",
+      "weight": 29
+    },
+    {
+      "src_process": "LIFProcess_N-8",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-187",
+      "dst_port": "a_in",
+      "weight": 2
+    },
+    {
+      "src_process": "LIFProcess_N-8",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1277",
+      "dst_port": "a_in",
+      "weight": 10
+    },
+    {
+      "src_process": "LIFProcess_N-8",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-111",
+      "dst_port": "a_in",
+      "weight": 41
+    },
+    {
+      "src_process": "LIFProcess_N-9",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-468",
+      "dst_port": "a_in",
+      "weight": 55
+    },
+    {
+      "src_process": "LIFProcess_N-9",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-436",
+      "dst_port": "a_in",
+      "weight": 29
+    },
+    {
+      "src_process": "LIFProcess_N-9",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1352",
+      "dst_port": "a_in",
+      "weight": 68
+    },
+    {
+      "src_process": "LIFProcess_N-9",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1771",
+      "dst_port": "a_in",
+      "weight": 28
+    },
+    {
+      "src_process": "LIFProcess_N-9",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1881",
+      "dst_port": "a_in",
+      "weight": 20
+    },
+    {
+      "src_process": "LIFProcess_N-9",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1365",
+      "dst_port": "a_in",
+      "weight": 38
+    },
+    {
+      "src_process": "LIFProcess_N-9",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-441",
+      "dst_port": "a_in",
+      "weight": 53
+    },
+    {
+      "src_process": "LIFProcess_N-9",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-72",
+      "dst_port": "a_in",
+      "weight": 10
+    },
+    {
+      "src_process": "LIFProcess_N-9",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1598",
+      "dst_port": "a_in",
+      "weight": 49
+    },
+    {
+      "src_process": "LIFProcess_N-9",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1699",
+      "dst_port": "a_in",
+      "weight": 66
+    },
+    {
+      "src_process": "LIFProcess_N-9",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1220",
+      "dst_port": "a_in",
+      "weight": 11
+    },
+    {
+      "src_process": "LIFProcess_N-9",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-289",
+      "dst_port": "a_in",
+      "weight": 17
+    },
+    {
+      "src_process": "LIFProcess_N-10",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-243",
+      "dst_port": "a_in",
+      "weight": 12
+    },
+    {
+      "src_process": "LIFProcess_N-10",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1689",
+      "dst_port": "a_in",
+      "weight": 64
+    },
+    {
+      "src_process": "LIFProcess_N-10",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-376",
+      "dst_port": "a_in",
+      "weight": 20
+    },
+    {
+      "src_process": "LIFProcess_N-10",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1732",
+      "dst_port": "a_in",
+      "weight": 18
+    },
+    {
+      "src_process": "LIFProcess_N-10",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-389",
+      "dst_port": "a_in",
+      "weight": 20
+    },
+    {
+      "src_process": "LIFProcess_N-10",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1209",
+      "dst_port": "a_in",
+      "weight": 3
+    },
+    {
+      "src_process": "LIFProcess_N-10",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-928",
+      "dst_port": "a_in",
+      "weight": 109
+    },
+    {
+      "src_process": "LIFProcess_N-10",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1619",
+      "dst_port": "a_in",
+      "weight": 20
+    },
+    {
+      "src_process": "LIFProcess_N-10",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-459",
+      "dst_port": "a_in",
+      "weight": 47
+    },
+    {
+      "src_process": "LIFProcess_N-10",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1293",
+      "dst_port": "a_in",
+      "weight": 9
+    },
+    {
+      "src_process": "LIFProcess_N-10",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-747",
+      "dst_port": "a_in",
+      "weight": 30
+    },
+    {
+      "src_process": "LIFProcess_N-10",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-981",
+      "dst_port": "a_in",
+      "weight": 28
+    },
+    {
+      "src_process": "LIFProcess_N-10",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1979",
+      "dst_port": "a_in",
+      "weight": 13
+    },
+    {
+      "src_process": "LIFProcess_N-10",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-458",
+      "dst_port": "a_in",
+      "weight": 14
+    },
+    {
+      "src_process": "LIFProcess_N-10",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-795",
+      "dst_port": "a_in",
+      "weight": 45
+    },
+    {
+      "src_process": "LIFProcess_N-10",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1545",
+      "dst_port": "a_in",
+      "weight": 10
+    },
+    {
+      "src_process": "LIFProcess_N-10",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1582",
+      "dst_port": "a_in",
+      "weight": 1
+    },
+    {
+      "src_process": "LIFProcess_N-10",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1976",
+      "dst_port": "a_in",
+      "weight": 24
+    },
+    {
+      "src_process": "LIFProcess_N-11",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-686",
+      "dst_port": "a_in",
+      "weight": 47
+    },
+    {
+      "src_process": "LIFProcess_N-11",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-223",
+      "dst_port": "a_in",
+      "weight": 16
+    },
+    {
+      "src_process": "LIFProcess_N-11",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-533",
+      "dst_port": "a_in",
+      "weight": 13
+    },
+    {
+      "src_process": "LIFProcess_N-11",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1902",
+      "dst_port": "a_in",
+      "weight": 22
+    },
+    {
+      "src_process": "LIFProcess_N-11",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-439",
+      "dst_port": "a_in",
+      "weight": 18
+    },
+    {
+      "src_process": "LIFProcess_N-11",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1697",
+      "dst_port": "a_in",
+      "weight": 1
+    },
+    {
+      "src_process": "LIFProcess_N-11",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1205",
+      "dst_port": "a_in",
+      "weight": 12
+    },
+    {
+      "src_process": "LIFProcess_N-11",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1010",
+      "dst_port": "a_in",
+      "weight": 101
+    },
+    {
+      "src_process": "LIFProcess_N-11",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1590",
+      "dst_port": "a_in",
+      "weight": 22
+    },
+    {
+      "src_process": "LIFProcess_N-11",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1789",
+      "dst_port": "a_in",
+      "weight": 55
+    },
+    {
+      "src_process": "LIFProcess_N-12",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-336",
+      "dst_port": "a_in",
+      "weight": 86
+    },
+    {
+      "src_process": "LIFProcess_N-12",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1207",
+      "dst_port": "a_in",
+      "weight": 12
+    },
+    {
+      "src_process": "LIFProcess_N-12",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-816",
+      "dst_port": "a_in",
+      "weight": 14
+    },
+    {
+      "src_process": "LIFProcess_N-12",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-45",
+      "dst_port": "a_in",
+      "weight": 35
+    },
+    {
+      "src_process": "LIFProcess_N-12",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-179",
+      "dst_port": "a_in",
+      "weight": 9
+    },
+    {
+      "src_process": "LIFProcess_N-12",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-771",
+      "dst_port": "a_in",
+      "weight": 13
+    },
+    {
+      "src_process": "LIFProcess_N-12",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-455",
+      "dst_port": "a_in",
+      "weight": 12
+    },
+    {
+      "src_process": "LIFProcess_N-12",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1128",
+      "dst_port": "a_in",
+      "weight": 53
+    },
+    {
+      "src_process": "LIFProcess_N-12",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1809",
+      "dst_port": "a_in",
+      "weight": 8
+    },
+    {
+      "src_process": "LIFProcess_N-13",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1232",
+      "dst_port": "a_in",
+      "weight": 16
+    },
+    {
+      "src_process": "LIFProcess_N-13",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1675",
+      "dst_port": "a_in",
+      "weight": 31
+    },
+    {
+      "src_process": "LIFProcess_N-13",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1526",
+      "dst_port": "a_in",
+      "weight": 45
+    },
+    {
+      "src_process": "LIFProcess_N-13",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1166",
+      "dst_port": "a_in",
+      "weight": 61
+    },
+    {
+      "src_process": "LIFProcess_N-13",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1107",
+      "dst_port": "a_in",
+      "weight": 25
+    },
+    {
+      "src_process": "LIFProcess_N-13",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-726",
+      "dst_port": "a_in",
+      "weight": 17
+    },
+    {
+      "src_process": "LIFProcess_N-13",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1827",
+      "dst_port": "a_in",
+      "weight": 102
+    },
+    {
+      "src_process": "LIFProcess_N-14",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-738",
+      "dst_port": "a_in",
+      "weight": 62
+    },
+    {
+      "src_process": "LIFProcess_N-14",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-943",
+      "dst_port": "a_in",
+      "weight": 23
+    },
+    {
+      "src_process": "LIFProcess_N-14",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-655",
+      "dst_port": "a_in",
+      "weight": 21
+    },
+    {
+      "src_process": "LIFProcess_N-14",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1785",
+      "dst_port": "a_in",
+      "weight": 24
+    },
+    {
+      "src_process": "LIFProcess_N-14",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1475",
+      "dst_port": "a_in",
+      "weight": 27
+    },
+    {
+      "src_process": "LIFProcess_N-14",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1614",
+      "dst_port": "a_in",
+      "weight": 19
+    },
+    {
+      "src_process": "LIFProcess_N-15",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-611",
+      "dst_port": "a_in",
+      "weight": 12
+    },
+    {
+      "src_process": "LIFProcess_N-15",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-129",
+      "dst_port": "a_in",
+      "weight": 6
+    },
+    {
+      "src_process": "LIFProcess_N-15",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-516",
+      "dst_port": "a_in",
+      "weight": 40
+    },
+    {
+      "src_process": "LIFProcess_N-15",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1945",
+      "dst_port": "a_in",
+      "weight": 21
+    },
+    {
+      "src_process": "LIFProcess_N-15",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-370",
+      "dst_port": "a_in",
+      "weight": 34
+    },
+    {
+      "src_process": "LIFProcess_N-15",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-531",
+      "dst_port": "a_in",
+      "weight": 11
+    },
+    {
+      "src_process": "LIFProcess_N-15",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1253",
+      "dst_port": "a_in",
+      "weight": 32
+    },
+    {
+      "src_process": "LIFProcess_N-15",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1256",
+      "dst_port": "a_in",
+      "weight": 18
+    },
+    {
+      "src_process": "LIFProcess_N-15",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1735",
+      "dst_port": "a_in",
+      "weight": 2
+    },
+    {
+      "src_process": "LIFProcess_N-15",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-768",
+      "dst_port": "a_in",
+      "weight": 12
+    },
+    {
+      "src_process": "LIFProcess_N-15",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1222",
+      "dst_port": "a_in",
+      "weight": 47
+    },
+    {
+      "src_process": "LIFProcess_N-15",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-7",
+      "dst_port": "a_in",
+      "weight": 13
+    },
+    {
+      "src_process": "LIFProcess_N-15",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1590",
+      "dst_port": "a_in",
+      "weight": 17
+    },
+    {
+      "src_process": "LIFProcess_N-15",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1315",
+      "dst_port": "a_in",
+      "weight": 12
+    },
+    {
+      "src_process": "LIFProcess_N-16",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1384",
+      "dst_port": "a_in",
+      "weight": 8
+    },
+    {
+      "src_process": "LIFProcess_N-16",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-480",
+      "dst_port": "a_in",
+      "weight": 35
+    },
+    {
+      "src_process": "LIFProcess_N-16",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-500",
+      "dst_port": "a_in",
+      "weight": 17
+    },
+    {
+      "src_process": "LIFProcess_N-16",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1241",
+      "dst_port": "a_in",
+      "weight": 7
+    },
+    {
+      "src_process": "LIFProcess_N-16",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-138",
+      "dst_port": "a_in",
+      "weight": 35
+    },
+    {
+      "src_process": "LIFProcess_N-16",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-796",
+      "dst_port": "a_in",
+      "weight": 8
+    },
+    {
+      "src_process": "LIFProcess_N-16",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1391",
+      "dst_port": "a_in",
+      "weight": 18
+    },
+    {
+      "src_process": "LIFProcess_N-16",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1035",
+      "dst_port": "a_in",
+      "weight": 28
+    },
+    {
+      "src_process": "LIFProcess_N-16",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1547",
+      "dst_port": "a_in",
+      "weight": 19
+    },
+    {
+      "src_process": "LIFProcess_N-16",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1967",
+      "dst_port": "a_in",
+      "weight": 25
+    },
+    {
+      "src_process": "LIFProcess_N-16",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-987",
+      "dst_port": "a_in",
+      "weight": 29
+    },
+    {
+      "src_process": "LIFProcess_N-16",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1268",
+      "dst_port": "a_in",
+      "weight": 18
+    },
+    {
+      "src_process": "LIFProcess_N-16",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-757",
+      "dst_port": "a_in",
+      "weight": 20
+    },
+    {
+      "src_process": "LIFProcess_N-16",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-388",
+      "dst_port": "a_in",
+      "weight": 7
+    },
+    {
+      "src_process": "LIFProcess_N-16",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-590",
+      "dst_port": "a_in",
+      "weight": 3
+    },
+    {
+      "src_process": "LIFProcess_N-16",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1463",
+      "dst_port": "a_in",
+      "weight": 3
+    },
+    {
+      "src_process": "LIFProcess_N-17",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-184",
+      "dst_port": "a_in",
+      "weight": 14
+    },
+    {
+      "src_process": "LIFProcess_N-17",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-908",
+      "dst_port": "a_in",
+      "weight": 22
+    },
+    {
+      "src_process": "LIFProcess_N-17",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1062",
+      "dst_port": "a_in",
+      "weight": 1
+    },
+    {
+      "src_process": "LIFProcess_N-17",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-924",
+      "dst_port": "a_in",
+      "weight": 69
+    },
+    {
+      "src_process": "LIFProcess_N-17",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-783",
+      "dst_port": "a_in",
+      "weight": 45
+    },
+    {
+      "src_process": "LIFProcess_N-17",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-986",
+      "dst_port": "a_in",
+      "weight": 26
+    },
+    {
+      "src_process": "LIFProcess_N-17",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1760",
+      "dst_port": "a_in",
+      "weight": 49
+    },
+    {
+      "src_process": "LIFProcess_N-17",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1689",
+      "dst_port": "a_in",
+      "weight": 39
+    },
+    {
+      "src_process": "LIFProcess_N-17",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-609",
+      "dst_port": "a_in",
+      "weight": 16
+    },
+    {
+      "src_process": "LIFProcess_N-17",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1068",
+      "dst_port": "a_in",
+      "weight": 21
+    },
+    {
+      "src_process": "LIFProcess_N-17",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-952",
+      "dst_port": "a_in",
+      "weight": 7
+    },
+    {
+      "src_process": "LIFProcess_N-17",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-687",
+      "dst_port": "a_in",
+      "weight": 44
+    },
+    {
+      "src_process": "LIFProcess_N-17",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-817",
+      "dst_port": "a_in",
+      "weight": 27
+    },
+    {
+      "src_process": "LIFProcess_N-17",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-295",
+      "dst_port": "a_in",
+      "weight": 42
+    },
+    {
+      "src_process": "LIFProcess_N-17",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1023",
+      "dst_port": "a_in",
+      "weight": 57
+    },
+    {
+      "src_process": "LIFProcess_N-17",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1849",
+      "dst_port": "a_in",
+      "weight": 1
+    },
+    {
+      "src_process": "LIFProcess_N-17",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1511",
+      "dst_port": "a_in",
+      "weight": 14
+    },
+    {
+      "src_process": "LIFProcess_N-17",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1699",
+      "dst_port": "a_in",
+      "weight": 7
+    },
+    {
+      "src_process": "LIFProcess_N-17",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-171",
+      "dst_port": "a_in",
+      "weight": 4
+    },
+    {
+      "src_process": "LIFProcess_N-18",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-229",
+      "dst_port": "a_in",
+      "weight": 22
+    },
+    {
+      "src_process": "LIFProcess_N-18",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-403",
+      "dst_port": "a_in",
+      "weight": 6
+    },
+    {
+      "src_process": "LIFProcess_N-18",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1225",
+      "dst_port": "a_in",
+      "weight": 39
+    },
+    {
+      "src_process": "LIFProcess_N-18",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1842",
+      "dst_port": "a_in",
+      "weight": 14
+    },
+    {
+      "src_process": "LIFProcess_N-18",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1832",
+      "dst_port": "a_in",
+      "weight": 22
+    },
+    {
+      "src_process": "LIFProcess_N-18",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1419",
+      "dst_port": "a_in",
+      "weight": 2
+    },
+    {
+      "src_process": "LIFProcess_N-18",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1728",
+      "dst_port": "a_in",
+      "weight": 6
+    },
+    {
+      "src_process": "LIFProcess_N-18",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1575",
+      "dst_port": "a_in",
+      "weight": 13
+    },
+    {
+      "src_process": "LIFProcess_N-18",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1709",
+      "dst_port": "a_in",
+      "weight": 20
+    },
+    {
+      "src_process": "LIFProcess_N-18",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1499",
+      "dst_port": "a_in",
+      "weight": 22
+    },
+    {
+      "src_process": "LIFProcess_N-18",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-755",
+      "dst_port": "a_in",
+      "weight": 29
+    },
+    {
+      "src_process": "LIFProcess_N-18",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-131",
+      "dst_port": "a_in",
+      "weight": 10
+    },
+    {
+      "src_process": "LIFProcess_N-18",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-668",
+      "dst_port": "a_in",
+      "weight": 1
+    },
+    {
+      "src_process": "LIFProcess_N-18",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1645",
+      "dst_port": "a_in",
+      "weight": 5
+    },
+    {
+      "src_process": "LIFProcess_N-18",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-436",
+      "dst_port": "a_in",
+      "weight": 17
+    },
+    {
+      "src_process": "LIFProcess_N-19",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1227",
+      "dst_port": "a_in",
+      "weight": 12
+    },
+    {
+      "src_process": "LIFProcess_N-19",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1777",
+      "dst_port": "a_in",
+      "weight": 9
+    },
+    {
+      "src_process": "LIFProcess_N-19",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1923",
+      "dst_port": "a_in",
+      "weight": 44
+    },
+    {
+      "src_process": "LIFProcess_N-19",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1709",
+      "dst_port": "a_in",
+      "weight": 8
+    },
+    {
+      "src_process": "LIFProcess_N-19",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-299",
+      "dst_port": "a_in",
+      "weight": 40
+    },
+    {
+      "src_process": "LIFProcess_N-19",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1992",
+      "dst_port": "a_in",
+      "weight": 14
+    },
+    {
+      "src_process": "LIFProcess_N-20",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1956",
+      "dst_port": "a_in",
+      "weight": 2
+    },
+    {
+      "src_process": "LIFProcess_N-20",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-334",
+      "dst_port": "a_in",
+      "weight": 42
+    },
+    {
+      "src_process": "LIFProcess_N-20",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-272",
+      "dst_port": "a_in",
+      "weight": 61
+    },
+    {
+      "src_process": "LIFProcess_N-20",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-965",
+      "dst_port": "a_in",
+      "weight": 39
+    },
+    {
+      "src_process": "LIFProcess_N-20",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1997",
+      "dst_port": "a_in",
+      "weight": 18
+    },
+    {
+      "src_process": "LIFProcess_N-20",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-781",
+      "dst_port": "a_in",
+      "weight": 13
+    },
+    {
+      "src_process": "LIFProcess_N-20",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-997",
+      "dst_port": "a_in",
+      "weight": 8
+    },
+    {
+      "src_process": "LIFProcess_N-20",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-206",
+      "dst_port": "a_in",
+      "weight": 16
+    },
+    {
+      "src_process": "LIFProcess_N-20",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1822",
+      "dst_port": "a_in",
+      "weight": 23
+    },
+    {
+      "src_process": "LIFProcess_N-20",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1787",
+      "dst_port": "a_in",
+      "weight": 24
+    },
+    {
+      "src_process": "LIFProcess_N-20",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-386",
+      "dst_port": "a_in",
+      "weight": 3
+    },
+    {
+      "src_process": "LIFProcess_N-20",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1903",
+      "dst_port": "a_in",
+      "weight": 12
+    },
+    {
+      "src_process": "LIFProcess_N-21",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-535",
+      "dst_port": "a_in",
+      "weight": 10
+    },
+    {
+      "src_process": "LIFProcess_N-21",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1045",
+      "dst_port": "a_in",
+      "weight": 15
+    },
+    {
+      "src_process": "LIFProcess_N-21",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1309",
+      "dst_port": "a_in",
+      "weight": 3
+    },
+    {
+      "src_process": "LIFProcess_N-21",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1523",
+      "dst_port": "a_in",
+      "weight": 5
+    },
+    {
+      "src_process": "LIFProcess_N-21",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1662",
+      "dst_port": "a_in",
+      "weight": 20
+    },
+    {
+      "src_process": "LIFProcess_N-21",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1774",
+      "dst_port": "a_in",
+      "weight": 20
+    },
+    {
+      "src_process": "LIFProcess_N-21",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1272",
+      "dst_port": "a_in",
+      "weight": 25
+    },
+    {
+      "src_process": "LIFProcess_N-21",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1379",
+      "dst_port": "a_in",
+      "weight": 15
+    },
+    {
+      "src_process": "LIFProcess_N-21",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-303",
+      "dst_port": "a_in",
+      "weight": 45
+    },
+    {
+      "src_process": "LIFProcess_N-21",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1517",
+      "dst_port": "a_in",
+      "weight": 17
+    },
+    {
+      "src_process": "LIFProcess_N-21",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-357",
+      "dst_port": "a_in",
+      "weight": 27
+    },
+    {
+      "src_process": "LIFProcess_N-21",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-412",
+      "dst_port": "a_in",
+      "weight": 15
+    },
+    {
+      "src_process": "LIFProcess_N-22",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-553",
+      "dst_port": "a_in",
+      "weight": 7
+    },
+    {
+      "src_process": "LIFProcess_N-22",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-967",
+      "dst_port": "a_in",
+      "weight": 6
+    },
+    {
+      "src_process": "LIFProcess_N-22",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1956",
+      "dst_port": "a_in",
+      "weight": 51
+    },
+    {
+      "src_process": "LIFProcess_N-22",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1274",
+      "dst_port": "a_in",
+      "weight": 26
+    },
+    {
+      "src_process": "LIFProcess_N-22",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1488",
+      "dst_port": "a_in",
+      "weight": 68
+    },
+    {
+      "src_process": "LIFProcess_N-22",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-629",
+      "dst_port": "a_in",
+      "weight": 12
+    },
+    {
+      "src_process": "LIFProcess_N-22",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1090",
+      "dst_port": "a_in",
+      "weight": 49
+    },
+    {
+      "src_process": "LIFProcess_N-22",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1104",
+      "dst_port": "a_in",
+      "weight": 35
+    },
+    {
+      "src_process": "LIFProcess_N-22",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-775",
+      "dst_port": "a_in",
+      "weight": 10
+    },
+    {
+      "src_process": "LIFProcess_N-22",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1917",
+      "dst_port": "a_in",
+      "weight": 6
+    },
+    {
+      "src_process": "LIFProcess_N-22",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-408",
+      "dst_port": "a_in",
+      "weight": 49
+    },
+    {
+      "src_process": "LIFProcess_N-22",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1974",
+      "dst_port": "a_in",
+      "weight": 23
+    },
+    {
+      "src_process": "LIFProcess_N-22",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-341",
+      "dst_port": "a_in",
+      "weight": 31
+    },
+    {
+      "src_process": "LIFProcess_N-23",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1535",
+      "dst_port": "a_in",
+      "weight": 6
+    },
+    {
+      "src_process": "LIFProcess_N-23",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-205",
+      "dst_port": "a_in",
+      "weight": 15
+    },
+    {
+      "src_process": "LIFProcess_N-23",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1117",
+      "dst_port": "a_in",
+      "weight": 30
+    },
+    {
+      "src_process": "LIFProcess_N-23",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1",
+      "dst_port": "a_in",
+      "weight": 44
+    },
+    {
+      "src_process": "LIFProcess_N-23",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-585",
+      "dst_port": "a_in",
+      "weight": 3
+    },
+    {
+      "src_process": "LIFProcess_N-23",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1918",
+      "dst_port": "a_in",
+      "weight": 25
+    },
+    {
+      "src_process": "LIFProcess_N-23",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-760",
+      "dst_port": "a_in",
+      "weight": 5
+    },
+    {
+      "src_process": "LIFProcess_N-23",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1565",
+      "dst_port": "a_in",
+      "weight": 8
+    },
+    {
+      "src_process": "LIFProcess_N-23",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-743",
+      "dst_port": "a_in",
+      "weight": 33
+    },
+    {
+      "src_process": "LIFProcess_N-23",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1254",
+      "dst_port": "a_in",
+      "weight": 8
+    },
+    {
+      "src_process": "LIFProcess_N-23",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1296",
+      "dst_port": "a_in",
+      "weight": 17
+    },
+    {
+      "src_process": "LIFProcess_N-23",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1984",
+      "dst_port": "a_in",
+      "weight": 5
+    },
+    {
+      "src_process": "LIFProcess_N-24",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-173",
+      "dst_port": "a_in",
+      "weight": 4
+    },
+    {
+      "src_process": "LIFProcess_N-24",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1886",
+      "dst_port": "a_in",
+      "weight": 40
+    },
+    {
+      "src_process": "LIFProcess_N-24",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-997",
+      "dst_port": "a_in",
+      "weight": 23
+    },
+    {
+      "src_process": "LIFProcess_N-24",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-471",
+      "dst_port": "a_in",
+      "weight": 4
+    },
+    {
+      "src_process": "LIFProcess_N-24",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-773",
+      "dst_port": "a_in",
+      "weight": 49
+    },
+    {
+      "src_process": "LIFProcess_N-24",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-199",
+      "dst_port": "a_in",
+      "weight": 29
+    },
+    {
+      "src_process": "LIFProcess_N-24",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-858",
+      "dst_port": "a_in",
+      "weight": 12
+    },
+    {
+      "src_process": "LIFProcess_N-24",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1082",
+      "dst_port": "a_in",
+      "weight": 39
+    },
+    {
+      "src_process": "LIFProcess_N-24",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1703",
+      "dst_port": "a_in",
+      "weight": 25
+    },
+    {
+      "src_process": "LIFProcess_N-24",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-953",
+      "dst_port": "a_in",
+      "weight": 20
+    },
+    {
+      "src_process": "LIFProcess_N-24",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-739",
+      "dst_port": "a_in",
+      "weight": 4
+    },
+    {
+      "src_process": "LIFProcess_N-24",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1406",
+      "dst_port": "a_in",
+      "weight": 61
+    },
+    {
+      "src_process": "LIFProcess_N-24",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1408",
+      "dst_port": "a_in",
+      "weight": 11
+    },
+    {
+      "src_process": "LIFProcess_N-24",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1697",
+      "dst_port": "a_in",
+      "weight": 43
+    },
+    {
+      "src_process": "LIFProcess_N-24",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1395",
+      "dst_port": "a_in",
+      "weight": 34
+    },
+    {
+      "src_process": "LIFProcess_N-24",
+      "src_port": "s_out",
+      "dst_process": "LIFProcess_N-1016",
+      "dst_port": "a_in",
+      "weight": 7
+    }
+  ]
+}

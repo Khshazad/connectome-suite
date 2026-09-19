@@ -1,0 +1,56 @@
+{
+  "graph_summary": {
+    "nodes": 2000,
+    "synapses": 24905
+  },
+  "latency_metrics": {
+    "time_to_first_spike_ms": 1.1,
+    "mean_isi_ms": 0.116,
+    "estimated_propagation_latency_ms": 2.986
+  },
+  "dynamic_range_metrics": {
+    "weight_dynamic_range_db": 42.82,
+    "min_weight": 0.1001,
+    "max_weight": 13.8429
+  },
+  "throughput_metrics": {
+    "total_spikes": 852,
+    "spikes_per_second": 8520.0,
+    "synaptic_ops_per_second_SOPS": 212190600.0,
+    "GSOPS": 0.2122
+  },
+  "hardware_profiles_evaluation": {
+    "Loihi_2": {
+      "energy_per_spike_pj": 23.0,
+      "total_dynamic_energy_nj": 19.596,
+      "total_power_mw": 15.196,
+      "gsops_per_watt": 13.963,
+      "quantization_bits": 8,
+      "weight_quantization_mse": 0.000244
+    },
+    "SpiNNaker_2": {
+      "energy_per_spike_pj": 45.0,
+      "total_dynamic_energy_nj": 38.34,
+      "total_power_mw": 40.383,
+      "gsops_per_watt": 5.254,
+      "quantization_bits": 16,
+      "weight_quantization_mse": 0.0
+    },
+    "TrueNorth": {
+      "energy_per_spike_pj": 26.0,
+      "total_dynamic_energy_nj": 22.152,
+      "total_power_mw": 70.222,
+      "gsops_per_watt": 3.022,
+      "quantization_bits": 4,
+      "weight_quantization_mse": 0.074682
+    },
+    "BrainScaleS_2": {
+      "energy_per_spike_pj": 120.0,
+      "total_dynamic_energy_nj": 102.24,
+      "total_power_mw": 121.022,
+      "gsops_per_watt": 1.753,
+      "quantization_bits": 6,
+      "weight_quantization_mse": 0.004069
+    }
+  }
+}

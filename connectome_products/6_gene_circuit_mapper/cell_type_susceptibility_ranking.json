@@ -1,0 +1,482 @@
+[
+  {
+    "cell_type": "giant_fiber",
+    "brain_region": "mushroom_body",
+    "neuron_count": 10,
+    "total_receptor_density": 4.3342,
+    "mean_betweenness": 0.0,
+    "mean_degree": 0.0,
+    "susceptibility_score": 1.7337,
+    "primary_target_family": "nAChR",
+    "family_expression": {
+      "nAChR": 0.671,
+      "GABAR": 0.365,
+      "DopR": 0.22,
+      "GluR": 0.285
+    }
+  },
+  {
+    "cell_type": "kenyon_cell",
+    "brain_region": "mushroom_body",
+    "neuron_count": 25,
+    "total_receptor_density": 4.2372,
+    "mean_betweenness": 0.0002,
+    "mean_degree": 0.0018,
+    "susceptibility_score": 1.7,
+    "primary_target_family": "nAChR",
+    "family_expression": {
+      "nAChR": 0.55,
+      "GABAR": 0.393,
+      "DopR": 0.226,
+      "GluR": 0.365
+    }
+  },
+  {
+    "cell_type": "kenyon_cell",
+    "brain_region": "ventral_nerve_cord",
+    "neuron_count": 40,
+    "total_receptor_density": 4.0958,
+    "mean_betweenness": 0.0001,
+    "mean_degree": 0.0016,
+    "susceptibility_score": 1.6428,
+    "primary_target_family": "nAChR",
+    "family_expression": {
+      "nAChR": 0.48,
+      "GABAR": 0.458,
+      "DopR": 0.198,
+      "GluR": 0.345
+    }
+  },
+  {
+    "cell_type": "central_complex",
+    "brain_region": "optic_lobe",
+    "neuron_count": 19,
+    "total_receptor_density": 4.0945,
+    "mean_betweenness": 0.0002,
+    "mean_degree": 0.0005,
+    "susceptibility_score": 1.6399,
+    "primary_target_family": "nAChR",
+    "family_expression": {
+      "nAChR": 0.634,
+      "GABAR": 0.336,
+      "DopR": 0.131,
+      "GluR": 0.395
+    }
+  },
+  {
+    "cell_type": "giant_fiber",
+    "brain_region": "antennal_lobe",
+    "neuron_count": 8,
+    "total_receptor_density": 4.0649,
+    "mean_betweenness": 0.0,
+    "mean_degree": 0.0,
+    "susceptibility_score": 1.626,
+    "primary_target_family": "GABAR",
+    "family_expression": {
+      "nAChR": 0.459,
+      "GABAR": 0.465,
+      "DopR": 0.212,
+      "GluR": 0.329
+    }
+  },
+  {
+    "cell_type": "motor",
+    "brain_region": "ventral_nerve_cord",
+    "neuron_count": 80,
+    "total_receptor_density": 4.0232,
+    "mean_betweenness": 0.0005,
+    "mean_degree": 0.0009,
+    "susceptibility_score": 1.6135,
+    "primary_target_family": "nAChR",
+    "family_expression": {
+      "nAChR": 0.517,
+      "GABAR": 0.407,
+      "DopR": 0.174,
+      "GluR": 0.365
+    }
+  },
+  {
+    "cell_type": "interneuron",
+    "brain_region": "central_brain",
+    "neuron_count": 141,
+    "total_receptor_density": 4.0142,
+    "mean_betweenness": 0.0002,
+    "mean_degree": 0.0016,
+    "susceptibility_score": 1.6102,
+    "primary_target_family": "nAChR",
+    "family_expression": {
+      "nAChR": 0.522,
+      "GABAR": 0.379,
+      "DopR": 0.204,
+      "GluR": 0.35
+    }
+  },
+  {
+    "cell_type": "central_complex",
+    "brain_region": "ventral_nerve_cord",
+    "neuron_count": 17,
+    "total_receptor_density": 4.0166,
+    "mean_betweenness": 0.0,
+    "mean_degree": 0.0,
+    "susceptibility_score": 1.6066,
+    "primary_target_family": "nAChR",
+    "family_expression": {
+      "nAChR": 0.467,
+      "GABAR": 0.455,
+      "DopR": 0.167,
+      "GluR": 0.375
+    }
+  },
+  {
+    "cell_type": "sensory",
+    "brain_region": "mushroom_body",
+    "neuron_count": 76,
+    "total_receptor_density": 3.9703,
+    "mean_betweenness": 0.0001,
+    "mean_degree": 0.0014,
+    "susceptibility_score": 1.5921,
+    "primary_target_family": "nAChR",
+    "family_expression": {
+      "nAChR": 0.467,
+      "GABAR": 0.379,
+      "DopR": 0.202,
+      "GluR": 0.414
+    }
+  },
+  {
+    "cell_type": "giant_fiber",
+    "brain_region": "ventral_nerve_cord",
+    "neuron_count": 15,
+    "total_receptor_density": 3.9556,
+    "mean_betweenness": 0.0014,
+    "mean_degree": 0.0013,
+    "susceptibility_score": 1.5906,
+    "primary_target_family": "nAChR",
+    "family_expression": {
+      "nAChR": 0.564,
+      "GABAR": 0.382,
+      "DopR": 0.109,
+      "GluR": 0.394
+    }
+  },
+  {
+    "cell_type": "sensory",
+    "brain_region": "optic_lobe",
+    "neuron_count": 98,
+    "total_receptor_density": 3.9654,
+    "mean_betweenness": 0.0005,
+    "mean_degree": 0.001,
+    "susceptibility_score": 1.5903,
+    "primary_target_family": "nAChR",
+    "family_expression": {
+      "nAChR": 0.492,
+      "GABAR": 0.421,
+      "DopR": 0.148,
+      "GluR": 0.39
+    }
+  },
+  {
+    "cell_type": "motor",
+    "brain_region": "antennal_lobe",
+    "neuron_count": 83,
+    "total_receptor_density": 3.9655,
+    "mean_betweenness": 0.0001,
+    "mean_degree": 0.0007,
+    "susceptibility_score": 1.5882,
+    "primary_target_family": "nAChR",
+    "family_expression": {
+      "nAChR": 0.488,
+      "GABAR": 0.426,
+      "DopR": 0.154,
+      "GluR": 0.381
+    }
+  },
+  {
+    "cell_type": "motor",
+    "brain_region": "optic_lobe",
+    "neuron_count": 75,
+    "total_receptor_density": 3.9612,
+    "mean_betweenness": 0.0004,
+    "mean_degree": 0.0007,
+    "susceptibility_score": 1.5877,
+    "primary_target_family": "nAChR",
+    "family_expression": {
+      "nAChR": 0.487,
+      "GABAR": 0.431,
+      "DopR": 0.16,
+      "GluR": 0.364
+    }
+  },
+  {
+    "cell_type": "interneuron",
+    "brain_region": "mushroom_body",
+    "neuron_count": 188,
+    "total_receptor_density": 3.9494,
+    "mean_betweenness": 0.0002,
+    "mean_degree": 0.0016,
+    "susceptibility_score": 1.5844,
+    "primary_target_family": "nAChR",
+    "family_expression": {
+      "nAChR": 0.492,
+      "GABAR": 0.398,
+      "DopR": 0.173,
+      "GluR": 0.379
+    }
+  },
+  {
+    "cell_type": "central_complex",
+    "brain_region": "central_brain",
+    "neuron_count": 23,
+    "total_receptor_density": 3.9562,
+    "mean_betweenness": 0.0,
+    "mean_degree": 0.0007,
+    "susceptibility_score": 1.5842,
+    "primary_target_family": "nAChR",
+    "family_expression": {
+      "nAChR": 0.425,
+      "GABAR": 0.395,
+      "DopR": 0.215,
+      "GluR": 0.424
+    }
+  },
+  {
+    "cell_type": "motor",
+    "brain_region": "mushroom_body",
+    "neuron_count": 73,
+    "total_receptor_density": 3.942,
+    "mean_betweenness": 0.0004,
+    "mean_degree": 0.0012,
+    "susceptibility_score": 1.5812,
+    "primary_target_family": "nAChR",
+    "family_expression": {
+      "nAChR": 0.533,
+      "GABAR": 0.328,
+      "DopR": 0.192,
+      "GluR": 0.392
+    }
+  },
+  {
+    "cell_type": "interneuron",
+    "brain_region": "optic_lobe",
+    "neuron_count": 186,
+    "total_receptor_density": 3.9364,
+    "mean_betweenness": 0.0002,
+    "mean_degree": 0.0015,
+    "susceptibility_score": 1.579,
+    "primary_target_family": "nAChR",
+    "family_expression": {
+      "nAChR": 0.478,
+      "GABAR": 0.402,
+      "DopR": 0.18,
+      "GluR": 0.378
+    }
+  },
+  {
+    "cell_type": "giant_fiber",
+    "brain_region": "central_brain",
+    "neuron_count": 5,
+    "total_receptor_density": 3.9154,
+    "mean_betweenness": 0.0,
+    "mean_degree": 0.003,
+    "susceptibility_score": 1.5739,
+    "primary_target_family": "GluR",
+    "family_expression": {
+      "nAChR": 0.31,
+      "GABAR": 0.362,
+      "DopR": 0.277,
+      "GluR": 0.534
+    }
+  },
+  {
+    "cell_type": "sensory",
+    "brain_region": "central_brain",
+    "neuron_count": 84,
+    "total_receptor_density": 3.908,
+    "mean_betweenness": 0.0005,
+    "mean_degree": 0.0013,
+    "susceptibility_score": 1.5682,
+    "primary_target_family": "nAChR",
+    "family_expression": {
+      "nAChR": 0.412,
+      "GABAR": 0.391,
+      "DopR": 0.23,
+      "GluR": 0.404
+    }
+  },
+  {
+    "cell_type": "sensory",
+    "brain_region": "ventral_nerve_cord",
+    "neuron_count": 88,
+    "total_receptor_density": 3.8822,
+    "mean_betweenness": 0.0002,
+    "mean_degree": 0.0018,
+    "susceptibility_score": 1.5579,
+    "primary_target_family": "nAChR",
+    "family_expression": {
+      "nAChR": 0.471,
+      "GABAR": 0.408,
+      "DopR": 0.157,
+      "GluR": 0.388
+    }
+  },
+  {
+    "cell_type": "interneuron",
+    "brain_region": "antennal_lobe",
+    "neuron_count": 194,
+    "total_receptor_density": 3.8734,
+    "mean_betweenness": 0.0003,
+    "mean_degree": 0.0009,
+    "susceptibility_score": 1.5528,
+    "primary_target_family": "nAChR",
+    "family_expression": {
+      "nAChR": 0.46,
+      "GABAR": 0.39,
+      "DopR": 0.193,
+      "GluR": 0.372
+    }
+  },
+  {
+    "cell_type": "interneuron",
+    "brain_region": "ventral_nerve_cord",
+    "neuron_count": 164,
+    "total_receptor_density": 3.8185,
+    "mean_betweenness": 0.0001,
+    "mean_degree": 0.0007,
+    "susceptibility_score": 1.5296,
+    "primary_target_family": "nAChR",
+    "family_expression": {
+      "nAChR": 0.486,
+      "GABAR": 0.356,
+      "DopR": 0.188,
+      "GluR": 0.364
+    }
+  },
+  {
+    "cell_type": "central_complex",
+    "brain_region": "mushroom_body",
+    "neuron_count": 27,
+    "total_receptor_density": 3.7902,
+    "mean_betweenness": 0.0006,
+    "mean_degree": 0.0045,
+    "susceptibility_score": 1.5294,
+    "primary_target_family": "nAChR",
+    "family_expression": {
+      "nAChR": 0.514,
+      "GABAR": 0.404,
+      "DopR": 0.127,
+      "GluR": 0.327
+    }
+  },
+  {
+    "cell_type": "motor",
+    "brain_region": "central_brain",
+    "neuron_count": 83,
+    "total_receptor_density": 3.8067,
+    "mean_betweenness": 0.0002,
+    "mean_degree": 0.0016,
+    "susceptibility_score": 1.5276,
+    "primary_target_family": "nAChR",
+    "family_expression": {
+      "nAChR": 0.519,
+      "GABAR": 0.326,
+      "DopR": 0.177,
+      "GluR": 0.37
+    }
+  },
+  {
+    "cell_type": "kenyon_cell",
+    "brain_region": "central_brain",
+    "neuron_count": 31,
+    "total_receptor_density": 3.8057,
+    "mean_betweenness": 0.0,
+    "mean_degree": 0.0011,
+    "susceptibility_score": 1.5251,
+    "primary_target_family": "nAChR",
+    "family_expression": {
+      "nAChR": 0.449,
+      "GABAR": 0.361,
+      "DopR": 0.198,
+      "GluR": 0.393
+    }
+  },
+  {
+    "cell_type": "kenyon_cell",
+    "brain_region": "optic_lobe",
+    "neuron_count": 27,
+    "total_receptor_density": 3.7713,
+    "mean_betweenness": 0.0011,
+    "mean_degree": 0.0009,
+    "susceptibility_score": 1.5146,
+    "primary_target_family": "nAChR",
+    "family_expression": {
+      "nAChR": 0.427,
+      "GABAR": 0.301,
+      "DopR": 0.251,
+      "GluR": 0.417
+    }
+  },
+  {
+    "cell_type": "sensory",
+    "brain_region": "antennal_lobe",
+    "neuron_count": 82,
+    "total_receptor_density": 3.76,
+    "mean_betweenness": 0.0001,
+    "mean_degree": 0.0012,
+    "susceptibility_score": 1.5074,
+    "primary_target_family": "nAChR",
+    "family_expression": {
+      "nAChR": 0.476,
+      "GABAR": 0.36,
+      "DopR": 0.168,
+      "GluR": 0.375
+    }
+  },
+  {
+    "cell_type": "central_complex",
+    "brain_region": "antennal_lobe",
+    "neuron_count": 22,
+    "total_receptor_density": 3.7254,
+    "mean_betweenness": 0.0001,
+    "mean_degree": 0.0014,
+    "susceptibility_score": 1.4939,
+    "primary_target_family": "nAChR",
+    "family_expression": {
+      "nAChR": 0.485,
+      "GABAR": 0.207,
+      "DopR": 0.233,
+      "GluR": 0.475
+    }
+  },
+  {
+    "cell_type": "giant_fiber",
+    "brain_region": "optic_lobe",
+    "neuron_count": 6,
+    "total_receptor_density": 3.7268,
+    "mean_betweenness": 0.0,
+    "mean_degree": 0.0,
+    "susceptibility_score": 1.4907,
+    "primary_target_family": "nAChR",
+    "family_expression": {
+      "nAChR": 0.485,
+      "GABAR": 0.312,
+      "DopR": 0.226,
+      "GluR": 0.328
+    }
+  },
+  {
+    "cell_type": "kenyon_cell",
+    "brain_region": "antennal_lobe",
+    "neuron_count": 30,
+    "total_receptor_density": 3.6948,
+    "mean_betweenness": 0.0001,
+    "mean_degree": 0.0013,
+    "susceptibility_score": 1.4816,
+    "primary_target_family": "GluR",
+    "family_expression": {
+      "nAChR": 0.488,
+      "GABAR": 0.305,
+      "DopR": 0.106,
+      "GluR": 0.5
+    }
+  }
+]

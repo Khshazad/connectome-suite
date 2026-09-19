@@ -1,0 +1,29 @@
+{
+  "product_id": 8,
+  "name": "Neuromorphic Edge-AI Pruner",
+  "connectome_calibration_neurons": 2000,
+  "mlp_pruning_benchmark": {
+    "total_parameters": 264704,
+    "nonzero_parameters": 39704,
+    "overall_sparsity_pct": 85.0,
+    "dense_memory_mb": 1.0098,
+    "estimated_sparse_memory_mb": 0.4544,
+    "memory_reduction_factor": 2.22,
+    "mse_reconstruction_error": 0.007203,
+    "representation_cosine_similarity": 0.2232,
+    "representation_capacity_preserved": false
+  },
+  "cnn_pruning_benchmark": {
+    "total_parameters": 60256,
+    "nonzero_parameters": 12049,
+    "overall_sparsity_pct": 80.0,
+    "dense_memory_mb": 0.2299,
+    "estimated_sparse_memory_mb": 0.1379,
+    "memory_reduction_factor": 1.67,
+    "mse_reconstruction_error": 0.002093,
+    "representation_cosine_similarity": 0.3722,
+    "representation_capacity_preserved": false
+  },
+  "sparse_tensors_generated": 3,
+  "status": "SUCCESS"
+}

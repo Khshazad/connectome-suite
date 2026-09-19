@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connectome & Bio-AI Suite — Live Demos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #07090e;
+            --panel-bg: rgba(18, 22, 32, 0.75);
+            --border-color: rgba(255, 255, 255, 0.1);
+            --accent-cyan: #00f2fe;
+            --accent-purple: #7928ca;
+            --accent-green: #00e676;
+            --accent-pink: #ff007f;
+            --accent-orange: #ff9100;
+            --text-main: #f0f4f8;
+            --text-dim: #8a99ad;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Outfit', sans-serif; }
+        body { background-color: var(--bg-dark); color: var(--text-main); min-height: 100vh; padding-bottom: 60px; background-image: radial-gradient(circle at 50% 0%, rgba(0, 242, 254, 0.08) 0%, transparent 60%); }
+
+        header {
+            padding: 40px 20px 20px;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+        }
+
+        h1 { font-size: 42px; font-weight: 700; letter-spacing: -1px; margin-bottom: 12px; background: linear-gradient(180deg, #fff 0%, #a0aec0 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        p.subtitle { font-size: 18px; color: var(--text-dim); max-width: 650px; margin: 0 auto 30px; line-height: 1.6; }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 24px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .card {
+            background: var(--panel-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 28px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(20px);
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(0, 242, 254, 0.4);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 30px rgba(0, 242, 254, 0.15);
+        }
+
+        .card-icon { font-size: 36px; margin-bottom: 16px; display: inline-block; }
+        .card-title { font-size: 22px; font-weight: 700; margin-bottom: 10px; color: #fff; }
+        .card-desc { font-size: 14px; color: var(--text-dim); line-height: 1.6; margin-bottom: 24px; flex-grow: 1; }
+
+        .tags-row { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px; }
+        .tag { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.08); padding: 4px 10px; border-radius: 6px; font-size: 11px; font-weight: 600; color: var(--text-dim); font-family: 'JetBrains Mono', monospace; }
+
+        .btn-launch {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background: linear-gradient(135deg, #0052d4, #4364f7, #6fb1fc);
+            color: #fff;
+            padding: 12px 20px;
+            border-radius: 10px;
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .btn-launch:hover { opacity: 0.9; transform: scale(1.02); }
+
+        footer { text-align: center; padding: 40px 20px 0; color: var(--text-dim); font-size: 13px; }
+        footer a { color: var(--accent-cyan); text-decoration: none; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="badge">Fruit Fly Connectome Suite</div>
+        <h1>Bio-AI Web Workstation & Live Apps</h1>
+        <p class="subtitle">Self-contained 3D WebGL Explorers, Bio-Robotics Simulators, and In-Silico Pharma Discovery Interfaces hosted live on GitHub Pages.</p>
+    </header>
+
+    <div class="grid-container">
+        <!-- App 1 -->
+        <div class="card">
+            <div>
+                <div class="card-icon">🧠</div>
+                <div class="card-title">3D Interactive Connectome Explorer</div>
+                <div class="card-desc">Interactive Three.js 3D brain point cloud with cell-type filtering, pulse signal propagation animations, and real-time neuron lesioning simulation.</div>
+                <div class="tags-row">
+                    <span class="tag">WebGL</span>
+                    <span class="tag">Three.js</span>
+                    <span class="tag">3D Graph</span>
+                    <span class="tag">Pulse Signal Flow</span>
+                </div>
+            </div>
+            <a href="explorer/index.html" class="btn-launch">🚀 Launch 3D Explorer →</a>
+        </div>
+
+        <!-- App 2 -->
+        <div class="card">
+            <div>
+                <div class="card-icon">🤖</div>
+                <div class="card-title">Bio-Robotics Central Complex Playground</div>
+                <div class="card-desc">Closed-loop robot navigation simulator driven by Central Complex EPG 360° Ring Attractors, EMD optical flow correlators, and Giant Fiber escape triggers.</div>
+                <div class="tags-row">
+                    <span class="tag">Central Complex</span>
+                    <span class="tag">EPG Attractor</span>
+                    <span class="tag">EMD Correlator</span>
+                    <span class="tag">1.2 mW Controller</span>
+                </div>
+            </div>
+            <a href="robotics/index.html" class="btn-launch">🤖 Launch Simulator →</a>
+        </div>
+
+        <!-- App 3 -->
+        <div class="card">
+            <div>
+                <div class="card-icon">🎮</div>
+                <div class="card-title">Behavior Prediction SaaS Game</div>
+                <div class="card-desc">Gamified neuroscience challenge platform comparing player intuition against Bio-GNN model predictions with dynamic scoring and leaderboards.</div>
+                <div class="tags-row">
+                    <span class="tag">SaaS Challenge</span>
+                    <span class="tag">Bio-GNN v4</span>
+                    <span class="tag">Leaderboard</span>
+                    <span class="tag">Web Audio</span>
+                </div>
+            </div>
+            <a href="game/index.html" class="btn-launch">🎮 Play Challenge →</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>Built with Antigravity & Hermes Orchestration. <a href="https://github.com" target="_blank">View GitHub Repository</a></p>
+    </footer>
+
+</body>
+</html>

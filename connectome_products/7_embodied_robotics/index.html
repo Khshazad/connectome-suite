@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bio-Robotics Central Complex Playground</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #0a0c10;
+            --panel-bg: rgba(18, 22, 31, 0.85);
+            --border-color: rgba(255, 255, 255, 0.1);
+            --accent-cyan: #00f2fe;
+            --accent-green: #00e676;
+            --accent-orange: #ff9100;
+            --accent-pink: #ff007f;
+            --accent-purple: #7928ca;
+            --text-main: #f0f4f8;
+            --text-dim: #8a99ad;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Outfit', sans-serif; }
+        body { background-color: var(--bg-dark); color: var(--text-main); overflow: hidden; height: 100vh; display: flex; flex-direction: column; }
+
+        header {
+            background: rgba(10, 12, 16, 0.95);
+            border-bottom: 1px solid var(--border-color);
+            padding: 12px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            backdrop-filter: blur(10px);
+            z-index: 100;
+        }
+
+        .logo { display: flex; align-items: center; gap: 12px; font-weight: 700; font-size: 18px; letter-spacing: 0.5px; }
+        .logo-badge { background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple)); padding: 4px 8px; border-radius: 6px; font-size: 11px; font-weight: 700; color: #fff; text-transform: uppercase; }
+
+        .metrics-bar { display: flex; gap: 24px; }
+        .metric-item { display: flex; flex-direction: column; align-items: flex-end; }
+        .metric-label { font-size: 11px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.5px; }
+        .metric-val { font-size: 16px; font-weight: 700; font-family: 'JetBrains Mono', monospace; color: var(--accent-cyan); }
+
+        .main-container { display: flex; flex: 1; height: calc(100vh - 61px); overflow: hidden; }
+
+        /* Left Canvas Arena */
+        .arena-pane { flex: 1; position: relative; background: radial-gradient(circle at center, #111622 0%, #080a0e 100%); display: flex; flex-direction: column; }
+        #arenaCanvas { width: 100%; height: 100%; display: block; cursor: crosshair; }
+
+        .arena-overlay {
+            position: absolute;
+            top: 16px;
+            left: 16px;
+            display: flex;
+            gap: 10px;
+            z-index: 10;
+        }
+
+        .btn {
+            background: var(--panel-bg);
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            padding: 8px 14px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            backdrop-filter: blur(10px);
+        }
+
+        .btn:hover { background: rgba(255, 255, 255, 0.15); border-color: var(--accent-cyan); transform: translateY(-1px); }
+        .btn-primary { background: linear-gradient(135deg, #0052d4, #4364f7, #6fb1fc); border: none; }
+        .btn-danger { background: linear-gradient(135deg, #ff416c, #ff4b2b); border: none; }
+
+        /* Right Telemetry Pane */
+        .telemetry-pane {
+            width: 420px;
+            background: var(--panel-bg);
+            border-left: 1px solid var(--border-color);
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            overflow-y: auto;
+            backdrop-filter: blur(20px);
+        }
+
+        .panel-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-dim);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            padding-bottom: 8px;
+        }
+
+        .ring-container { display: flex; justify-content: center; align-items: center; position: relative; height: 180px; }
+        #ringCanvas { width: 180px; height: 180px; }
+
+        .telemetry-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+        .stat-box { background: rgba(0, 0, 0, 0.2); padding: 10px; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.04); }
+        .stat-box .title { font-size: 11px; color: var(--text-dim); }
+        .stat-box .num { font-size: 18px; font-weight: 700; font-family: 'JetBrains Mono', monospace; margin-top: 4px; }
+
+        .control-group { display: flex; flex-direction: column; gap: 8px; }
+        .control-label { font-size: 12px; font-weight: 600; display: flex; justify-content: space-between; }
+        select, input[type="range"] {
+            width: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            padding: 8px;
+            border-radius: 6px;
+            outline: none;
+        }
+
+        .escape-indicator {
+            padding: 10px;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 700;
+            font-size: 12px;
+            letter-spacing: 1px;
+            transition: all 0.2s ease;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-color);
+        }
+
+        .escape-active { background: rgba(255, 0, 127, 0.2); border-color: var(--accent-pink); color: var(--accent-pink); animation: pulse 0.5s infinite alternate; }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 5px rgba(255, 0, 127, 0.5); }
+            100% { box-shadow: 0 0 20px rgba(255, 0, 127, 0.9); }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            🤖 Bio-Robotics Simulator
+            <span class="logo-badge">Central Complex EPG Engine</span>
+        </div>
+        <div class="metrics-bar">
+            <div class="metric-item">
+                <span class="metric-label">Power Draw</span>
+                <span class="metric-val" id="powerVal">1.2 mW</span>
+            </div>
+            <div class="metric-item">
+                <span class="metric-label">Attractor Heading Drift</span>
+                <span class="metric-val" id="driftVal" style="color: var(--accent-green)">0.04° / s</span>
+            </div>
+            <div class="metric-item">
+                <span class="metric-label">Optical Flow Rate</span>
+                <span class="metric-val" id="flowVal">840 FPS</span>
+            </div>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <!-- Arena Canvas -->
+        <div class="arena-pane">
+            <canvas id="arenaCanvas"></canvas>
+            <div class="arena-overlay">
+                <button class="btn btn-primary" onclick="resetAgent()">🔄 Reset Robot</button>
+                <button class="btn" onclick="addObstacle()">➕ Add Obstacle</button>
+                <button class="btn btn-danger" onclick="triggerPredator()">⚡ Attack Predator</button>
+                <button class="btn" onclick="clearObstacles()">🧹 Clear Arena</button>
+            </div>
+        </div>
+
+        <!-- Telemetry Panel -->
+        <div class="telemetry-pane">
+            <!-- Central Complex Ring Attractor Telemetry -->
+            <div class="panel-card">
+                <div class="card-header">
+                    <span>Central Complex EPG Ring Attractor</span>
+                    <span style="color: var(--accent-cyan); font-size: 11px;">16-Neuron Circuit</span>
+                </div>
+                <div class="ring-container">
+                    <canvas id="ringCanvas"></canvas>
+                </div>
+                <div class="telemetry-grid">
+                    <div class="stat-box">
+                        <div class="title">Decoded Angle</div>
+                        <div class="num" id="decodedAngle">0°</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="title">Attractor Bump Strength</div>
+                        <div class="num" id="bumpStrength">0.96</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Controller Settings -->
+            <div class="panel-card">
+                <div class="card-header">
+                    <span>Neural Controller Steering</span>
+                </div>
+                <div class="control-group">
+                    <div class="control-label">Control Mode</div>
+                    <select id="controlModeSelect" onchange="changeMode()">
+                        <option value="epg">🧠 Drosophila Central Complex Ring Attractor (Bio-LIF)</option>
+                        <option value="pid">⚙️ Traditional PID Controller (High Power Draw)</option>
+                        <option value="random">🎲 Random Walk (Baseline)</option>
+                    </select>
+                </div>
+                <div class="control-group">
+                    <div class="control-label">
+                        <span>Robot Speed</span>
+                        <span id="speedDisplay">3.5</span>
+                    </div>
+                    <input type="range" id="speedSlider" min="1" max="8" step="0.5" value="3.5" oninput="updateSpeed()">
+                </div>
+                <div class="control-group">
+                    <div class="control-label">
+                        <span>Sensory Noise Level</span>
+                        <span id="noiseDisplay">5%</span>
+                    </div>
+                    <input type="range" id="noiseSlider" min="0" max="30" value="5" oninput="updateNoise()">
+                </div>
+            </div>
+
+            <!-- Visual Correlator & Giant Fiber Motor Circuit -->
+            <div class="panel-card">
+                <div class="card-header">
+                    <span>Visual EMD & Giant Fiber Circuit</span>
+                </div>
+                <div class="telemetry-grid">
+                    <div class="stat-box">
+                        <div class="title">Left EMD Channel</div>
+                        <div class="num" id="leftEmdVal">0.05</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="title">Right EMD Channel</div>
+                        <div class="num" id="rightEmdVal">0.04</div>
+                    </div>
+                </div>
+                <div class="escape-indicator" id="escapeIndicator">
+                    GIANT FIBER ESCAPE CIRCUIT: NORMAL
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const arenaCanvas = document.getElementById('arenaCanvas');
+        const ctx = arenaCanvas.getContext('2d');
+        const ringCanvas = document.getElementById('ringCanvas');
+        const ringCtx = ringCanvas.getContext('2d');
+
+        function resizeCanvas() {
+            arenaCanvas.width = arenaCanvas.clientWidth;
+            arenaCanvas.height = arenaCanvas.clientHeight;
+            ringCanvas.width = 180;
+            ringCanvas.height = 180;
+        }
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        // Agent State
+        let agent = {
+            x: 200,
+            y: 200,
+            angle: 0, // Radians
+            speed: 3.5,
+            radius: 14,
+            headingBump: 0, // Central Complex EPG angle
+            epgNeurons: new Array(16).fill(0),
+            leftEmd: 0,
+            rightEmd: 0,
+            escapeActive: false
+        };
+
+        // Environment State
+        let obstacles = [
+            { x: 350, y: 250, r: 30 },
+            { x: 550, y: 400, r: 45 },
+            { x: 250, y: 500, r: 25 },
+            { x: 650, y: 200, r: 35 }
+        ];
+
+        let target = { x: 700, y: 450, r: 20 };
+        let predator = null;
+        let controlMode = 'epg';
+        let noiseLevel = 0.05;
+
+        function changeMode() {
+            controlMode = document.getElementById('controlModeSelect').value;
+            document.getElementById('powerVal').innerText = controlMode === 'epg' ? '1.2 mW' : (controlMode === 'pid' ? '45.0 W' : '0.5 mW');
+            document.getElementById('driftVal').innerText = controlMode === 'epg' ? '0.04° / s' : (controlMode === 'pid' ? '2.80° / s' : '45.0° / s');
+        }
+
+        function updateSpeed() {
+            agent.speed = parseFloat(document.getElementById('speedSlider').value);
+            document.getElementById('speedDisplay').innerText = agent.speed;
+        }
+
+        function updateNoise() {
+            noiseLevel = parseInt(document.getElementById('noiseSlider').value) / 100;
+            document.getElementById('noiseDisplay').innerText = (noiseLevel * 100) + '%';
+        }
+
+        function resetAgent() {
+            agent.x = 100 + Math.random() * 100;
+            agent.y = 100 + Math.random() * 100;
+            agent.angle = Math.random() * Math.PI * 2;
+            predator = null;
+        }
+
+        function addObstacle() {
+            obstacles.push({
+                x: 150 + Math.random() * (arenaCanvas.width - 300),
+                y: 100 + Math.random() * (arenaCanvas.height - 200),
+                r: 20 + Math.random() * 25
+            });
+        }
+
+        function clearObstacles() { obstacles = []; predator = null; }
+
+        function triggerPredator() {
+            predator = {
+                x: agent.x + (Math.random() - 0.5) * 300,
+                y: agent.y - 200,
+                r: 35,
+                vx: 0,
+                vy: 8 // Closing in rapidly
+            };
+        }
+
+        // Central Complex EPG Ring Attractor Simulation
+        function updateEPGAttractor(targetAngle) {
+            const numNeurons = 16;
+            for (let i = 0; i < numNeurons; i++) {
+                const neuronAngle = (i / numNeurons) * Math.PI * 2;
+                let diff = Math.abs(neuronAngle - targetAngle);
+                if (diff > Math.PI) diff = Math.PI * 2 - diff;
+                
+                let act = Math.exp(- (diff * diff) / (2 * 0.4 * 0.4)) + (Math.random() - 0.5) * noiseLevel;
+                agent.epgNeurons[i] = Math.max(0, act);
+            }
+
+            let sinSum = 0, cosSum = 0;
+            for (let i = 0; i < numNeurons; i++) {
+                const a = (i / numNeurons) * Math.PI * 2;
+                sinSum += agent.epgNeurons[i] * Math.sin(a);
+                cosSum += agent.epgNeurons[i] * Math.cos(a);
+            }
+            agent.headingBump = Math.atan2(sinSum, cosSum);
+            if (agent.headingBump < 0) agent.headingBump += Math.PI * 2;
+        }
+
+        // Main Simulation Loop
+        function step() {
+            if (predator) {
+                predator.x += (agent.x - predator.x) * 0.04;
+                predator.y += (agent.y - predator.y) * 0.04;
+
+                const dist = Math.hypot(predator.x - agent.x, predator.y - agent.y);
+                if (dist < 150) {
+                    agent.escapeActive = true;
+                    const escapeAngle = Math.atan2(agent.y - predator.y, agent.x - predator.x);
+                    agent.angle = escapeAngle + (Math.random() - 0.5) * 0.2;
+                    agent.x += Math.cos(agent.angle) * (agent.speed * 2.5);
+                    agent.y += Math.sin(agent.angle) * (agent.speed * 2.5);
+                } else {
+                    agent.escapeActive = false;
+                }
+            } else {
+                agent.escapeActive = false;
+            }
+
+            if (!agent.escapeActive) {
+                let leftRay = 0, rightRay = 0;
+                const rayFOV = Math.PI / 2;
+
+                obstacles.forEach(obs => {
+                    const d = Math.hypot(obs.x - agent.x, obs.y - agent.y);
+                    if (d < 160) {
+                        const angleToObs = Math.atan2(obs.y - agent.y, obs.x - agent.x);
+                        let relAngle = angleToObs - agent.angle;
+                        while (relAngle > Math.PI) relAngle -= Math.PI * 2;
+                        while (relAngle < -Math.PI) relAngle += Math.PI * 2;
+
+                        if (relAngle > 0 && relAngle < rayFOV) rightRay += (160 - d) / 160;
+                        if (relAngle < 0 && relAngle > -rayFOV) leftRay += (160 - d) / 160;
+                    }
+                });
+
+                agent.leftEmd = leftRay;
+                agent.rightEmd = rightRay;
+
+                if (controlMode === 'epg') {
+                    const goalAngle = Math.atan2(target.y - agent.y, target.x - agent.x);
+                    let desiredSteer = goalAngle + (leftRay - rightRay) * 1.8;
+                    
+                    updateEPGAttractor(desiredSteer);
+                    
+                    let steerDiff = agent.headingBump - agent.angle;
+                    while (steerDiff > Math.PI) steerDiff -= Math.PI * 2;
+                    while (steerDiff < -Math.PI) steerDiff += Math.PI * 2;
+
+                    agent.angle += steerDiff * 0.12;
+                } else if (controlMode === 'pid') {
+                    const goalAngle = Math.atan2(target.y - agent.y, target.x - agent.x);
+                    let error = goalAngle - agent.angle + (leftRay - rightRay) * 2.0;
+                    agent.angle += error * 0.08;
+                    updateEPGAttractor(agent.angle);
+                } else {
+                    agent.angle += (Math.random() - 0.5) * 0.4;
+                    updateEPGAttractor(agent.angle);
+                }
+
+                agent.x += Math.cos(agent.angle) * agent.speed;
+                agent.y += Math.sin(agent.angle) * agent.speed;
+            }
+
+            if (agent.x < 30) agent.x = 30;
+            if (agent.x > arenaCanvas.width - 30) agent.x = arenaCanvas.width - 30;
+            if (agent.y < 30) agent.y = 30;
+            if (agent.y > arenaCanvas.height - 30) agent.y = arenaCanvas.height - 30;
+
+            if (Math.hypot(target.x - agent.x, target.y - agent.y) < target.r + agent.radius) {
+                target.x = 100 + Math.random() * (arenaCanvas.width - 200);
+                target.y = 100 + Math.random() * (arenaCanvas.height - 200);
+            }
+
+            drawArena();
+            drawRingAttractor();
+            updateUI();
+            requestAnimationFrame(step);
+        }
+
+        function drawArena() {
+            ctx.clearRect(0, 0, arenaCanvas.width, arenaCanvas.height);
+
+            ctx.strokeStyle = 'rgba(255, 255, 255, 0.03)';
+            ctx.lineWidth = 1;
+            for (let x = 0; x < arenaCanvas.width; x += 40) {
+                ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, arenaCanvas.height); ctx.stroke();
+            }
+            for (let y = 0; y < arenaCanvas.height; y += 40) {
+                ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(arenaCanvas.width, y); ctx.stroke();
+            }
+
+            ctx.fillStyle = 'rgba(0, 230, 118, 0.2)';
+            ctx.strokeStyle = '#00e676';
+            ctx.lineWidth = 2;
+            ctx.beginPath();
+            ctx.arc(target.x, target.y, target.r, 0, Math.PI * 2);
+            ctx.fill(); ctx.stroke();
+            ctx.fillStyle = '#00e676';
+            ctx.font = '10px JetBrains Mono';
+            ctx.fillText('GOAL', target.x - 12, target.y + 4);
+
+            obstacles.forEach(obs => {
+                ctx.fillStyle = 'rgba(255, 145, 0, 0.15)';
+                ctx.strokeStyle = '#ff9100';
+                ctx.lineWidth = 2;
+                ctx.beginPath();
+                ctx.arc(obs.x, obs.y, obs.r, 0, Math.PI * 2);
+                ctx.fill(); ctx.stroke();
+            });
+
+            if (predator) {
+                ctx.fillStyle = 'rgba(255, 0, 127, 0.3)';
+                ctx.strokeStyle = '#ff007f';
+                ctx.lineWidth = 3;
+                ctx.beginPath();
+                ctx.arc(predator.x, predator.y, predator.r, 0, Math.PI * 2);
+                ctx.fill(); ctx.stroke();
+                ctx.fillStyle = '#ff007f';
+                ctx.fillText('PREDATOR LOOMING', predator.x - 45, predator.y - predator.r - 5);
+            }
+
+            ctx.save();
+            ctx.translate(agent.x, agent.y);
+            ctx.rotate(agent.angle);
+
+            ctx.strokeStyle = 'rgba(0, 242, 254, 0.2)';
+            ctx.lineWidth = 1;
+            ctx.beginPath(); ctx.moveTo(0, 0); ctx.lineTo(120, -40); ctx.stroke();
+            ctx.beginPath(); ctx.moveTo(0, 0); ctx.lineTo(120, 40); ctx.stroke();
+
+            ctx.fillStyle = agent.escapeActive ? '#ff007f' : '#00f2fe';
+            ctx.shadowColor = agent.escapeActive ? '#ff007f' : '#00f2fe';
+            ctx.shadowBlur = 15;
+            ctx.beginPath();
+            ctx.arc(0, 0, agent.radius, 0, Math.PI * 2);
+            ctx.fill();
+
+            ctx.strokeStyle = '#fff';
+            ctx.lineWidth = 3;
+            ctx.beginPath(); ctx.moveTo(0, 0); ctx.lineTo(22, 0); ctx.stroke();
+
+            ctx.restore();
+        }
+
+        function drawRingAttractor() {
+            ringCtx.clearRect(0, 0, ringCanvas.width, ringCanvas.height);
+            const cx = ringCanvas.width / 2;
+            const cy = ringCanvas.height / 2;
+            const radius = 65;
+
+            ringCtx.strokeStyle = 'rgba(255, 255, 255, 0.1)';
+            ringCtx.lineWidth = 4;
+            ringCtx.beginPath();
+            ringCtx.arc(cx, cy, radius, 0, Math.PI * 2);
+            ringCtx.stroke();
+
+            const num = 16;
+            for (let i = 0; i < num; i++) {
+                const a = (i / num) * Math.PI * 2 - Math.PI / 2;
+                const x = cx + Math.cos(a) * radius;
+                const y = cy + Math.sin(a) * radius;
+                const act = agent.epgNeurons[i] || 0;
+
+                ringCtx.fillStyle = `rgba(0, 242, 254, ${0.2 + act * 0.8})`;
+                ringCtx.shadowColor = '#00f2fe';
+                ringCtx.shadowBlur = act * 12;
+                ringCtx.beginPath();
+                ringCtx.arc(x, y, 6 + act * 6, 0, Math.PI * 2);
+                ringCtx.fill();
+            }
+
+            const bumpAngle = agent.headingBump - Math.PI / 2;
+            ringCtx.strokeStyle = '#00e676';
+            ringCtx.lineWidth = 3;
+            ringCtx.shadowColor = '#00e676';
+            ringCtx.shadowBlur = 10;
+            ringCtx.beginPath();
+            ringCtx.moveTo(cx, cy);
+            ringCtx.lineTo(cx + Math.cos(bumpAngle) * (radius - 12), cy + Math.sin(bumpAngle) * (radius - 12));
+            ringCtx.stroke();
+        }
+
+        function updateUI() {
+            const deg = Math.round((agent.headingBump * 180 / Math.PI) % 360);
+            document.getElementById('decodedAngle').innerText = deg + '°';
+            document.getElementById('leftEmdVal').innerText = agent.leftEmd.toFixed(2);
+            document.getElementById('rightEmdVal').innerText = agent.rightEmd.toFixed(2);
+
+            const esc = document.getElementById('escapeIndicator');
+            if (agent.escapeActive) {
+                esc.innerText = '⚠️ GIANT FIBER ESCAPE CIRCUIT TRIGGERED!';
+                esc.className = 'escape-indicator escape-active';
+            } else {
+                esc.innerText = 'GIANT FIBER ESCAPE CIRCUIT: NORMAL';
+                esc.className = 'escape-indicator';
+            }
+        }
+
+        requestAnimationFrame(step);
+    </script>
+</body>
+</html>

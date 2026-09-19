@@ -1,0 +1,302 @@
+{
+  "alzheimers_simulation": {
+    "disease": "Alzheimer's Disease (Tau/Amyloid Graph Diffusion)",
+    "simulation_steps": 8,
+    "trajectory": [
+      {
+        "remaining_nodes": 2000,
+        "remaining_edges": 24905,
+        "node_survival_ratio": 1.0,
+        "largest_component_ratio": 1.0,
+        "functional_health_index": 1.0,
+        "stage": 0,
+        "mean_pathology_load": 0.0018,
+        "severely_damaged_nodes": 0
+      },
+      {
+        "remaining_nodes": 2000,
+        "remaining_edges": 24905,
+        "node_survival_ratio": 1.0,
+        "largest_component_ratio": 1.0,
+        "functional_health_index": 1.0,
+        "stage": 1,
+        "mean_pathology_load": 0.0017,
+        "severely_damaged_nodes": 0
+      },
+      {
+        "remaining_nodes": 2000,
+        "remaining_edges": 24905,
+        "node_survival_ratio": 1.0,
+        "largest_component_ratio": 1.0,
+        "functional_health_index": 1.0,
+        "stage": 2,
+        "mean_pathology_load": 0.0016,
+        "severely_damaged_nodes": 0
+      },
+      {
+        "remaining_nodes": 2000,
+        "remaining_edges": 24905,
+        "node_survival_ratio": 1.0,
+        "largest_component_ratio": 1.0,
+        "functional_health_index": 1.0,
+        "stage": 3,
+        "mean_pathology_load": 0.0016,
+        "severely_damaged_nodes": 0
+      },
+      {
+        "remaining_nodes": 2000,
+        "remaining_edges": 24905,
+        "node_survival_ratio": 1.0,
+        "largest_component_ratio": 1.0,
+        "functional_health_index": 1.0,
+        "stage": 4,
+        "mean_pathology_load": 0.0016,
+        "severely_damaged_nodes": 0
+      },
+      {
+        "remaining_nodes": 2000,
+        "remaining_edges": 24905,
+        "node_survival_ratio": 1.0,
+        "largest_component_ratio": 1.0,
+        "functional_health_index": 1.0,
+        "stage": 5,
+        "mean_pathology_load": 0.0016,
+        "severely_damaged_nodes": 0
+      },
+      {
+        "remaining_nodes": 2000,
+        "remaining_edges": 24905,
+        "node_survival_ratio": 1.0,
+        "largest_component_ratio": 1.0,
+        "functional_health_index": 1.0,
+        "stage": 6,
+        "mean_pathology_load": 0.0017,
+        "severely_damaged_nodes": 0
+      },
+      {
+        "remaining_nodes": 2000,
+        "remaining_edges": 24905,
+        "node_survival_ratio": 1.0,
+        "largest_component_ratio": 1.0,
+        "functional_health_index": 1.0,
+        "stage": 7,
+        "mean_pathology_load": 0.0017,
+        "severely_damaged_nodes": 0
+      }
+    ]
+  },
+  "parkinsons_simulation": {
+    "disease": "Parkinson's Disease (Dopaminergic Neurodegeneration)",
+    "simulation_steps": 8,
+    "trajectory": [
+      {
+        "remaining_nodes": 1987,
+        "remaining_edges": 24599,
+        "node_survival_ratio": 0.9935,
+        "largest_component_ratio": 0.9935,
+        "functional_health_index": 0.9948,
+        "stage": 0,
+        "dopaminergic_cell_loss_pct": 7.56,
+        "total_dead_neurons": 13
+      },
+      {
+        "remaining_nodes": 1973,
+        "remaining_edges": 24253,
+        "node_survival_ratio": 0.9865,
+        "largest_component_ratio": 0.9865,
+        "functional_health_index": 0.9892,
+        "stage": 1,
+        "dopaminergic_cell_loss_pct": 15.7,
+        "total_dead_neurons": 27
+      },
+      {
+        "remaining_nodes": 1959,
+        "remaining_edges": 23906,
+        "node_survival_ratio": 0.9795,
+        "largest_component_ratio": 0.9795,
+        "functional_health_index": 0.9836,
+        "stage": 2,
+        "dopaminergic_cell_loss_pct": 23.84,
+        "total_dead_neurons": 41
+      },
+      {
+        "remaining_nodes": 1945,
+        "remaining_edges": 23558,
+        "node_survival_ratio": 0.9725,
+        "largest_component_ratio": 0.9725,
+        "functional_health_index": 0.978,
+        "stage": 3,
+        "dopaminergic_cell_loss_pct": 31.98,
+        "total_dead_neurons": 55
+      },
+      {
+        "remaining_nodes": 1932,
+        "remaining_edges": 23242,
+        "node_survival_ratio": 0.966,
+        "largest_component_ratio": 0.966,
+        "functional_health_index": 0.9728,
+        "stage": 4,
+        "dopaminergic_cell_loss_pct": 39.53,
+        "total_dead_neurons": 68
+      },
+      {
+        "remaining_nodes": 1918,
+        "remaining_edges": 22938,
+        "node_survival_ratio": 0.959,
+        "largest_component_ratio": 0.959,
+        "functional_health_index": 0.9672,
+        "stage": 5,
+        "dopaminergic_cell_loss_pct": 47.67,
+        "total_dead_neurons": 82
+      },
+      {
+        "remaining_nodes": 1904,
+        "remaining_edges": 22594,
+        "node_survival_ratio": 0.952,
+        "largest_component_ratio": 0.952,
+        "functional_health_index": 0.9616,
+        "stage": 6,
+        "dopaminergic_cell_loss_pct": 55.81,
+        "total_dead_neurons": 96
+      },
+      {
+        "remaining_nodes": 1890,
+        "remaining_edges": 22280,
+        "node_survival_ratio": 0.945,
+        "largest_component_ratio": 0.945,
+        "functional_health_index": 0.956,
+        "stage": 7,
+        "dopaminergic_cell_loss_pct": 63.95,
+        "total_dead_neurons": 110
+      }
+    ]
+  },
+  "pruning_simulation": {
+    "disease": "Synaptic Pruning (Age-Related Connectome Decay)",
+    "simulation_steps": 8,
+    "trajectory": [
+      {
+        "remaining_nodes": 2000,
+        "remaining_edges": 23660,
+        "node_survival_ratio": 1.0,
+        "largest_component_ratio": 1.0,
+        "functional_health_index": 1.0,
+        "stage": 0,
+        "pruned_synapses_pct": 5.0
+      },
+      {
+        "remaining_nodes": 2000,
+        "remaining_edges": 22415,
+        "node_survival_ratio": 1.0,
+        "largest_component_ratio": 1.0,
+        "functional_health_index": 1.0,
+        "stage": 1,
+        "pruned_synapses_pct": 10.0
+      },
+      {
+        "remaining_nodes": 2000,
+        "remaining_edges": 21170,
+        "node_survival_ratio": 1.0,
+        "largest_component_ratio": 1.0,
+        "functional_health_index": 1.0,
+        "stage": 2,
+        "pruned_synapses_pct": 15.0
+      },
+      {
+        "remaining_nodes": 2000,
+        "remaining_edges": 19924,
+        "node_survival_ratio": 1.0,
+        "largest_component_ratio": 1.0,
+        "functional_health_index": 1.0,
+        "stage": 3,
+        "pruned_synapses_pct": 20.0
+      },
+      {
+        "remaining_nodes": 2000,
+        "remaining_edges": 18679,
+        "node_survival_ratio": 1.0,
+        "largest_component_ratio": 1.0,
+        "functional_health_index": 1.0,
+        "stage": 4,
+        "pruned_synapses_pct": 25.0
+      },
+      {
+        "remaining_nodes": 2000,
+        "remaining_edges": 17434,
+        "node_survival_ratio": 1.0,
+        "largest_component_ratio": 1.0,
+        "functional_health_index": 1.0,
+        "stage": 5,
+        "pruned_synapses_pct": 30.0
+      },
+      {
+        "remaining_nodes": 2000,
+        "remaining_edges": 16189,
+        "node_survival_ratio": 1.0,
+        "largest_component_ratio": 1.0,
+        "functional_health_index": 1.0,
+        "stage": 6,
+        "pruned_synapses_pct": 35.0
+      },
+      {
+        "remaining_nodes": 2000,
+        "remaining_edges": 14943,
+        "node_survival_ratio": 1.0,
+        "largest_component_ratio": 1.0,
+        "functional_health_index": 1.0,
+        "stage": 7,
+        "pruned_synapses_pct": 40.0
+      }
+    ]
+  },
+  "trajectory_comparison": [
+    {
+      "stage": 0,
+      "alzheimers_health_index": 1.0,
+      "parkinsons_health_index": 0.9948,
+      "pruning_health_index": 1.0
+    },
+    {
+      "stage": 1,
+      "alzheimers_health_index": 1.0,
+      "parkinsons_health_index": 0.9892,
+      "pruning_health_index": 1.0
+    },
+    {
+      "stage": 2,
+      "alzheimers_health_index": 1.0,
+      "parkinsons_health_index": 0.9836,
+      "pruning_health_index": 1.0
+    },
+    {
+      "stage": 3,
+      "alzheimers_health_index": 1.0,
+      "parkinsons_health_index": 0.978,
+      "pruning_health_index": 1.0
+    },
+    {
+      "stage": 4,
+      "alzheimers_health_index": 1.0,
+      "parkinsons_health_index": 0.9728,
+      "pruning_health_index": 1.0
+    },
+    {
+      "stage": 5,
+      "alzheimers_health_index": 1.0,
+      "parkinsons_health_index": 0.9672,
+      "pruning_health_index": 1.0
+    },
+    {
+      "stage": 6,
+      "alzheimers_health_index": 1.0,
+      "parkinsons_health_index": 0.9616,
+      "pruning_health_index": 1.0
+    },
+    {
+      "stage": 7,
+      "alzheimers_health_index": 1.0,
+      "parkinsons_health_index": 0.956,
+      "pruning_health_index": 1.0
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "product_id": 2,
+  "name": "Bio-Inspired PyTorch LIF Spiking Circuit Library",
+  "connectome_source_neurons": 2000,
+  "connectome_source_synapses": 24905,
+  "circuits": {
+    "ring_attractor": {
+      "wedges": 16,
+      "initial_heading_deg": 57.3,
+      "final_heading_deg": 57.29,
+      "bump_stability": "STABLE"
+    },
+    "motion_detector": {
+      "channels": 16,
+      "max_motion_signal": 0.1813,
+      "min_motion_signal": -0.011,
+      "status": "OPERATIONAL"
+    },
+    "escape_circuit": {
+      "escape_triggered": true,
+      "trigger_step": 12,
+      "threshold_mv": -45.0,
+      "status": "OPERATIONAL"
+    },
+    "learning_circuit": {
+      "pn_neurons": 50,
+      "kc_neurons": 1000,
+      "mbon_neurons": 4,
+      "pre_training_w_sum": 2000.0,
+      "post_training_w_sum": 1942.78,
+      "ltd_depression_verified": true,
+      "status": "OPERATIONAL"
+    }
+  },
+  "timestamp": "1789292792.7369514"
+}

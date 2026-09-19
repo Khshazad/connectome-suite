@@ -1,0 +1,284 @@
+[
+  {
+    "query": "What is the shortest path between N-0 and N-42?",
+    "intent": "shortest_path",
+    "extracted_entities": {
+      "node_ids": [
+        "N-0",
+        "N-42"
+      ],
+      "neuron_types": [],
+      "regions": [],
+      "neurotransmitters": []
+    },
+    "graph_evidence": {
+      "path_found": true,
+      "source": "N-0",
+      "target": "N-42",
+      "path_length_hops": 7,
+      "path_nodes": [
+        "N-0",
+        "N-158",
+        "N-1079",
+        "N-1917",
+        "N-1488",
+        "N-1801",
+        "N-465",
+        "N-42"
+      ],
+      "edge_details": [
+        {
+          "source": "N-0",
+          "target": "N-158",
+          "weight": 0.122,
+          "neurotransmitter": "excitatory"
+        },
+        {
+          "source": "N-158",
+          "target": "N-1079",
+          "weight": 0.474,
+          "neurotransmitter": "excitatory"
+        },
+        {
+          "source": "N-1079",
+          "target": "N-1917",
+          "weight": 0.459,
+          "neurotransmitter": "excitatory"
+        },
+        {
+          "source": "N-1917",
+          "target": "N-1488",
+          "weight": 0.274,
+          "neurotransmitter": "excitatory"
+        },
+        {
+          "source": "N-1488",
+          "target": "N-1801",
+          "weight": 0.225,
+          "neurotransmitter": "excitatory"
+        },
+        {
+          "source": "N-1801",
+          "target": "N-465",
+          "weight": 0.24,
+          "neurotransmitter": "excitatory"
+        },
+        {
+          "source": "N-465",
+          "target": "N-42",
+          "weight": 0.218,
+          "neurotransmitter": "excitatory"
+        }
+      ]
+    },
+    "natural_language_answer": "Found shortest directed connectome path between N-0 and N-42: [N-0 -> N-158 -> N-1079 -> N-1917 -> N-1488 -> N-1801 -> N-465 -> N-42] across 7 hops."
+  },
+  {
+    "query": "Which Kenyon cells or motor neurons have the highest betweenness centrality in mushroom body?",
+    "intent": "centrality_ranking",
+    "extracted_entities": {
+      "node_ids": [],
+      "neuron_types": [
+        "motor",
+        "kenyon_cell"
+      ],
+      "regions": [
+        "mushroom_body"
+      ],
+      "neurotransmitters": []
+    },
+    "graph_evidence": {
+      "top_hubs": [
+        {
+          "id": "N-1123",
+          "type": "motor",
+          "region": "mushroom_body",
+          "betweenness": 0.009,
+          "degree": 0.0515
+        },
+        {
+          "id": "N-1564",
+          "type": "motor",
+          "region": "mushroom_body",
+          "betweenness": 0.0049,
+          "degree": 0.0206
+        },
+        {
+          "id": "N-1360",
+          "type": "kenyon_cell",
+          "region": "mushroom_body",
+          "betweenness": 0.0045,
+          "degree": 0.0309
+        },
+        {
+          "id": "N-265",
+          "type": "motor",
+          "region": "mushroom_body",
+          "betweenness": 0.0042,
+          "degree": 0.0412
+        },
+        {
+          "id": "N-1510",
+          "type": "motor",
+          "region": "mushroom_body",
+          "betweenness": 0.004,
+          "degree": 0.0619
+        },
+        {
+          "id": "N-178",
+          "type": "kenyon_cell",
+          "region": "mushroom_body",
+          "betweenness": 0.0028,
+          "degree": 0.0412
+        },
+        {
+          "id": "N-1469",
+          "type": "motor",
+          "region": "mushroom_body",
+          "betweenness": 0.0028,
+          "degree": 0.0206
+        },
+        {
+          "id": "N-1771",
+          "type": "motor",
+          "region": "mushroom_body",
+          "betweenness": 0.0021,
+          "degree": 0.0412
+        },
+        {
+          "id": "N-1521",
+          "type": "kenyon_cell",
+          "region": "mushroom_body",
+          "betweenness": 0.0021,
+          "degree": 0.0309
+        },
+        {
+          "id": "N-1403",
+          "type": "motor",
+          "region": "mushroom_body",
+          "betweenness": 0.0021,
+          "degree": 0.0206
+        }
+      ],
+      "filtered_region": "mushroom_body",
+      "filtered_type": "motor"
+    },
+    "natural_language_answer": "Top network hub neurons identified by betweenness centrality in mushroom_body region: N-1123 (motor), N-1564 (motor), N-1360 (kenyon_cell)."
+  },
+  {
+    "query": "Show neurotransmitter pathways connecting Cholinergic neurons to GABAergic neurons",
+    "intent": "pathway_trace",
+    "extracted_entities": {
+      "node_ids": [],
+      "neuron_types": [],
+      "regions": [],
+      "neurotransmitters": [
+        "Cholinergic",
+        "GABAergic"
+      ]
+    },
+    "graph_evidence": {
+      "source_nt": "Cholinergic",
+      "target_nt": "GABAergic",
+      "sample_synaptic_pathways": [
+        {
+          "source": "N-8",
+          "source_type": "interneuron",
+          "target": "N-878",
+          "target_type": "sensory",
+          "weight": 3.651
+        },
+        {
+          "source": "N-8",
+          "source_type": "interneuron",
+          "target": "N-1130",
+          "target_type": "motor",
+          "weight": 0.377
+        },
+        {
+          "source": "N-8",
+          "source_type": "interneuron",
+          "target": "N-928",
+          "target_type": "interneuron",
+          "weight": 0.602
+        },
+        {
+          "source": "N-8",
+          "source_type": "interneuron",
+          "target": "N-1330",
+          "target_type": "interneuron",
+          "weight": 1.748
+        },
+        {
+          "source": "N-8",
+          "source_type": "interneuron",
+          "target": "N-187",
+          "target_type": "interneuron",
+          "weight": 0.138
+        },
+        {
+          "source": "N-8",
+          "source_type": "interneuron",
+          "target": "N-1277",
+          "target_type": "giant_fiber",
+          "weight": 0.655
+        },
+        {
+          "source": "N-9",
+          "source_type": "motor",
+          "target": "N-436",
+          "target_type": "sensory",
+          "weight": 1.818
+        },
+        {
+          "source": "N-9",
+          "source_type": "motor",
+          "target": "N-1881",
+          "target_type": "central_complex",
+          "weight": 1.282
+        },
+        {
+          "source": "N-9",
+          "source_type": "motor",
+          "target": "N-1365",
+          "target_type": "sensory",
+          "weight": 2.413
+        },
+        {
+          "source": "N-9",
+          "source_type": "motor",
+          "target": "N-1598",
+          "target_type": "sensory",
+          "weight": 3.076
+        }
+      ],
+      "total_matches_found": 10
+    },
+    "natural_language_answer": "Identified 10 synaptic projections connecting Cholinergic neurons directly to GABAergic neurons."
+  },
+  {
+    "query": "Summarize the circuit structure in the antennal lobe",
+    "intent": "general_overview",
+    "extracted_entities": {
+      "node_ids": [],
+      "neuron_types": [],
+      "regions": [
+        "antennal_lobe"
+      ],
+      "neurotransmitters": []
+    },
+    "graph_evidence": {
+      "total_nodes": 2000,
+      "total_edges": 24905,
+      "is_directed": true,
+      "sample_regions": [
+        "optic_lobe",
+        "central_brain",
+        "mushroom_body",
+        "ventral_nerve_cord",
+        "antennal_lobe"
+      ]
+    },
+    "natural_language_answer": "Connectome graph contains 2000 neurons and 24905 synapses across 5 brain regions."
+  }
+]
