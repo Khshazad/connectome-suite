@@ -2,6 +2,7 @@ services:
   - type: web
     name: connectome-pharma-api
     env: python
+    plan: free
     buildCommand: pip install -r requirements.txt
     startCommand: uvicorn connectome_products.4_pharma_api.main:app --host 0.0.0.0 --port $PORT
     envVars:
@@ -10,5 +11,6 @@ services:
 
   - type: static_site
     name: connectome-web-suite
+    plan: free
     buildCommand: echo "Static site ready"
     staticPublishPath: ./docs
